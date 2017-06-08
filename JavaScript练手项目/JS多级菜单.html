@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html >
+<head>
+	<meta charset="UTF-8">
+	<title>JS二级菜单</title>
+	<style>
+		*{margin: 0;padding: 0;}
+		li{list-style: none;}
+		a{text-decoration: none;color: #333;}
+		.nav{width:600px;height: 40px;background-color: #FFF0F5;margin: 0 auto;}
+		.nav .firstNav li{float: left;text-align: center;line-height:40px; width: 100px;}
+		.nav .firstNav li a {display: block; height: 40px;}
+		.nav li a:hover {background-color: #FF6700;color: #eee;width: 100px;}
+
+		.nav .submenu {display: none;width: 100px;margin-top: 2px;}
+		.nav .submenu li{float: none;background-color: #FFF0F5;border-bottom: 1px solid #fff;}
+		
+	</style>
+</head>
+<body>	
+	<div class="nav">
+		<ul class="firstNav">
+			<li><a href="#">首页</a></li>
+			<li class="menu">
+				<a href="#">计算机语言</a>
+				<ul class="submenu">
+					<li><a href="#">JAVA</a></li>
+					<li><a href="#">C++</a></li>
+					<li><a href="#">JavaScript</a></li>
+					<li><a href="#">HTML</a></li>
+				</ul>
+			</li>
+			<li class="menu">
+				<a href="#">技能展示</a>
+				<ul class="submenu">
+					<li><a href="#">HTML</a></li>
+					<li><a href="#">CSS</a></li>
+					<li><a href="#">JavaScript</a></li>
+				</ul>
+			</li>
+			<li><a href="#">个人中心</a></li>
+			<li><a href="#">关于我们</a></li>
+		</ul>
+	</div>
+
+</body>
+	<script >
+		var menu = document.getElementsByClassName('menu');
+
+		for (var i = 0;i<menu.length;i++) {
+			menu[i].onmouseover = function () {
+				this.getElementsByClassName('submenu')[0].style.display = 'block';
+			}
+			menu[i].onmouseout = function () {
+				this.getElementsByClassName('submenu')[0].style.display = 'none';
+			}	
+		}
+	</script>
+</html>

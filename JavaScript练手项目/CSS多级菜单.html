@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html >
+<head>
+	<meta charset="UTF-8">
+	<title>CSS三级菜单</title>
+	<style>
+		*{margin: 0;padding: 0;}
+		li{list-style: none;}
+		a{text-decoration: none;color: #333;}
+		.nav{width:600px;height: 40px;background-color: #FFF0F5;margin: 0 auto;position: relative;}
+		.nav .firstNav li{float: left;text-align: center;line-height:40px; width: 100px;}
+		.nav .firstNav li a {display: block; height: 40px;}
+		.nav li a:hover {background-color: #FF6700;color: #eee;width: 100px;}
+
+		.nav .secondNav {display: none;width: 100px;position: absolute;}
+		.nav .secondNav li{float: none;background-color: #FFF0F5;border-bottom: 1px solid #fff;}
+
+		.firstNav li:hover ul {display: block;}
+		.nav .secondNav li ul {display: none;}
+		.nav .secondNav li:hover ul{display: block;top: 0px;left: 100px;position: absolute;}
+	</style>
+</head>
+<body>	
+	<div class="nav">
+		<ul class="firstNav">
+			<li><a href="#">首页</a></li>
+			<li >
+				<a href="#">计算机语言 +</a>
+				<ul class="secondNav">
+					<li>
+						<a href="#">其他 +</a>
+						<ul>
+							<li><a href="#">Python</a></li>
+							<li><a href="#">VB</a></li>
+							<li><a href="#">Java</a></li>
+						</ul>
+					</li>
+					<li><a href="#">C++</a></li>
+					<li><a href="#">JavaScript</a></li>
+					<li><a href="#">HTML</a></li>
+				</ul>
+			</li>
+			<li>
+				<a href="#">经典案例 +</a>
+				<ul class="secondNav">
+					<li><a href="#">JAVA</a></li>
+					<li><a href="#">C++</a></li>
+					<li><a href="#">JavaScript</a></li>
+					<li><a href="#">HTML</a></li>
+				</ul>
+			</li>
+			<li><a href="#">个人中心</a></li>
+			<li><a href="#">关于我们</a></li>
+		</ul>
+	</div>
+
+</body>
+</html>

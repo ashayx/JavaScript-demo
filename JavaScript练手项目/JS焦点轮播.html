@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>原生JS焦点轮播图</title>
+    <style type="text/css">
+        *{ margin: 0; padding: 0; text-decoration: none;}
+        body { padding: 20px;}
+        #container { width: 1000px; height: 600px; border: 1px solid #fff000; overflow: hidden; position: relative;margin:auto;}
+        #list { width: 7000px; height: 600px; position: absolute; z-index: 1;}
+       /*  #list{
+      
+              width:3600px;
+      
+              position:absolute;
+      
+              transition:left 0.5s;
+      
+              -moz-transition:left 0.5s; Firefox 4
+      
+              -webkit-transition:left 0.5s; Safari and Chrome
+      
+              -o-transition:left 0.5s; Opera
+      
+          }*/
+        #list img { float: left;width: 1000px;height: 600px;}
+        #buttons { position: absolute; height: 10px; width: 100px; z-index: 2; bottom: 20px; left: 400px;}
+        #buttons span { cursor: pointer; float: left; border: 1px solid #fff; width: 10px; height: 10px; border-radius: 50%; background: #66700; margin-right: 5px;}
+        #buttons .on {  background: #6700EE;}
+        .arrow { cursor: pointer; display: none; line-height: 39px; text-align: center; font-size: 36px; font-weight: bold; width: 40px; height: 40px;  position: absolute; z-index: 2; top: 280px; background-color: RGBA(0,0,0,.3); color: #fff;}
+        .arrow:hover { background-color: RGBA(0,0,0,.7);}
+        #container:hover .arrow { display: block;}
+        #prev { left: 20px;}
+        #next { right: 20px;}
+    </style>
+ 
+</head>
+<body>
+
+<div id="container">
+    <div id="list" style="left: -1000px;">
+        <img src="img/5.jpg" alt="1"/>
+        <img src="img/1.jpg" alt="1"/>
+        <img src="img/2.jpg" alt="2"/>
+        <img src="img/3.jpg" alt="3"/>
+        <img src="img/4.jpg" alt="4"/>
+        <img src="img/5.jpg" alt="5"/>
+        <img src="img/1.jpg" alt="5"/>
+    </div>
+    <div id="buttons">
+        <span index="1" class="on"></span>
+        <span index="2"></span>
+        <span index="3"></span>
+        <span index="4"></span>
+        <span index="5"></span>
+    </div>
+    <a href="javascript:;" id="prev" class="arrow">&lt;</a>
+    <a href="javascript:;" id="next" class="arrow">&gt;</a>
+</div>
+
+</body>
+    <script>
+        /**
+         * [container description]
+         * @type {[type]}
+         */
+        var container = document.getElementById('container');
+        var list = document.getElementById('list');
+        var buttons = document.getElementById('buttons').getElementsByTagName('span');
+        var prev = document.getElementById('prev');
+        var next = document.getElementById('next');
+        var wid = 1000;
+        var len = 5;
+        var index = 1;
+        var animated = false;
+        var timer ;
+        var interval = 2000;
+        /**
+         * [animate description]
+         * offset位移量
+         * go函数定义动画
+         */
+        var animate = function (offset) {
+            animated = true;
+            var newLeft = parseInt(list.style.left) + offset;
+            var time = 500;  
+            var interval = 10;
+            var speed = offset/(time/interval);
+
+            function go () {
+                if((speed > 0 && parseInt(list.style.left) < newLeft)||(speed < 0 && parseInt(list.style.left) > newLeft)) {
+                    list.style.left = parseInt(list.style.left) + speed +'px';
+                    setTimeout(go, interval);
+                }else { 
+                    list.style.left = newLeft +'px';
+                    if (newLeft < -(wid *len)) {
+                        list.style.left = -wid + 'px';
+                    }
+                    if (newLeft > -wid) {
+                        list.style.left = -(wid * len) + 'px';
+                    }
+                    animated = false;
+                }
+            }
+            go();
+            // debugger;
+        }
+
+        /**
+         * 点击左箭头
+         * 
+         */
+        prev.onclick = function () {
+            if(!animated){
+                if(index == 1){
+                    index = 5;
+                }else{
+                    index -= 1;
+                }
+                showButton();
+                animate(wid);
+            }
+
+        }
+        /**
+         * 点击右箭头
+         */
+        next.onclick = function () {
+            if(!animated){
+
+                if(index == 5){
+                    index = 1;
+                }else{
+                    index += 1;
+                }
+                showButton();
+                animate(-wid);
+            }
+        }
+        //焦点变色，添加类on
+        function showButton () {
+            for (var i = 0;i<buttons.length;i++){
+                if(buttons[i].className == 'on'){
+                    buttons[i].className = '';
+                    break;
+                }
+            }
+            buttons[index - 1].className = 'on';
+        }
+        //焦点位移
+        for (var i = 0;i<buttons.length;i++){
+            buttons[i].onclick =function () {
+                if(this.className =='on'){
+                    return;
+                }
+                var myIndex = parseInt(this.getAttribute('index')); 
+                var offset = -wid * (myIndex - index);
+                if(!animated){
+                    animate(offset);
+                }
+                index = myIndex;
+                showButton();
+                // debugger;
+            }
+        }
+        //自动播放
+        function play(){
+            timer = setInterval(function () {
+                next.onclick();
+            }, interval);
+        }
+        function stop () {
+            clearInterval(timer);
+        }
+        play();
+        container.onmouseover = stop;
+        container.onmouseout = play;
+
+
+
+    </script>
+</html>
