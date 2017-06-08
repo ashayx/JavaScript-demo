@@ -1,2 +1,2 @@
-# mua
-The man is lazy,leaving nothing.
+# JavaScript练习
+
