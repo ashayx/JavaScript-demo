@@ -60,10 +60,6 @@
 
 </body>
     <script>
-        /**
-         * [container description]
-         * @type {[type]}
-         */
         var container = document.getElementById('container');
         var list = document.getElementById('list');
         var buttons = document.getElementById('buttons').getElementsByTagName('span');
@@ -78,7 +74,7 @@
         /**
          * [animate description]
          * offset位移量
-         * go函数定义动画
+         * go函数定义动画，每10ms执行一次go函数，每次位移speedpx
          */
         var animate = function (offset) {
             animated = true;
@@ -108,7 +104,7 @@
 
         /**
          * 点击左箭头
-         * 
+         * 没有动画的时候才执行位移和焦点聚焦
          */
         prev.onclick = function () {
             if(!animated){
@@ -124,6 +120,7 @@
         }
         /**
          * 点击右箭头
+         * 没有动画的时候才执行位移和焦点聚焦
          */
         next.onclick = function () {
             if(!animated){
@@ -150,15 +147,13 @@
         //焦点位移
         for (var i = 0;i<buttons.length;i++){
             buttons[i].onclick =function () {
-                if(this.className =='on'){
+                if(this.className =='on'||animated){
                     return;
                 }
                 var myIndex = parseInt(this.getAttribute('index')); 
                 var offset = -wid * (myIndex - index);
-                if(!animated){
-                    animate(offset);
-                }
                 index = myIndex;
+                animate(offset);    
                 showButton();
                 // debugger;
             }
