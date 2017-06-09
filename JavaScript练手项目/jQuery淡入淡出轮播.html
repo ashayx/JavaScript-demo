@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html >
+<head>
+	<meta charset="UTF-8">
+	<title>jQuery淡入淡出轮播</title>
+	<style type="text/css">
+	    *{ margin: 0; padding: 0; text-decoration: none;}
+	    body { padding: 20px;}
+	    #container { width: 1000px; height: 600px; border: 1px solid #fff000; overflow: ; position: relative;margin:auto;}
+	    #list { width: 1000px; height: 600px; position: absolute; z-index: 1;}
+	    #list img { position: absolute;top: 0;left: 0; width: 1000px;height: 600px;display: none;}
+	    #buttons { position: absolute; height: 10px; width: 100px; z-index: 2; bottom: 20px; left: 450px;}
+	    #buttons span { cursor: pointer; float: left; border: 2px solid #fff; border-color: rgba(255,255,255,0.5);display: block; width: 10px; height: 10px; border-radius: 50%; background: rgba(0,0,0,0.2);; margin-right: 5px;}
+	    #buttons .on {  background: rgba(255,255,255,0.2);border-color: rgba(0,0,0,0.1);}
+	    .arrow { cursor: pointer; display: none; line-height: 39px; text-align: center; font-size: 36px; font-weight: bold; width: 40px; height: 40px;  position: absolute; z-index: 2; top: 280px; background-color: RGBA(0,0,0,.3); color: #fff;}
+	    .arrow:hover { background-color: RGBA(0,0,0,.7);}
+	    #container:hover .arrow { display: block;}
+	    #prev { left: 20px;}
+	    #next { right: 20px;}
+	</style>
+	<script type="text/javascript" src="js/jquery.js"></script>
+	<script type="text/javascript">
+		$(function(){
+			var container = $('#container');
+			var img = $('#list img');
+			var buttons = $('#buttons span');
+			var prev = $('#prev');
+			var next = $('#next');
+			var index = 1;
+			var timer;
+			var interval = 3000;
+			/**
+			 * 第一个图片显示
+			 * fadeIn显示图片，其余图片fadeOut隐藏
+			 */
+			img.eq(0).css('display','block');
+			function animate () {		
+				img.eq(index-1).fadeIn(500).siblings().fadeOut();
+			}
+			//index-1 为当前索引，添加类on，兄弟类移除on
+			function showButton () {
+				buttons.eq(index-1).addClass('on').siblings().removeClass('on')
+			}
+			/**
+			 * 遍历焦点
+			 * 绑定点击事件，如果正在动画或者存在on的类，就结束
+			 */
+			buttons.each(function () {
+				$(this).bind('click', function () {
+					if (img.is(':animated') || $(this).attr('class')=='on') {
+					    return;
+					}
+					var myIndex = parseInt($(this).attr('index'));
+					index = myIndex;
+					animate();
+					showButton();
+				})
+			});
+			/**
+			 * 绑定左右点击事件
+			 * 如果正在动画中，return，不执行点击
+			 * 绑定animate函数位移，showButton焦点变色
+			 */
+			next.bind('click', function () {
+				if(img.is(':animated')){
+					return;
+				}
+				if(index == 5){
+					index = 1 ;
+				}else{
+					index ++ ;
+				}
+				animate();
+				showButton();
+			});
+
+			prev.bind('click', function () {
+				if(img.is(':animated')){
+					return;
+				}
+				if(index == 1){
+					index = 5 ;
+				}else{
+					index --;
+				}
+				animate();
+				showButton();
+			});
+			/**
+			 * 定时器，鼠标滑入执行stop消除定时，滑出执行play
+			 */
+			function play () {
+				timer = setInterval(function () {
+					next.click()
+				},interval)
+			}
+			function stop(){
+				clearInterval(timer);
+			}
+			play();
+			container.hover(stop,play);
+
+
+		})
+	</script>
+</head>
+<body>
+	<div id="container">
+	    <div id="list" >
+	        
+	        <img src="img/1.jpg" alt="1"/>
+	        <img src="img/2.jpg" alt="2"/>
+	        <img src="img/3.jpg" alt="3"/>
+	        <img src="img/4.jpg" alt="4"/>
+	        <img src="img/5.jpg" alt="5"/>
+	        
+	    </div>
+	    <div id="buttons">
+	        <span index="1" class="on"></span>
+	        <span index="2"></span>
+	        <span index="3"></span>
+	        <span index="4"></span>
+	        <span index="5"></span>
+	    </div>
+	    <a href="javascript:;" id="prev" class="arrow">&lt;</a>
+	    <a href="javascript:;" id="next" class="arrow">&gt;</a>
+	</div>
+	
+</body>
+</html>
