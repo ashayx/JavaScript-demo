@@ -1,0 +1,324 @@
+﻿<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>JS返回顶部效果</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-size: 12px;
+            line-height: 1.7;
+        }
+
+        li {
+            list-style: none;
+        }
+
+        #content {
+            width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        #content h1 {
+            color: #0088bb;
+        }
+
+        #content .item {
+            padding: 20px;
+            margin-bottom: 20px;
+            border: 1px dotted #0088bb;
+        }
+
+        #content .item h2 {
+            font-size: 16px;
+            font-weight: bold;
+            border-bottom: 2px solid #0088bb;
+            margin-bottom: 10px;
+        }
+
+        #content .item li {
+            display: inline;
+            margin-right: 10px;
+        }
+
+        #content .item li a img {
+            width: 230px;
+            height: 230px;
+            border: none;
+        }
+
+        #menu {
+            position: fixed;
+            top: 100px;
+            left: 50%;
+            margin-left: 400px;
+            width: 50px;
+        }
+
+        #menu ul li a {
+            display: block;
+            margin: 5px 0;
+            font-size: 14px;
+            font-weight: bold;
+            color: #333;
+            width: 80px;
+            height: 50px;
+            line-height: 50px;
+            text-decoration: none;
+            text-align: center;
+        }
+
+        #menu ul li a:hover,
+        #menu ul li a.current {
+            color: #fff;
+            background: #0088bb;
+        }
+
+        * html, * html body {
+            background-image: url(about:blank);
+            background-attachment: fixed;
+        }
+
+        * html #menu {
+            position: absolute;
+            bottom: auto;
+            top: expression(100+((e=document.documentElement.scrollTop)?e:document.body.scrollTop)+'px');
+        }
+        #backTop {
+          display: none;
+          width: 38px;
+          height: 38px;
+          background-color: #ddd;
+          border-radius: 3px;
+          border: 0;
+          cursor: pointer;
+          position: fixed;
+          right: 100px;
+          bottom: 100px;
+        }
+        #backTop:hover{
+            opacity: 0.5;
+        }
+        #backTop .arrow{
+            width: 0;
+            height: 0;
+            top: -1px;
+            border: 9px solid transparent;
+            border-bottom-color: #aaa;
+            position: relative;
+            top: 0;
+            left: 9px;
+        }
+        #backTop .stick {
+            width: 8px;
+            height: 14px;
+            top: 15px;
+            border-radius: 1px;
+            background-color: #aaa;
+            position: relative;
+            top: 0;
+            left: 14px;
+        }
+    </style>
+
+</head>
+<body>
+<div id="menu">
+    <ul>
+        <li><a href="#item1" class="current">1F 男装</a></li>
+        <li><a href="#item2">2F 女装</a></li>
+        <li><a href="#item3">3F 美妆</a></li>
+        <li><a href="#item4">4F 数码</a></li>
+        <li><a href="#item5">5F 母婴</a></li>
+    </ul>
+    <a id="backTop">
+        <div class="arrow"></div>
+        <div class="stick"></div>
+    </a>
+</div>
+<div id="content">
+    <h1>导航定位</h1>
+
+    <div id="item1" class="item">
+        <h2>1F 男装</h2>
+
+        <ul>
+            <li><a href="#"><img src="img/1.jpg" alt=""/></a></li>
+            <li><a href="#"><img src="img/1.jpg" alt=""/></a></li>
+            <li><a href="#"><img src="img/1.jpg" alt=""/></a></li>
+            <li><a href="#"><img src="img/1.jpg" alt=""/></a></li>
+            <li><a href="#"><img src="img/1.jpg" alt=""/></a></li>
+            <li><a href="#"><img src="img/1.jpg" alt=""/></a></li>
+            <li><a href="#"><img src="img/1.jpg" alt=""/></a></li>
+            <li><a href="#"><img src="img/1.jpg" alt=""/></a></li>
+            <li><a href="#"><img src="img/1.jpg" alt=""/></a></li>
+        </ul>
+    </div>
+    <div id="item2" class="item">
+        <h2>2F 女装</h2>
+        <ul>
+            <li><a href="#"><img src="img/2.jpg" alt=""/></a></li>
+            <li><a href="#"><img src="img/2.jpg" alt=""/></a></li>
+            <li><a href="#"><img src="img/2.jpg" alt=""/></a></li>
+            <li><a href="#"><img src="img/2.jpg" alt=""/></a></li>
+            <li><a href="#"><img src="img/2.jpg" alt=""/></a></li>
+            <li><a href="#"><img src="img/2.jpg" alt=""/></a></li>
+            <li><a href="#"><img src="img/2.jpg" alt=""/></a></li>
+            <li><a href="#"><img src="img/2.jpg" alt=""/></a></li>
+            <li><a href="#"><img src="img/2.jpg" alt=""/></a></li>
+        </ul>
+    </div>
+    <div id="item3" class="item">
+        <h2>3F 美妆</h2>
+
+        <ul>
+            <li><a href="#"><img src="img/3.jpg" alt=""/></a></li>
+            <li><a href="#"><img src="img/3.jpg" alt=""/></a></li>
+            <li><a href="#"><img src="img/3.jpg" alt=""/></a></li>
+            <li><a href="#"><img src="img/3.jpg" alt=""/></a></li>
+            <li><a href="#"><img src="img/3.jpg" alt=""/></a></li>
+            <li><a href="#"><img src="img/3.jpg" alt=""/></a></li>
+            <li><a href="#"><img src="img/3.jpg" alt=""/></a></li>
+            <li><a href="#"><img src="img/3.jpg" alt=""/></a></li>
+            <li><a href="#"><img src="img/3.jpg" alt=""/></a></li>
+        </ul>
+    </div>
+    <div id="item4" class="item">
+        <h2>4F 数码</h2>
+
+        <ul>
+            <li><a href="#"><img src="img/4.jpg" alt=""/></a></li>
+            <li><a href="#"><img src="img/4.jpg" alt=""/></a></li>
+            <li><a href="#"><img src="img/4.jpg" alt=""/></a></li>
+            <li><a href="#"><img src="img/4.jpg" alt=""/></a></li>
+            <li><a href="#"><img src="img/4.jpg" alt=""/></a></li>
+            <li><a href="#"><img src="img/4.jpg" alt=""/></a></li>
+            <li><a href="#"><img src="img/4.jpg" alt=""/></a></li>
+            <li><a href="#"><img src="img/4.jpg" alt=""/></a></li>
+            <li><a href="#"><img src="img/4.jpg" alt=""/></a></li>
+        </ul>
+    </div>
+    <div id="item5" class="item">
+        <h2>5F 母婴</h2>
+
+        <ul>
+            <li><a href="#"><img src="img/5.jpg" alt=""/></a></li>
+            <li><a href="#"><img src="img/5.jpg" alt=""/></a></li>
+            <li><a href="#"><img src="img/5.jpg" alt=""/></a></li>
+            <li><a href="#"><img src="img/5.jpg" alt=""/></a></li>
+            <li><a href="#"><img src="img/5.jpg" alt=""/></a></li>
+            <li><a href="#"><img src="img/5.jpg" alt=""/></a></li>
+            <li><a href="#"><img src="img/5.jpg" alt=""/></a></li>
+            <li><a href="#"><img src="img/5.jpg" alt=""/></a></li>
+            <li><a href="#"><img src="img/5.jpg" alt=""/></a></li>
+        </ul>
+    </div>
+</div>
+
+</body>
+
+<script >
+  //根据classname获取元素
+  function getByClassName(obj,cls){
+     var elements = obj.getElementsByTagName('*');
+     var result = [];
+     for(var i=0;i<elements.length;i++){
+         if(elements[i].className == cls){
+             result.push(elements[i]);
+         }
+     }
+     return result;
+ }
+
+   function hasClass(obj,cls){//
+     return obj.className.match(new RegExp("(\\s|^)" + cls + "(\\s|$)"));
+ }
+
+ function removeClass( obj,cls ){
+       if( hasClass( obj,cls )){//包含class删掉
+         var reg =  new RegExp("(\\s|^)" + cls + "(\\s|$)");
+         obj.className =  obj.className.replace(reg,'');
+     }
+ }
+
+ function addClass(obj,cls){
+     if(!hasClass(obj,cls)){
+         obj.className += ' ' + cls;
+     }
+ }
+
+ window.onscroll = function() {
+     /* var top = document.documentElement ? document.documentElement.scrollTop : document.body.scrollTop;*/
+
+     var top = document.documentElement.scrollTop || document.body.scrollTop;
+     var menus = document.getElementById('menu').getElementsByTagName('a');
+
+     var items = getByClassName(document.getElementById('content'),'item');
+     var backTop = document.getElementById('backTop');
+     var clientHight = document.documentElement.clientHeight;
+     var currentId = '';
+
+     for(var i = 0;i<items.length;i++) {
+       var _item = items[i];
+       var _itemTop = _item.offsetTop;
+       if(top > _itemTop - 200){
+           currentId = '#' + _item.id;
+               // console.log(currentId)
+           }else{
+               break;
+           }
+       }
+
+       if(currentId){
+           for(var j = 0;j<menus.length;j++){
+               var _menu = menus[j];
+               var _href = _menu.getAttribute('href');
+               // console.log(_href)
+               if( _href != currentId )
+               {
+                removeClass(_menu,"current");
+            }else{
+                addClass(_menu,"current");
+            }
+        }
+    }
+       //返回顶部
+       if(top > clientHight){
+            backTop.style.display = 'block';
+        }else {
+            backTop.style.display = 'none';
+        }
+       // 回到顶部过程中用户滚动滚动条，停止定时器
+       if (!isTop) {
+         clearInterval(timer);
+     };
+     isTop = false;
+
+ }
+ var timer = null;
+ var isTop = true;
+ backTop.onclick = function() {
+        //设置定时器
+        timer = setInterval(function(){
+          var top = document.documentElement.scrollTop || document.body.scrollTop;
+          //设置速度
+          var ispeed = Math.floor(-top / 4);
+
+          document.documentElement.scrollTop = document.body.scrollTop = top+ispeed;
+              //到达顶部，清除定时器
+              if (top == 0) {
+                clearInterval(timer);
+            };
+            isTop = true;
+
+        },30);
+    };
+
+
+</script>
+</html>
