@@ -7,5 +7,6 @@
 - [jQuery淡入淡出轮播](https://ashayx.github.io/JavaScript-demo/JavaScript练手项目/jQuery淡入淡出轮播.html)
 - [jQuery定位导航](https://ashayx.github.io/JavaScript-demo/JavaScript练手项目/jQuery定位导航.html)
 - [JS定位导航](https://ashayx.github.io/JavaScript-demo/JavaScript练手项目/JS定位导航.html)
+- [JS返回顶部](https://ashayx.github.io/JavaScript-demo/JavaScript练手项目/JS返回顶部.html)
 
 
