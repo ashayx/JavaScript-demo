@@ -1,0 +1,48 @@
+
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta charset='utf-8'/>
+		<title>数字时钟</title>
+		<style type="text/css">
+		span{font-size: 80px;font-weight: bold;color: green;}
+		</style>
+		<script type="text/javascript">
+		window.onload = function(){
+			var oHour = document.getElementById('hour');
+			var oPoint = document.getElementById('point');
+			var oSecond = document.getElementById('second');
+			var timer = null;
+			function showTime(){
+				clearInterval(timer);
+				var nowTime = new Date();
+				var h = nowTime.getHours();
+				var m = nowTime.getMinutes();
+				var s = nowTime.getSeconds();
+
+				m = checkTime(m);
+				s = checkTime(s);
+
+				oHour.innerHTML = h + ':';
+				oPoint.innerHTML = m + ':';
+				oSecond.innerHTML = s;
+				t=setTimeout(function(){
+					showTime();
+				},500);
+			}
+			function checkTime(num){
+				if(num < 10){
+					num = '0' + num;
+				}
+				return num;
+			}
+			showTime();
+		}
+		</script>
+	</head>
+	<body>
+		<span id="hour"></span>
+		<span id="point"></span>
+		<span id="second"></span>
+	</body>
+</html>
