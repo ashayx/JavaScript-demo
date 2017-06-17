@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <title>鼠标移入移出改变透明度</title>
+    <style type="text/css">
+        *{margin: 0;padding:0;}
+        .demo1 {width: 1000px; position: relative;margin:100px auto;}
+        .demo1 img {width: 1000px;}
+    </style>
+</head>
+<body>
+<div class="demo1">
+    <img id="img" src="img/1.jpg" alt=""/>
+</div>
+<script>
+    (function(){
+        var img = document.getElementById('img');
+        img.onmouseover = function(){
+            fade(this, 30);
+        }
+        img.onmouseout = function(){
+            fade(this, 100);
+        }
+
+        function css(obj, attr){
+            if(obj.currentStyle){
+                return obj.currentStyle[attr];
+            } else {
+                return getComputedStyle(obj, false)[attr];
+            }
+        }
+        function fade(obj, target){
+            clearInterval(obj.timer);
+            obj.timer = setInterval(function(){
+                var alpha = 0;
+                var cur = css(obj, 'opacity') * 100;
+                alpha = (target - cur) / 8;
+                alpha = alpha > 0 ? Math.ceil(alpha) : Math.floor(alpha);
+                var stop = true;
+                if(cur != target){
+                    stop = false;
+                }
+                cur += alpha;
+                obj.style.fitler = 'alpha(opacity=' + cur + ')';
+                obj.style.opacity = cur / 100;
+                if(stop){
+                    clearInterval(obj.timer);
+                    obj.timer = null;
+                }
+            }, 30);
+        }
+    }());
+</script>
+</body>
+</html>
