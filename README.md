@@ -8,6 +8,7 @@
 - [JS鼠标悬停提示](https://ashayx.github.io/JavaScript-demo/JavaScript练手项目/JS鼠标悬停提示.html)
 - [JS改变透明度](https://ashayx.github.io/JavaScript-demo/JavaScript练手项目/Js改变透明度.html)
 - [JS榜单效果](https://ashayx.github.io/JavaScript-demo/JavaScript练手项目/JS榜单效果.html)
+- [JS数字时钟](https://ashayx.github.io/JavaScript-demo/JavaScript练手项目/JS数字时钟.html)
 
 ------------------------------
 # jQuery练习
