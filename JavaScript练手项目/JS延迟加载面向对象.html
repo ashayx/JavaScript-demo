@@ -1,9 +1,8 @@
-
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>面向对象延时加载</title>
+<title>延时加载</title>
 <style type="text/css">
 body,div,ul,li{margin:0;padding:0;}
 #box{width:770px;margin:0 auto;padding:10px 0 0 10px;background:#f00;overflow:hidden;zoom:1;}
@@ -83,36 +82,48 @@ fgm.on(window, "load", function () {new LazyLoad("box")});
 </script>
 <body>
 <ul id="box">
-	<li><img src="http://www.fgm.cc/learn/lesson10/img/lazy/none.gif" data-img="img/1.jpg" /></li>
-	<li><img src="http://www.fgm.cc/learn/lesson10/img/lazy/none.gif" data-img="img/2.jpg" /></li>
-	<li><img src="http://www.fgm.cc/learn/lesson10/img/lazy/none.gif" data-img="img/3.jpg" /></li>
-	<li><img src="http://www.fgm.cc/learn/lesson10/img/lazy/none.gif" data-img="img/4.jpg" /></li>
-	<li><img src="http://www.fgm.cc/learn/lesson10/img/lazy/none.gif" data-img="img/5.jpg" /></li>
-	<li><img src="http://www.fgm.cc/learn/lesson10/img/lazy/none.gif" data-img="img/1.jpg" /></li>
-	<li><img src="http://www.fgm.cc/learn/lesson10/img/lazy/none.gif" data-img="img/2.jpg" /></li>
-	<li><img src="http://www.fgm.cc/learn/lesson10/img/lazy/none.gif" data-img="img/3.jpg" /></li>
-	<li><img src="http://www.fgm.cc/learn/lesson10/img/lazy/none.gif" data-img="img/4.jpg" /></li>
-	<li><img src="http://www.fgm.cc/learn/lesson10/img/lazy/none.gif" data-img="img/5.jpg" /></li>
-	<li><img src="http://www.fgm.cc/learn/lesson10/img/lazy/none.gif" data-img="img/1.jpg" /></li>
-	<li><img src="http://www.fgm.cc/learn/lesson10/img/lazy/none.gif" data-img="img/2.jpg" /></li>
-	<li><img src="http://www.fgm.cc/learn/lesson10/img/lazy/none.gif" data-img="img/3.jpg" /></li>
-	<li><img src="http://www.fgm.cc/learn/lesson10/img/lazy/none.gif" data-img="img/4.jpg" /></li>
-	<li><img src="http://www.fgm.cc/learn/lesson10/img/lazy/none.gif" data-img="img/5.jpg" /></li>
-	<li><img src="http://www.fgm.cc/learn/lesson10/img/lazy/none.gif" data-img="img/1.jpg" /></li>
-	<li><img src="http://www.fgm.cc/learn/lesson10/img/lazy/none.gif" data-img="img/2.jpg" /></li>
-	<li><img src="http://www.fgm.cc/learn/lesson10/img/lazy/none.gif" data-img="img/3.jpg" /></li>
-	<li><img src="http://www.fgm.cc/learn/lesson10/img/lazy/none.gif" data-img="img/4.jpg" /></li>
-	<li><img src="http://www.fgm.cc/learn/lesson10/img/lazy/none.gif" data-img="img/5.jpg" /></li>
-	<li><img src="http://www.fgm.cc/learn/lesson10/img/lazy/none.gif" data-img="img/1.jpg" /></li>
-	<li><img src="http://www.fgm.cc/learn/lesson10/img/lazy/none.gif" data-img="img/2.jpg" /></li>
-	<li><img src="http://www.fgm.cc/learn/lesson10/img/lazy/none.gif" data-img="img/3.jpg" /></li>
-	<li><img src="http://www.fgm.cc/learn/lesson10/img/lazy/none.gif" data-img="img/4.jpg" /></li>
-	<li><img src="http://www.fgm.cc/learn/lesson10/img/lazy/none.gif" data-img="img/5.jpg" /></li>
-	<li><img src="http://www.fgm.cc/learn/lesson10/img/lazy/none.gif" data-img="img/1.jpg" /></li>
-	<li><img src="http://www.fgm.cc/learn/lesson10/img/lazy/none.gif" data-img="img/2.jpg" /></li>
-	<li><img src="http://www.fgm.cc/learn/lesson10/img/lazy/none.gif" data-img="img/3.jpg" /></li>
-	<li><img src="http://www.fgm.cc/learn/lesson10/img/lazy/none.gif" data-img="img/4.jpg" /></li>
-	<li><img src="http://www.fgm.cc/learn/lesson10/img/lazy/none.gif" data-img="img/5.jpg" /></li>
+    <li><img src="img/lazy/none.gif" data-img="img/lazy/1.jpg" /></li>
+    <li><img src="img/lazy/none.gif" data-img="img/lazy/1.jpg" /></li>
+    <li><img src="img/lazy/none.gif" data-img="img/lazy/1.jpg" /></li>
+    <li><img src="img/lazy/none.gif" data-img="img/lazy/1.jpg" /></li>
+    <li><img src="img/lazy/none.gif" data-img="img/lazy/1.jpg" /></li>
+    <li><img src="img/lazy/none.gif" data-img="img/lazy/1.jpg" /></li>
+    <li><img src="img/lazy/none.gif" data-img="img/lazy/1.jpg" /></li>
+    <li><img src="img/lazy/none.gif" data-img="img/lazy/1.jpg" /></li>
+    <li><img src="img/lazy/none.gif" data-img="img/lazy/1.jpg" /></li>
+    <li><img src="img/lazy/none.gif" data-img="img/lazy/1.jpg" /></li>
+    <li><img src="img/lazy/none.gif" data-img="img/lazy/1.jpg" /></li>
+    <li><img src="img/lazy/none.gif" data-img="img/lazy/1.jpg" /></li>
+    <li><img src="img/lazy/none.gif" data-img="img/lazy/1.jpg" /></li>
+    <li><img src="img/lazy/none.gif" data-img="img/lazy/1.jpg" /></li>
+    <li><img src="img/lazy/none.gif" data-img="img/lazy/1.jpg" /></li>
+    <li><img src="img/lazy/none.gif" data-img="img/lazy/1.jpg" /></li>
+    <li><img src="img/lazy/none.gif" data-img="img/lazy/1.jpg" /></li>
+    <li><img src="img/lazy/none.gif" data-img="img/lazy/1.jpg" /></li>
+    <li><img src="img/lazy/none.gif" data-img="img/lazy/1.jpg" /></li>
+    <li><img src="img/lazy/none.gif" data-img="img/lazy/1.jpg" /></li>
+    <li><img src="img/lazy/none.gif" data-img="img/lazy/1.jpg" /></li>
+    <li><img src="img/lazy/none.gif" data-img="img/lazy/1.jpg" /></li>
+    <li><img src="img/lazy/none.gif" data-img="img/lazy/1.jpg" /></li>
+    <li><img src="img/lazy/none.gif" data-img="img/lazy/1.jpg" /></li>
+    <li><img src="img/lazy/none.gif" data-img="img/lazy/1.jpg" /></li>
+    <li><img src="img/lazy/none.gif" data-img="img/lazy/1.jpg" /></li>
+    <li><img src="img/lazy/none.gif" data-img="img/lazy/1.jpg" /></li>
+    <li><img src="img/lazy/none.gif" data-img="img/lazy/1.jpg" /></li>
+    <li><img src="img/lazy/none.gif" data-img="img/lazy/1.jpg" /></li>
+    <li><img src="img/lazy/none.gif" data-img="img/lazy/1.jpg" /></li>
+    <li><img src="img/lazy/none.gif" data-img="img/lazy/1.jpg" /></li>
+    <li><img src="img/lazy/none.gif" data-img="img/lazy/1.jpg" /></li>
+    <li><img src="img/lazy/none.gif" data-img="img/lazy/1.jpg" /></li>
+    <li><img src="img/lazy/none.gif" data-img="img/lazy/1.jpg" /></li>
+    <li><img src="img/lazy/none.gif" data-img="img/lazy/1.jpg" /></li>
+    <li><img src="img/lazy/none.gif" data-img="img/lazy/1.jpg" /></li>
+    <li><img src="img/lazy/none.gif" data-img="img/lazy/1.jpg" /></li>
+    <li><img src="img/lazy/none.gif" data-img="img/lazy/1.jpg" /></li>
+    <li><img src="img/lazy/none.gif" data-img="img/lazy/1.jpg" /></li>
+    <li><img src="img/lazy/none.gif" data-img="img/lazy/1.jpg" /></li>
+
+   
 </ul>
 </body>
 </html>
