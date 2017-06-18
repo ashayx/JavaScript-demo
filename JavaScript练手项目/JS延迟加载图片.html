@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html >
+<head>
+	<meta charset="UTF-8">
+	<title>JS延迟加载图片</title>
+	<style>
+		*{margin:0;padding:0;}
+        ul{overflow:hidden;width: 1200px;margin: 0 auto;}
+        li{list-style:none;width:384px;height:216px;border:4px solid #ccc;box-sizing:border-box;-webkit-box-sizing:border-box;float:left;overflow:hidden;position:relative;}
+
+        li i{width:20px;height:20px;border-radius:20px;position:absolute;border:2px solid #6feb95;z-index:0;left:50%;top:50%;margin-top:-11px;margin-left:-11px;animation:move 1s infinite;-webkit-animation:move 1s infinite;}
+        li i:before{position:absolute;width:5px;height:5px;border-radius:4px;content:'';box-shadow:0 0 10px #666;-webkit-box-shadow:0 0 10px #666;background:#fff;border:1px solid #fff;top:-3px;left:50%;margin-left:-3px;}
+        img{vertical-align:middle;border-width:0;width:100%;position:relative;z-index:1;}
+        @keyframes move{
+            0%{
+                transform:rotateZ(0);
+            }
+            100%{
+                transform:rotateZ(360deg);
+            }
+        }
+        @-webkit-keyframes move{
+            0%{
+                -webkit-transform:rotateZ(0);
+            }
+            100%{
+                -webkit-transform:rotateZ(360deg);
+            }
+        }
+	</style>
+</head>
+<body>
+<ul>
+	<li data-src="img/1.jpg"><i></i></li>
+	<li data-src="img/2.jpg"><i></i></li>
+	<li data-src="img/3.jpg"><i></i></li>
+	<li data-src="img/4.jpg"><i></i></li>
+	<li data-src="img/5.jpg"><i></i></li>
+	<li data-src="img/1.jpg"><i></i></li>
+	<li data-src="img/1.jpg"><i></i></li>
+	<li data-src="img/1.jpg"><i></i></li>
+	<li data-src="img/2.jpg"><i></i></li>
+	<li data-src="img/3.jpg"><i></i></li>
+	<li data-src="img/4.jpg"><i></i></li>
+	<li data-src="img/5.jpg"><i></i></li>
+	<li data-src="img/1.jpg"><i></i></li>
+	<li data-src="img/1.jpg"><i></i></li>
+	<li data-src="img/1.jpg"><i></i></li>
+	<li data-src="img/2.jpg"><i></i></li>
+	<li data-src="img/3.jpg"><i></i></li>
+	<li data-src="img/4.jpg"><i></i></li>
+	<li data-src="img/5.jpg"><i></i></li>
+	<li data-src="img/1.jpg"><i></i></li>
+	<li data-src="img/1.jpg"><i></i></li>
+	<li data-src="img/1.jpg"><i></i></li>
+	<li data-src="img/2.jpg"><i></i></li>
+	<li data-src="img/3.jpg"><i></i></li>
+	<li data-src="img/4.jpg"><i></i></li>
+	<li data-src="img/5.jpg"><i></i></li>
+	<li data-src="img/1.jpg"><i></i></li>
+	<li data-src="img/1.jpg"><i></i></li>
+	<li data-src="img/1.jpg"><i></i></li>
+	<li data-src="img/2.jpg"><i></i></li>
+	<li data-src="img/3.jpg"><i></i></li>
+	<li data-src="img/4.jpg"><i></i></li>
+	<li data-src="img/5.jpg"><i></i></li>
+	<li data-src="img/1.jpg"><i></i></li>
+	<li data-src="img/1.jpg"><i></i></li>
+	<li data-src="img/1.jpg"><i></i></li>
+	<li data-src="img/2.jpg"><i></i></li>
+	<li data-src="img/3.jpg"><i></i></li>
+	<li data-src="img/4.jpg"><i></i></li>
+	<li data-src="img/5.jpg"><i></i></li>
+	<li data-src="img/1.jpg"><i></i></li>
+	<li data-src="img/1.jpg"><i></i></li>
+	<li data-src="img/1.jpg"><i></i></li>
+	<li data-src="img/2.jpg"><i></i></li>
+	<li data-src="img/3.jpg"><i></i></li>
+	<li data-src="img/4.jpg"><i></i></li>
+	<li data-src="img/5.jpg"><i></i></li>
+	<li data-src="img/1.jpg"><i></i></li>
+	<li data-src="img/1.jpg"><i></i></li>
+	<li data-src="img/1.jpg"><i></i></li>
+	<li data-src="img/2.jpg"><i></i></li>
+	<li data-src="img/3.jpg"><i></i></li>
+	<li data-src="img/4.jpg"><i></i></li>
+	<li data-src="img/5.jpg"><i></i></li>
+	<li data-src="img/1.jpg"><i></i></li>
+	<li data-src="img/1.jpg"><i></i></li>
+	<li data-src="img/1.jpg"><i></i></li>
+	<li data-src="img/2.jpg"><i></i></li>
+	<li data-src="img/3.jpg"><i></i></li>
+	<li data-src="img/4.jpg"><i></i></li>
+	<li data-src="img/5.jpg"><i></i></li>
+	<li data-src="img/1.jpg"><i></i></li>
+	<li data-src="img/1.jpg"><i></i></li>
+</ul>
+	
+</body>
+<script>
+	/* 获取节点 */    
+	var oUl = document.getElementsByTagName('ul')[0];
+	var aLi = oUl.getElementsByTagName('li');
+
+	/* 创建img标签函数 */    
+	function createImg(obj){
+	    var src = '';
+	    if(obj.dataset.src){
+	        src = obj.dataset.src;
+	    }else{
+	        src = obj.getAttribute('data-src');
+	    }
+	    if(obj.children.length <= 1){
+	        var img = document.createElement('img');
+	        img.src = src;
+	        obj.appendChild(img);
+	    }
+	}
+
+	/* 计算节点到文档顶部的距离 */    
+	function getTop(obj){
+	    var h = 0;
+	    while(obj){
+	        h += obj.offsetTop;
+	        obj = obj.offsetParent;
+	    }
+	    return h;
+	}
+
+	/* 滚动实时计算所到区域并进行相关计算 */
+	window.onscroll = function(){
+	    var t = document.documentElement.clientHeight + (document.body.scrollTop || document.documentElement.scrollTop);
+	    for(var i=0;i<aLi.length;i++){
+	        if(getTop(aLi[i]) < t){  
+	            setTimeout('createImg(aLi['+i+'])',500);
+	        }
+	    } 
+	}
+
+	/* 页面加载完便执行一次滚动函数 */
+	window.onload = function(){
+	    window.onscroll();
+	}
+</script>
+</html>
