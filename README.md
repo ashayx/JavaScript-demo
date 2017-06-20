@@ -12,6 +12,7 @@
 - [JS延迟加载图片](https://ashayx.github.io/JavaScript-demo/JavaScript练手项目/JS延迟加载图片.html)
 - [JS延迟加载面向对象](https://ashayx.github.io/JavaScript-demo/JavaScript练手项目/JS延迟加载面向对象.html)
 - [JS乘法口诀](https://ashayx.github.io/JavaScript-demo/JavaScript练手项目/JS乘法口诀.html)
+- [JS生成迷宫](https://ashayx.github.io/JavaScript-demo/JavaScript练手项目/JS迷宫.html)
 
 ------------------------------
 # jQuery练习
