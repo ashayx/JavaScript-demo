@@ -16,7 +16,7 @@
 - [JS生成迷宫](https://ashayx.github.io/JavaScript-demo/JavaScript练手项目/JS迷宫.html)
 - [JS简易计算器](https://ashayx.github.io/JavaScript-demo/JavaScript练手项目/JS计算机.html)
 - [JS生成随机验证码](https://ashayx.github.io/JavaScript-demo/JavaScript练手项目/JS生成随机验证码.html)
-
+- [JS移动的小蛇](https://ashayx.github.io/JavaScript-demo/JavaScript练手项目/JS小球移动.html)
 
 
 ------------------------------
