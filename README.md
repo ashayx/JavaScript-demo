@@ -1,4 +1,5 @@
-# JavaScript练习
+# JavaScript demo
+## 一些平常练习用的小案例
 -------------------
 - [JS滚动论播](https://ashayx.github.io/JavaScript-demo/JavaScript练手项目/JS滚动轮播.html)
 - [JS二级菜单](https://ashayx.github.io/JavaScript-demo/JavaScript练手项目/JS多级菜单.html)
