@@ -13,6 +13,10 @@
 - [JS延迟加载面向对象](https://ashayx.github.io/JavaScript-demo/JavaScript练手项目/JS延迟加载面向对象.html)
 - [JS乘法口诀](https://ashayx.github.io/JavaScript-demo/JavaScript练手项目/JS乘法口诀.html)
 - [JS生成迷宫](https://ashayx.github.io/JavaScript-demo/JavaScript练手项目/JS迷宫.html)
+- [JS简易计算器](https://ashayx.github.io/JavaScript-demo/JavaScript练手项目/JS计算机.html)
+- [JS生成随机验证码](https://ashayx.github.io/JavaScript-demo/JavaScript练手项目/JS生成随机验证码.html)
+
+
 
 ------------------------------
 # jQuery练习
