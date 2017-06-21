@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+		body{
+			background-color: #000;
+			color: white;
+		}
+			.content{
+				width: 30px;
+				height: 30px;
+				background-color: red;
+				border-radius: 50%;
+				font-size: 17px;
+				text-align: center;
+				line-height: 30px;
+				position: absolute;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="content">1</div>
+		<div class="content">2</div>
+		<div class="content">3</div>
+		<div class="content">4</div>
+		<div class="content">5</div>
+		<div class="content">6</div>
+		<div class="content">7</div>
+		<div class="content">8</div>
+		<div class="content">9</div>
+		<div class="content">10</div>
+		<div class="content">11</div>
+		<div class="content">12</div>
+		<div class="content">13</div>
+		<div class="content">14</div>
+		<div class="content">15</div>
+		<div class="content">16</div>
+		<div class="content">17</div>
+		<div class="content">18</div>
+		<div class="content">19</div>
+		<div class="content">20</div>
+		<div class="content">21</div>
+		<div class="content">22</div>
+		<div class="content">23</div>
+		<div class="content">24</div>
+		<div class="content">25</div>
+		<div class="content">26</div>
+		<div class="content">27</div>
+		<div class="content">28</div>
+		<div class="content">29</div>
+		<div class="content">30</div>
+		<div class="content">31</div>
+		<div class="content">32</div>
+		<div class="content">33</div>
+		<div class="content">34</div>
+		<div class="content">35</div>
+		<div class="content">36</div>
+		<div class="content">37</div>
+		<div class="content">38</div>
+		<div class="content">39</div>
+		<div class="content">40</div>
+		<div class="content">41</div>
+		<div class="content">42</div>
+		<div class="content">43</div>
+		<div class="content">44</div>
+		<div class="content">45</div>
+		<div class="content">46</div>
+		<div class="content">47</div>
+		<div class="content">48</div>
+		<div class="content">49</div>
+		<div class="content">50</div>
+		<div class="content">51</div>
+		<div class="content">52</div>
+		<div class="content">53</div>
+		<div class="content">54</div>
+		<div class="content">55</div>
+		<div class="content">56</div>
+		<div class="content">57</div>
+		<div class="content">58</div>
+		<div class="content">59</div>
+		<div class="content">60</div>
+		<div class="content">61</div>
+		<div class="content">62</div>
+		<div class="content">63</div>
+		<div class="content">64</div>
+		<div class="content">65</div>
+		<div class="content">66</div>
+		<div class="content">67</div>
+		<div class="content">68</div>
+		<div class="content">69</div>
+		<div class="content">70</div>
+		<div class="content">71</div>
+		<div class="content">72</div>
+		<div class="content">73</div>
+		<div class="content">74</div>
+		<div class="content">75</div>
+		<div class="content">76</div>
+		<div class="content">77</div>
+		<div class="content">78</div>
+		<div class="content">79</div>
+		<div class="content">80</div>
+		
+	</body>
+	<script type="text/javascript">
+	function randomNum (min,max) {
+	  return Math.floor(Math.random() * (max - min + 1) + min);
+	}
+		//设置颜色
+		var divs = document.getElementsByClassName('content');
+		for (var i = 0;i < divs.length;i++) {
+			var r = randomNum(0,255);
+			var g = randomNum(0,255);
+			var b = randomNum(0,255);
+			divs[i].style.backgroundColor = 'rgb('
+			+ r + ',' + g + ',' + b + ')';
+		}
+		//设置多个球div跟随着鼠标移动
+		document.onmousemove = function (e) {
+			//获取事件对象
+			var event = window.event || e;
+			//设置相邻div的位置为上一次鼠标移动的位置
+			for (var i = divs.length - 1; i > 0;i--) {
+				divs[i].style.top = divs[i - 1].style.top;
+				divs[i].style.left  = divs[i - 1].style.left;
+			}
+			//设置最上面的div位置，跟随着鼠标位置移动
+			divs[0].style.top = event.clientY + 'px';
+			divs[0].style.left = event.clientX + 'px';
+		}
+	</script>
+</html>
