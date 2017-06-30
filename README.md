@@ -19,6 +19,7 @@
 - [JS移动的小蛇](https://ashayx.github.io/JavaScript-demo/JavaScript练手项目/JS小球移动.html)
 - [JS仿苹果菜单](https://ashayx.github.io/JavaScript-demo/JavaScript练手项目/JS仿苹果菜单.html)
 - [JS滑动验证](https://ashayx.github.io/JavaScript-demo/JavaScript练手项目/JS滑动验证.html)
+- [JS显示KeyCode](https://ashayx.github.io/JavaScript-demo/JavaScript练手项目/JS显示KeyCode.html)
 
 
 ------------------------------
