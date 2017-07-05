@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html >
+<head>
+	<meta charset="UTF-8">
+	<title>JS迷宫</title>
+</head>
+<body>
+<p style="line-height: 18px; font-size: 18px;  font-family: times;">
+刷新可更新
+<br>
+用JavaScript生成随机迷宫:<br><br>
+<script>
+	for (var line=1; line<30; line++) {
+	  for(var i=1;i<29;i++) {
+	    var s = (Math.floor((Math.random()*2)%2)) ? "╱" : "╲";
+	    document.write(s);
+	  }
+	  document.writeln("<br>");
+	}
+	</script>
+</p>
+
+</body>
+</html>
