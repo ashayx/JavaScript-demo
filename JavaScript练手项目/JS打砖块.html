@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html >
+<head>
+	<meta charset="UTF-8">
+	<title>打砖块</title>
+	<style type="text/css" media="screen">
+		canvas {
+			border: 1px solid black;
+		}
+	</style>
+</head>
+<body>
+	<canvas id="id-canvas" width="400" height="300" ></canvas>
+	
+	<script>
+		var log = console.log.bind(console);
+		
+
+		var imageFromPath = function (path) {
+			var img = new Image();
+			img.src = path;
+			return img;
+		}
+
+		var GuaGame = function () {
+			var fps = 30;
+    		var canvas = document.querySelector('#id-canvas');
+    		var context = canvas.getContext('2d');
+			var g = {
+				canvas: canvas,
+				context: context,
+				actions: {},
+				keydowns: {},
+				//给按键key绑定函数
+				registerAction: function (key,callback) {
+					this.actions[key] = callback;
+				},
+			};
+			//draw
+			g.drawImage = function (GuaImage) {
+				g.context.drawImage(GuaImage.image, GuaImage.x, GuaImage.y);
+			}
+			//event
+			window.addEventListener('keydown', function (event) {
+				g.keydowns[event.key] = true;
+			})
+			
+			window.addEventListener('keyup', function (event) {
+				g.keydowns[event.key] = false;
+			})
+			//timer
+			setInterval(function () {
+				//event
+				var actions = Object.keys(g.actions);
+				for (var i = 0; i < actions.length; i++) {
+					var key = actions[i];
+					if(g.keydowns[key]){
+						// 如果按键被按下, 调用注册的 action
+						g.actions[key]();
+					}
+				}
+				//update
+				g.update();
+    		
+				//clear
+				context.clearRect(0,0,canvas.width,canvas.height)
+				//draw
+				g.draw();
+
+			},1000/fps)
+
+			return g;
+		}
+
+		var Paddle = function () {
+			var image = imageFromPath('images/paddle.png')
+			var o = {
+				image: image,
+				x: 100,
+				y: 250,
+				speed: 15,
+				moveLeft: function () {
+	    			this.x -= this.speed;
+				},
+				moveRight: function () {
+	    			this.x += this.speed;
+				},
+				collide: function(ball) {
+				    if (ball.y + ball.image.height > o.y) {
+				        if (ball.x > o.x && ball.x < o.x + o.image.width) {
+				            log('相撞')
+				            return true
+				        }
+				    }
+				    if(ball.y > o.y + o.image.height){
+				    	// alert('dead')
+				    }
+				    return false
+				},
+			}
+			return o;
+		}
+
+		var Ball = function () {
+			var image = imageFromPath('images/ball.png');
+
+			var o = {
+				image: image,
+				x: 120,
+				y: 242 ,
+				speedX: 10,
+				speedY: 10,
+				fired: false,
+				move: function () {
+					if (this.fired) {
+						var w = o.image.width;
+						if(this.x < 0 || this.x > 400-w){
+							this.speedX = -this.speedX;
+						}else if (this.y < 0 || this.y > 300-w) {
+							this.speedY = -this.speedY;
+						}
+						this.x += this.speedX;
+						this.y -= this.speedY;
+					}
+				},
+				fire: function () {
+					this.fired = true;
+				},
+
+			}
+			return o;
+		}
+
+		var _main = function () {
+
+    		var game = GuaGame();
+    		var paddle = Paddle();
+    		var ball = Ball();
+
+    		game.registerAction('a',function () {
+    			paddle.moveLeft();
+    		})
+
+    		game.registerAction('d',function () {
+    			paddle.moveRight();
+    		})
+
+    		game.registerAction('f',function () {
+    			ball.fire();
+    		})
+
+    	    game.update = function () {
+    	    	//update x
+    	    	ball.move();
+    	    	if (paddle.collide(ball)) {
+    	    	    // 这里应该调用一个 ball.反弹() 来实现
+    	    	    ball.speedY *= -1
+    	    	}
+    	    }
+
+    	    game.draw = function () {
+    	    	game.drawImage(paddle);
+    	    	game.drawImage(ball);
+    	    }
+
+	    }
+	    _main();
+	    
+	</script>
+</body>
+</html>
