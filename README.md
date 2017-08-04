@@ -21,7 +21,7 @@
 - [JS滑动验证](https://ashayx.github.io/JavaScript-demo/JavaScript练手项目/JS滑动验证.html)
 - [JS.显示KeyCode](https://ashayx.github.io/JavaScript-demo/JavaScript练手项目/JS.显示KeyCode.html)
 - [JS粒子背景](https://ashayx.github.io/JavaScript-demo/JavaScript练手项目/JS粒子背景.html)
-- [打砖块](https://ashayx.github.io/JavaScript-demo/JavaScript练手项目/JS打砖块.html)
+- [JS打砖块](https://ashayx.github.io/JavaScript-demo/JavaScript练手项目/打砖块/index.html)
 
 
 ------------------------------
