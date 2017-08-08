@@ -1,0 +1,106 @@
+<!DOCTYPE html>  
+<html>  
+    <head>  
+        <meta charset="UTF-8">  
+        <title></title>  
+        <style type="text/css">  
+            * {margin: 0px;padding: 0px;}
+           
+            .wrapper{  
+                width: 1024px;  
+                height: 640px;
+                /*border: #333 solid 1px;  */
+                margin: 50px auto;  
+                overflow: hidden;  
+                position: relative; 
+				background: url(img/floor.jpg);
+            } 
+            .wrapper .left {
+               position: absolute;
+               left: 342px;
+               top: 100px;  
+            }
+            @keyframes moveLeft {
+                from {left: 362px;}
+                to {left: 162px;}
+            }
+            .wrapper .right {
+                position: absolute;
+                left: 512px;
+                top: 100px;   
+            }
+            @keyframes moveRight {
+                from {left: 512px;}
+                to {left: 692px;}
+            }
+            img{  
+                width: 180px;
+                cursor: pointer;  
+            }  
+           .wrapper:hover{  
+                transition: all 2s; 
+                transform: scale(1.8);  
+            }
+            .wrapper:hover  .left{
+                animation:moveLeft 2s infinite; 
+            }
+            .wrapper:hover  .right{
+                animation:moveRight 2s infinite; 
+            }
+
+
+            body{
+                background:#2b2938;
+            }
+            .btn-audio{
+                margin: 20px auto;
+                width: 50px;
+                height: 50px;
+                background:url(img/4.png) no-repeat center bottom;
+                background-size:cover;
+                z-index: 100;
+            }
+        </style>  
+    </head>  
+    <body> 
+    
+        <div class="btn-audio"><audio id="mp3Btn"><source src="audio/Prologue.mp3" type="audio/mpeg" /></audio></div>
+        <div class="wrapper">  
+            <div class="left">
+                <img src="img/door.jpg" />
+            </div>
+            <div class="right">
+                <img src="img/door.jpg" />
+            </div>  
+        </div>  
+
+        
+        <script type="text/javascript" src="js/jquery.js"></script>
+		<script type="text/javascript">
+		    $(function(){
+		        //播放完毕
+		        var audio = document.getElementById('mp3Btn');
+		        audio.volume = .2;
+		        audio.play();
+		        $('.btn-audio').css({'background':'url(img/2.png) no-repeat center bottom','background-size':'50px 50px'});
+
+		        $('#mp3Btn').on('ended', function() {
+		            console.log("音频已播放完成");
+		            $('.btn-audio').css({'background':'url(img/4.png) no-repeat center bottom','background-size':'50px 50px'});
+		        })
+		        //播放器控制
+		        $('.btn-audio').click(function() {
+		            // event.stopPropagation();//防止冒泡
+		            if(audio.paused){ //如果当前是暂停状态
+		                $('.btn-audio').css({'background':'url(img/2.png) no-repeat center bottom','background-size':'50px 50px'});
+		                audio.play(); //播放
+		                return;
+		            }else{//当前是播放状态
+		                $('.btn-audio').css({'background':'url(img/4.png) no-repeat center bottom','background-size':'50px 50px'});
+		                audio.pause(); //暂停
+		            }
+		        });
+		    })
+		</script>
+    </body>  
+</html>  
