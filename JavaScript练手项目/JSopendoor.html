@@ -1,0 +1,63 @@
+<!DOCTYPE html>  
+<html>  
+    <head>  
+        <meta charset="UTF-8">  
+        <title></title>  
+        <style type="text/css">  
+            * {margin: 0px;padding: 0px;}
+           
+            .wrapper{  
+                width: 364px;  
+                height: 420px;
+                /*border: #333 solid 1px;  */
+                margin: 50px auto;  
+                overflow: hidden;  
+                position: relative; 
+
+            } 
+            .wrapper .left {
+               position: absolute;
+               left: 0px;
+               top: 0px;  
+            }
+            @keyframes moveLeft {
+                from {left:0px;}
+                to {left:-180px;}
+            }
+            .wrapper .right {
+                position: absolute;
+                left: 180px;
+                top: 0px;   
+            }
+            @keyframes moveRight {
+                from {left:180px;}
+                to {left:360px;}
+            }
+            img{  
+                width: 180px;
+                cursor: pointer;  
+            }  
+           body:hover{  
+                transition: all 2s; 
+                transform: scale(1.8);  
+            }
+            body:hover  .left{
+                animation:moveLeft 2s infinite; 
+            }
+            body:hover  .right{
+                animation:moveRight 2s infinite; 
+            }
+        </style>  
+    </head>  
+    <body> 
+        <!-- <img src="floor.jpg" alt="" style="width: 100%;height: 100%;">  -->
+        <div class="wrapper">  
+            <div class="left">
+                <img src="door.png" />
+            </div>
+            <div class="right">
+                <img src="door.png" />
+            </div>  
+        </div>  
+    </body>  
+</html>  
