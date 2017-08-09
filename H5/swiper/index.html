@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html >
+<head>
+    <meta charset="utf-8">
+    <title>Swiper demo</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1,user-scalable=no">
+    <!-- Link Swiper's CSS -->
+    <link rel="stylesheet" href="js/swiper.min.css">
+    <link rel="stylesheet" href="css/mian.css">
+    <style>
+
+    </style>
+</head>
+<body style="width: 640px;height: 1040px;margin: auto;">
+
+    <div class="swiper-container wrap" >
+        <audio id="aud" src="audio/Prologue.mp3" autoplay="autoplay"></audio>
+        <div id="music" class="p1musle"></div>
+            
+        <div class="swiper-wrapper ">
+
+            <div class="swiper-slide stop-swiping page1" >
+                <div class="page-1-bg" >
+                    <img src="images/bg1.jpg">
+                </div>
+                <div class="door">
+                <div style="position: relative;top: 0px;left: 0px;z-index: 5;"><img src="images/hua.jpg"></div>
+                    <div class="left-door"></div>
+                    <div class="right-door"></div>
+                </div>
+                <div class="arrow">
+                    <img src="images/arrow-up.png" alt="">
+                </div>
+            </div>
+
+            <div class="swiper-slide " >
+            	<img src="images/bg2_01.png" alt="2">
+            </div>
+            <div class="swiper-slide " >
+                <img src="images/bg2_02.gif" alt="2">
+            </div>
+            <div class="swiper-slide " >
+                <img src="images/bg2_03.gif" alt="2">
+            </div>
+            <div class="swiper-slide " >
+                <img src="images/bg2_04.gif" alt="2">
+            </div>
+            <div class="swiper-slide " >
+                <img src="images/bg2_05.gif" alt="2">
+            </div>
+            <div class="swiper-slide " >
+                <img src="images/bg2_06.gif" alt="2">
+            </div>
+            <div class="swiper-slide " >
+                <img src="images/bg2_07.gif" alt="2">
+            </div>
+            <div class="swiper-slide " >
+                <img src="images/bg2_08.gif" alt="2">
+            </div>
+            <div class="swiper-slide " >
+                <img src="images/bg2_09.gif" alt="2">
+            </div>
+            <div class="swiper-slide " >
+                <img src="images/bg2_10.gif" alt="2">
+            </div>
+    </div>
+            
+
+            
+    <script type="text/javascript" src="js/jquery.js"></script>
+    <script src="js/swiper.min.js"></script>
+
+    <script >
+        var e = sel =>document.querySelector(sel)
+        var music=document.getElementById("music")
+        var aud=document.getElementById("aud")
+
+        music.onclick=function(){
+            if(aud.paused){
+                aud.play()
+                this.style.background =  "url('images/musicBtn.png')"
+                this.style.backgroundSize =  "100% 100%"
+                this.style.animation = "rotateArrow 5s infinite linear" 
+            }else{
+                aud.pause()
+                this.style.background =  "url('images/musicBtnOff.png')"
+                this.style.backgroundSize =  "100% 100%"
+                this.style.animation= "null"
+            }
+        }
+
+        var swiper = new Swiper('.swiper-container', {
+            // effect : 'coverflow',
+            noSwipingClass : 'stop-swiping',//不能滑动的类
+            slidesPerView: 1,
+            freeMode: true,
+            freeModeMomentum : false,
+            resistanceRatio : 0,//阻力回系数
+            //第二页不能左滑动
+            onTouchStart:function (swiper,event) {
+                console.log(swiper.activeIndex)
+                if (swiper.activeIndex == 1) {
+                    swiper.lockSwipeToPrev();
+                }else {
+                    swiper.unlockSwipeToPrev();
+                }
+            }
+
+        });
+       
+
+
+        $(function(){
+            var move = function () {
+                $('.left-door').animate({
+                    left: '-100px',
+                },2000)
+                $('.right-door').animate({
+                    left: '200px',
+                },2000)
+                $(".page1").css({'transition': 'all 2s','transform': 'scale(1.8)',});
+            }
+
+            var slideto = function () {
+                swiper.slideTo(1, 0,false)
+            }
+
+            $('.stop-swiping').click(function(){
+                move();
+                setTimeout(slideto, 1900)              
+            })
+            
+        })
+       
+    </script>
+
+</body>
+</html>

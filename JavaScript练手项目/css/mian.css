@@ -1,0 +1,91 @@
+ body
+{
+    font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+    font-size: 14px;
+
+    margin: 0;
+    padding: 0;
+
+    color: #000;
+    background: #eee;
+}
+.swiper-container
+{
+    width: 100%;
+    height: 1000px;
+    margin: 20px auto;
+}
+.swiper-slide
+{
+    font-size: 18px;
+    /* Center slide text vertically */
+
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display:         flex;
+
+    text-align: center;
+
+    background: #fff;
+
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    -webkit-justify-content: center;
+            justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+            align-items: center;
+}
+img
+{
+    width: 100%;
+}
+*
+{
+    margin: 0;
+    padding: 0;
+}
+
+.wrapper
+{
+    position: relative;
+
+    overflow: hidden;
+
+    width: 1024px;
+    height: 640px;
+    margin: 10px auto;
+
+    background: url(../img/floor.jpg);
+}
+.wrapper .left
+{
+    position: absolute;
+    top: 100px;
+    left: 342px;
+}
+
+.wrapper .right
+{
+    position: absolute;
+    top: 100px;
+    left: 512px;
+}
+img
+{
+    /*width: 180px;*/
+    cursor: pointer;
+}
+.btn-audio
+{
+    z-index: 100;
+
+    width: 50px;
+    height: 50px;
+    margin: 10px auto;
+
+    background: url(../img/4.png) no-repeat center bottom;
+    background-size: cover;
+}

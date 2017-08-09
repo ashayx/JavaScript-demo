@@ -3,74 +3,118 @@
 <head>
     <meta charset="utf-8">
     <title>Swiper demo</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
-
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1,user-scalable=no">
     <!-- Link Swiper's CSS -->
     <link rel="stylesheet" href="js/swiper.min.css">
-
-    <!-- Demo styles -->
-    <style>
-    body {
-        background: #eee;
-        font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
-        font-size: 14px;
-        color:#000;
-        margin: 0;
-        padding: 0;
-    }
-    .swiper-container {
-        width: 100%;
-        height: 1000px;
-        margin: 20px auto;
-    }
-    .swiper-slide {
-        text-align: center;
-        font-size: 18px;
-        background: #fff;
-        
-        /* Center slide text vertically */
-        display: -webkit-box;
-        display: -ms-flexbox;
-        display: -webkit-flex;
-        display: flex;
-        -webkit-box-pack: center;
-        -ms-flex-pack: center;
-        -webkit-justify-content: center;
-        justify-content: center;
-        -webkit-box-align: center;
-        -ms-flex-align: center;
-        -webkit-align-items: center;
-        align-items: center;
-    }
-    </style>
+    <link rel="stylesheet" href="css/mian.css">
 </head>
 <body>
-    <!-- Swiper -->
+    <div class="btn-audio">
+        <audio id="mp3Btn">
+            <source src="audio/Prologue.mp3" type="audio/mpeg" />
+        </audio>
+    </div>
+
     <div class="swiper-container">
+        
         <div class="swiper-wrapper">
-            <div class="swiper-slide">
-            	<img src="img/book.jpg" alt="">
+            <div class="swiper-slide stop-swiping">
+                <div class="wrapper">  
+                    <div class="left">
+                        <img src="img/door.png" />
+                    </div>
+                    <div class="right">
+                        <img src="img/door.png" />
+                    </div>  
+                </div> 
             </div>
             <div class="swiper-slide">
-            	<img src="img/1.jpg" alt="">
+            	<img src="img/book.jpg" alt="2">
             </div>
             <div class="swiper-slide">
-            	<img src="img/2.jpg" alt="">
+                <img src="img/book.jpg" alt="3">
+            </div>
+            <div class="swiper-slide">
+                <img src="img/book.jpg" alt="4">
+            </div>
+            <div class="swiper-slide">
+                <img src="img/book.jpg" alt="5">
             </div>
         </div>
     </div>
+            
 
-    <!-- Swiper JS -->
+            
+    <script type="text/javascript" src="js/jquery.js"></script>
     <script src="js/swiper.min.js"></script>
 
-    <!-- Initialize Swiper -->
-    <script>
-    var swiper = new Swiper('.swiper-container', {
-        slidesPerView: 1,
-        spaceBetween: 0,
-        freeMode: true,
-        freeModeMomentum : false,
-    });
+    <script >
+
+        var swiper = new Swiper('.swiper-container', {
+            // effect : 'coverflow',
+            noSwipingClass : 'stop-swiping',//不能滑动的类
+            slidesPerView: 1,
+            freeMode: true,
+            freeModeMomentum : false,
+            resistanceRatio : 0,//阻力回系数
+            //第二页不能左滑动
+            onTouchStart:function (swiper,event) {
+                if (swiper.activeIndex == 1) {
+                    swiper.lockSwipeToPrev();
+                    
+                    console.log('1',swiper.activeIndex)
+                }
+            }
+
+        });
+
+        $(function(){
+            //播放完毕
+            var audio = document.getElementById('mp3Btn');
+            audio.volume = .2;
+            audio.play();
+
+            $('.btn-audio').css({'background':'url(img/2.png) no-repeat center bottom','background-size':'50px 50px'});
+
+            $('#mp3Btn').on('ended', function() {
+                console.log("音频已播放完成");
+                $('.btn-audio').css({'background':'url(img/4.png) no-repeat center bottom','background-size':'50px 50px'});
+            })
+            //播放器控制
+            $('.btn-audio').click(function() {
+                // event.stopPropagation();//防止冒泡
+                if(audio.paused){ //如果当前是暂停状态
+                    $('.btn-audio').css({'background':'url(img/2.png) no-repeat center bottom','background-size':'50px 50px'});
+                    audio.play(); //播放
+                    return;
+                }else{//当前是播放状态
+                    $('.btn-audio').css({'background':'url(img/4.png) no-repeat center bottom','background-size':'50px 50px'});
+                    audio.pause(); //暂停
+                }
+            });
+
+            var move = function () {
+                $('.right').animate({
+                    left: '692px',
+                },2000)
+                $('.left').animate({
+                    left: '162px',
+                },2000)
+                $(".wrapper").css({'transition': 'all 2s','transform': 'scale(1.8)',});
+            }
+
+            var slideto = function () {
+                swiper.slideTo(1, 0,false)
+            }
+
+            $('.stop-swiping').click(function(){
+                move();
+                setTimeout(slideto, 1900)              
+            })
+            
+        })
+       
     </script>
+
 </body>
 </html>
