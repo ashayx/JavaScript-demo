@@ -107,3 +107,12 @@ img{ width: 100%; height: auto;max-width: 100%; display: block; }
     100%{transform:translateY(0%)}
 }
 
+@keyframes moveLeft {
+    from {left:0px;}
+    to {left:-50%;}
+}
+
+@keyframes moveRight {
+    from {left:50%;}
+    to {left:100%;}
+}
