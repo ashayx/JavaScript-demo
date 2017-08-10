@@ -2,9 +2,9 @@
 <html >
 <head>
     <meta charset="utf-8">
-    <title>Swiper demo</title>
+    <title>欢迎来到大厅</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1,user-scalable=no">
-    <!-- Link Swiper's CSS -->
+
     <link rel="stylesheet" href="js/swiper.min.css">
     <link rel="stylesheet" href="css/mian.css">
     <style>
@@ -13,7 +13,7 @@
 </head>
 <body >
 
-    <div class="swiper-container wrap" >
+    <div class="swiper-container main" >
         <div id="music" class="p1musle"></div>
         <audio id="aud" src="audio/Promise.mp3" autoplay="autoplay"></audio>
             
@@ -34,7 +34,7 @@
                     <div class="left-door"></div>
                     <div class="right-door"></div>
                 </div>
-                <div class="arrow">
+                <div class="arrow-up">
                     <img src="images/arrow-up.png" alt="">
                     <span class="font">点击门进入</span>
                 </div>
@@ -42,6 +42,9 @@
 
             <div class="swiper-slide " >
             	<img src="images/bg2_01.jpg" alt="2">
+                <div class="gesture" >
+                    <img src="images/gesture.png" />
+                </div>
             </div>
             <div class="swiper-slide " >
                 <img src="images/bg2_02.jpg" alt="2">
@@ -52,8 +55,24 @@
             <div class="swiper-slide " >
                 <img src="images/bg2_04.jpg" alt="2">
             </div>
-            <div class="swiper-slide " >
-                <img src="images/bg2_05.jpg" alt="2">
+            <div class="swiper-slide " class="shoe">
+                <img src="images/bg2_05.jpg" >
+                <div style="width: 300px;height: 300px;position: absolute;z-index: 5;display: block;" id="shoe">
+                    <div class="swiper-container layer">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide">
+                                <img src="images/shoe.jpg" alt="">
+                            </div>
+                            <div class="swiper-slide">
+                                <img src="images/shoe.jpg" alt="">
+                            </div>
+                            <div class="swiper-slide">
+                                <img src="images/shoe.jpg" alt="">
+                            </div>
+                        </div>
+                        <!-- <div class="swiper-pagination layer"></div> -->
+                    </div>
+                </div>
             </div>
             <div class="swiper-slide " >
                 <img src="images/bg2_06.jpg" alt="2">
@@ -80,7 +99,8 @@
 
     <script >
 
-        var swiper = new Swiper('.swiper-container', {
+        var swiper = new Swiper('.main', {
+            grabCursor : true,
             noSwipingClass : 'stop-swiping',//不能滑动的类
             slidesPerView: 1,
             freeMode: true,
@@ -95,6 +115,22 @@
                     swiper.unlockSwipeToPrev();
                 }
             }
+        });
+        var swiper2 = new Swiper('.layer', {
+            // pagination: '.layer',
+            grabCursor : true,
+            slidesPerView: 1,
+            resistanceRatio : 0,//阻力回系数
+            direction: 'vertical',
+            effect : 'cube',
+            cube: {
+              slideShadows: true,
+              shadow: true,
+              shadowOffset: 100,
+              shadowScale: 0.6
+            },
+            loop: true,
+
 
         });
 
@@ -148,6 +184,7 @@
             }
             setInterval(shade, 1000)
 
+           
         })
     </script>
 </body>
