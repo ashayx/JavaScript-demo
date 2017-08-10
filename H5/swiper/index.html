@@ -71,20 +71,20 @@
 
         var swiper = new Swiper('.swiper-container', {
             // effect : 'coverflow',
-            noSwipingClass : 'stop-swiping',//不能滑动的类
+//             noSwipingClass : 'stop-swiping',//不能滑动的类
             slidesPerView: 1,
             freeMode: true,
             freeModeMomentum : false,
-            resistanceRatio : 0,//阻力回系数
+//             resistanceRatio : 0,//阻力回系数
             //第二页不能左滑动
-            onTouchStart:function (swiper,event) {
-                console.log(swiper.activeIndex)
-                if (swiper.activeIndex == 1) {
-                    swiper.lockSwipeToPrev();
-                }else {
-                    swiper.unlockSwipeToPrev();
-                }
-            }
+//             onTouchStart:function (swiper,event) {
+//                 console.log(swiper.activeIndex)
+//                 if (swiper.activeIndex == 1) {
+//                     swiper.lockSwipeToPrev();
+//                 }else {
+//                     swiper.unlockSwipeToPrev();
+//                 }
+//             }
 
         });
 
