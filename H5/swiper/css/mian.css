@@ -1,8 +1,22 @@
-*
-{
+html, body {
+    width: 100%;
+    max-width: 640px;
+    height: auto;
+    margin: auto;
+}
+body {
+    background: #eee;
+    font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+    font-size: 14px;
+    color:#000;
     margin: 0;
     padding: 0;
 }
+.swiper-container {
+    width: 100%;
+    height: 100%;
+}
+
 img{ width: 100%; height: auto;max-width: 100%; display: block; }  
 
 .door {
@@ -15,6 +29,15 @@ img{ width: 100%; height: auto;max-width: 100%; display: block; }
     left: 36%;  
     z-index: 5; 
     background-color: red; 
+}
+@keyframes moveLeft {
+    from {left:0px;}
+    to {left:-50%;}
+}
+
+@keyframes moveRight {
+    from {left:50%;}
+    to {left:100%;}
 }
 .left-door
 {
@@ -73,27 +96,23 @@ img{ width: 100%; height: auto;max-width: 100%; display: block; }
 
 .swiper-slide
 {
-    font-size: 18px;
-    /* Center slide text vertically */
-
     display: -webkit-box;
     display: -ms-flexbox;
     display: -webkit-flex;
-    /*display:         flex;*/
-
-    text-align: center;
-
-    background: #fff;
+    display:         flex;
 
     -webkit-box-pack: center;
     -ms-flex-pack: center;
+    
     -webkit-justify-content: center;
     justify-content: center;
     -webkit-box-align: center;
+
     -ms-flex-align: center;
     -webkit-align-items: center;
     align-items: center;
 }
+
 .arrow{
     display: block;
     position: absolute;
@@ -107,12 +126,3 @@ img{ width: 100%; height: auto;max-width: 100%; display: block; }
     100%{transform:translateY(0%)}
 }
 
-@keyframes moveLeft {
-    from {left:0px;}
-    to {left:-50%;}
-}
-
-@keyframes moveRight {
-    from {left:50%;}
-    to {left:100%;}
-}

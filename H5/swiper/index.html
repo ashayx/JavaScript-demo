@@ -13,13 +13,13 @@
 </head>
 <body >
 
-        <audio id="aud" src="audio/Prologue.mp3" autoplay="autoplay"></audio>
-        <div id="music" class="p1musle"></div>
     <div class="swiper-container wrap" >
+        <div id="music" class="p1musle"></div>
+        <audio id="aud" src="audio/Prologue.mp3" autoplay="autoplay"></audio>
             
         <div class="swiper-wrapper ">
 
-            <div class="swiper-slide stop-swiping page1" >
+            <div class="swiper-slide stop-swiping page1" style="width: 100%;">
                 <div class="page-1-bg" >
                     <img src="images/bg1.jpg">
                 </div>
@@ -116,15 +116,15 @@
         var left = e(".left-door")
         var right = e(".right-door")
         var door = e(".door")
-
+        var page = e(".page1")
         door.onclick = function () {
-            left.style.animation = "moveLeft 2s infinite";
-            right.style.animation = "moveRight 2s infinite";
-
             setTimeout(function () {
                 swiper.slideTo(1, 0,false)
             },2000 )
-
+            left.style.animation = "moveLeft 2s infinite"
+            right.style.animation = "moveRight 2s infinite"
+            page.style.transition = "all 2s"
+            page.style.transform = "scale(1.8)"
         }
        
     </script>
