@@ -66,6 +66,7 @@
     </div>
             
     <script src="js/swiper.min.js"></script>
+    <script src="js/jquery.js"></script>
 
     <script >
 
@@ -90,5 +91,20 @@
 
     </script>
     <script src="js/main.js"></script>
+    <script >
+        $(function () {
+            $('.door').on('click touchend',function () {
+                setTimeout(function () {
+                       swiper.slideTo(1, 0,false)
+                   },2000 )
+                   left.style.animation = "moveLeft 2s infinite"
+                   right.style.animation = "moveRight 2s infinite"
+                   page.style.transition = "all 2s"
+                   page.style.transform = "scale(1.8)"
+
+                   alert('open')
+            })
+        })
+    </script>
 </body>
 </html>
