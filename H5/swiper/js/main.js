@@ -35,3 +35,14 @@ door.onclick = function () {
 
     alert('open')
 }
+door.addEventListener('touchstart',function () {
+    setTimeout(function () {
+        swiper.slideTo(1, 0,false)
+    },2000 )
+    left.style.animation = "moveLeft 2s infinite"
+    right.style.animation = "moveRight 2s infinite"
+    page.style.transition = "all 2s"
+    page.style.transform = "scale(1.8)"
+
+    alert('open')
+})
