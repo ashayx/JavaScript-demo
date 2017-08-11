@@ -57,11 +57,12 @@ $(function () {
 
               $('.show').css({
                   display: 'block',
-                  // animation: 'show 10s infinite ',//添加css动画
+                  animation: 'show 10s infinite ',//添加css动画
               })
-              $('.show').animate({left:'-900%'}, 9000,function () {
-                  $(this).animate({left:0},1000)
-              })
+              //同上动画
+              // $('.show').animate({left:'-900%'}, 9000,function () {
+              //     $(this).animate({left:0},1000)
+              // })
 
        },2000 )
 
