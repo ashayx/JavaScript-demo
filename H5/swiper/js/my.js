@@ -5,8 +5,8 @@ $(function () {
         noSwipingClass : 'stop-swiping',//不能滑动的类
         slidesPerView: 1,
         freeMode: true,
-        // freeModeMomentum : false,
-        freeModeSticky : true,
+        freeModeMomentum : false,//缓冲关闭
+        // freeModeSticky : true,
         resistanceRatio : 0,//阻力回系数
         //第二页不能左滑动
         onTouchStart:function (swiper,event) {
@@ -57,9 +57,14 @@ $(function () {
 
               $('.show').css({
                   display: 'block',
-                  animation: 'show 10s linear',
-              });
+                  // animation: 'show 10s infinite ',//添加css动画
+              })
+              $('.show').animate({left:'-900%'}, 9000,function () {
+                  $(this).animate({left:0},1000)
+              })
+
        },2000 )
+
 
        setTimeout(function () {
               $('.show').css({
@@ -111,4 +116,7 @@ $(function () {
        $('.show-item-layer-1').css('display', 'none');
        console.log('关闭')
    });
+
+
+
 })
