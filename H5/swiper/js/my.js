@@ -10,17 +10,25 @@ $(function () {
         resistanceRatio : 0,//阻力回系数
         //第二页不能左滑动
         onTouchStart:function (swiper,event) {
-            // console.log(swiper.activeIndex)
+            console.log(swiper.activeIndex)
             //点击取消展示动画
-            $('.show').css({display: 'none',});
+            $('.show').css({'display': 'none',});
+            $('.swiper-slide-active .welcome').css({
+                'animation': 'b 1s linear',
+                'animation-delay': '1s',
+                'animation-fill-mode': 'forwards'})
 
             if (swiper.activeIndex == 1) {
                 swiper.lockSwipeToPrev();
             }else {
                 swiper.unlockSwipeToPrev();
             }
-        }
+            
+        },
+
     })
+
+
 
     var swiper2 = new Swiper('.layer', {
         grabCursor : true,
@@ -34,16 +42,14 @@ $(function () {
         onTouchStart:function (swiper,event) {
             console.log(swiper.activeIndex)
            }
-
-
     })
 
     $(".main").click(function(event) {  
-          
+
         var xx = event.pageX;  
         var yy = event.pageY;   
           
-        console.log(xx/320,yy/520,'xx',xx,'yy',yy)
+        console.log(xx/320,yy/520,'x',xx,'y',yy)
     });  
 
     $('.door').on('click tap',function () {
