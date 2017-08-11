@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1,user-scalable=no">
 
     <link rel="stylesheet" href="js/swiper.min.css">
+    <link rel="stylesheet" href="css/animate .css">
     <link rel="stylesheet" href="css/mian.css">
     <style>
 
@@ -19,173 +20,98 @@
             
         <div class="swiper-wrapper ">
 
-            <div class="swiper-slide stop-swiping page1" style="width: 100%;">
-                <div >
+            <div class="swiper-slide stop-swiping page1" style="width: 100%;" >
+                <div class="animated zoomInUp">
                     <img src="images/bg1.jpg">
-                </div>
-                <div class="diff">
-                    <img src="images/diff1.png" >
-                    <img src="images/diff2.png" >
-                    <img src="images/diff3.png" >
-                    <img src="images/logo.png" id="logo">
-                </div>
-                <div class="door">
-                <div style="position: relative;top: 0px;left: 0px;z-index: 5;"><img src="images/hua.jpg"></div>
-                    <div class="left-door"></div>
-                    <div class="right-door"></div>
-                </div>
-                <div class="arrow-up">
-                    <img src="images/arrow-up.png" alt="">
-                    <span class="font">点击门进入</span>
+
+                    <div class="diff">
+                        <img src="images/diff1.png" >
+                        <img src="images/diff2.png" >
+                        <img src="images/diff3.png" >
+                        <img src="images/logo.png" id="logo">
+                    </div>
+                    <div class="door">
+                    <div style="position: relative;top: 0px;left: 0px;z-index: 5;"><img src="images/hua.jpg"></div>
+                        <div class="left-door"></div>
+                        <div class="right-door"></div>
+                    </div>
+                    <div class="arrow-up">
+                        <img src="images/arrow-up.png" alt="">
+                        <span class="font">点击门进入</span>
+                    </div>
                 </div>
             </div>
-
-            <div class="swiper-slide " >
-            	<img src="images/bg2_01.jpg" alt="2">
+            <div class="swiper-slide" >
+            	<img src="images/bg2_01.jpg" >
                 <div class="gesture" >
                     <img src="images/gesture.png" />
                 </div>
             </div>
             <div class="swiper-slide " >
-                <img src="images/bg2_02.jpg" alt="2">
+                <img src="images/bg2_02.jpg" >
             </div>
             <div class="swiper-slide " >
-                <img src="images/bg2_03.jpg" alt="2">
+                <img src="images/bg2_03.jpg" >
             </div>
             <div class="swiper-slide " >
-                <img src="images/bg2_04.jpg" alt="2">
+                <img src="images/bg2_04.jpg" >
+
+               
+
+                <div class="show-item-1"></div>
             </div>
+
             <div class="swiper-slide " class="shoe">
                 <img src="images/bg2_05.jpg" >
-                <div style="width: 300px;height: 300px;position: absolute;z-index: 5;display: block;" id="shoe">
-                    <div class="swiper-container layer">
-                        <div class="swiper-wrapper">
-                            <div class="swiper-slide">
-                                <img src="images/shoe.jpg" alt="">
-                            </div>
-                            <div class="swiper-slide">
-                                <img src="images/shoe.jpg" alt="">
-                            </div>
-                            <div class="swiper-slide">
-                                <img src="images/shoe.jpg" alt="">
-                            </div>
-                        </div>
-                        <!-- <div class="swiper-pagination layer"></div> -->
-                    </div>
+                
+            </div>
+            <div class="swiper-slide " >
+                <img src="images/bg2_06.jpg" >
+            </div>
+            <div class="swiper-slide " >
+                <img src="images/bg2_07.jpg" >
+            </div>
+            <div class="swiper-slide " >
+                <img src="images/bg2_08.jpg" >
+            </div>
+            <div class="swiper-slide " >
+                <img src="images/bg2_09.jpg" >
+            </div>
+            <div class="swiper-slide " >
+                <img src="images/bg2_10.jpg" >
+            </div>
+            <div class="swiper-slide " >
+                <img src="images/girl.gif" >
+            </div>
+               
+    </div>
+
+    <div class="show-item-layer-1" >
+        <span class="close"> <img src="images/关闭 (1).png" ></span>  
+
+        <div class="swiper-container layer ">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                    <img src="images/shoe.jpg" alt="">
+                </div>
+                <div class="swiper-slide">
+                    <img src="images/shoe.jpg" alt="">
+                </div>
+                <div class="swiper-slide">
+                    <img src="images/shoe.jpg" alt="">
                 </div>
             </div>
-            <div class="swiper-slide " >
-                <img src="images/bg2_06.jpg" alt="2">
-            </div>
-            <div class="swiper-slide " >
-                <img src="images/bg2_07.jpg" alt="2">
-            </div>
-            <div class="swiper-slide " >
-                <img src="images/bg2_08.jpg" alt="2">
-            </div>
-            <div class="swiper-slide " >
-                <img src="images/bg2_09.jpg" alt="2">
-            </div>
-            <div class="swiper-slide " >
-                <img src="images/bg2_10.jpg" alt="2">
-            </div>
-            <div class="swiper-slide " >
-                <img src="images/girl.gif" alt="2">
-            </div>
+        </div>
+    </div>
+
+    <div  class="show">
+        <img src="images/bg2.jpg" style="display: block;width: 1000%;height: auto;">
     </div>
             
     <script src="js/swiper.min.js"></script>
     <script src="js/jquery.js"></script>
+    <script src="js/my.js"></script>
 
-    <script >
-
-        var swiper = new Swiper('.main', {
-            grabCursor : true,
-            noSwipingClass : 'stop-swiping',//不能滑动的类
-            slidesPerView: 1,
-            freeMode: true,
-            freeModeMomentum : false,
-            resistanceRatio : 0,//阻力回系数
-            //第二页不能左滑动
-            onTouchStart:function (swiper,event) {
-                console.log(swiper.activeIndex)
-                if (swiper.activeIndex == 1) {
-                    swiper.lockSwipeToPrev();
-                }else {
-                    swiper.unlockSwipeToPrev();
-                }
-            }
-        });
-        var swiper2 = new Swiper('.layer', {
-            // pagination: '.layer',
-            grabCursor : true,
-            slidesPerView: 1,
-            resistanceRatio : 0,//阻力回系数
-            direction: 'vertical',
-            effect : 'cube',
-            cube: {
-              slideShadows: true,
-              shadow: true,
-              shadowOffset: 100,
-              shadowScale: 0.6
-            },
-            loop: true,
-
-
-        });
-
-    </script>
-    <!-- <script src="js/main.js"></script> -->
-    <script >
-        $(function () {
-            $('.door').on('click tap',function () {
-                setTimeout(function () {
-                       swiper.slideTo(1, 0,false)
-                },2000 )
-
-               $('.left-door').css({'animation':'moveLeft 2s infinite'})
-               $('.right-door').css({'animation':'moveRight 2s infinite'})
-               $('.page1').css({'transition':'all 2s','transform':'scale(1.8)'})
-            })
-
-            var music = $("#music")
-            var aud = $("#aud")[0]
-            aud.play()
-            music.on('click tap',function () {
-                if(aud.paused){
-                    aud.play()
-                    this.style.background =  "url('images/musicBtn.png')"
-                    this.style.backgroundSize =  "100% 100%"
-                    this.style.animation = "rotateArrow 5s infinite linear" 
-                }else{
-                    aud.pause()
-                    this.style.background =  "url('images/musicBtnOff.png')"
-                    this.style.backgroundSize =  "100% 100%"
-                    this.style.animation= "null"
-                }
-            })
-            //diff扩散
-            var shade = function () {
-                $('.diff > img:eq(0)').addClass('shade').css({opacity: 1})
-
-                setTimeout(function () {
-                    $('.diff > img:eq(1)').addClass('shade').css({opacity: 1})
-                }, 300)
-
-                setTimeout(function () {
-                    $('.diff > img:eq(2)').addClass('shade').css({opacity: 1})
-                }, 600)
-
-                setTimeout(function () {
-                    $('.diff > img:eq(0)').removeClass('shade').css({opacity: 0})
-                    $('.diff > img:eq(1)').removeClass('shade').css({opacity: 0})
-                    $('.diff > img:eq(2)').removeClass('shade').css({opacity: 0})
-                }, 950)
-            }
-            setInterval(shade, 1000)
-
-           
-        })
-    </script>
+    
 </body>
 </html>
