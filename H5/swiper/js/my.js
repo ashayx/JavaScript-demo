@@ -1,11 +1,7 @@
 
 $(function () {
 
-    $('.main').hide();
-    Pace.on('done', function(){
-        $('.main').show(1000);;
-        console.log('加载完成') 
-    });
+    
 
     var swiper = new Swiper('.main', {
         grabCursor : true,
@@ -134,7 +130,11 @@ $(function () {
        console.log('关闭')
    });
    
-   
+   $('.main').hide();
+    Pace.on('done', function(){
+        $('.main').show(1000);;
+        console.log('加载完成') 
+    });
 
 })
 
