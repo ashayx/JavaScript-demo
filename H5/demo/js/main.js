@@ -16,8 +16,9 @@ $(function () {
             console.log(swiper.activeIndex)
             //点击取消展示动画
             $('.show').css({'display': 'none',});
+
             $('.swiper-slide-active .welcome').css({
-                'animation': 'b 1s linear',
+                'animation': 'b 1s ',
                 'animation-delay': '0s',
                 'animation-fill-mode': 'forwards'})
 
@@ -26,12 +27,9 @@ $(function () {
             }else {
                 swiper.unlockSwipeToPrev();
             }
-            
         },
 
     })
-
-
 
     var swiper2 = new Swiper('.layer', {
         grabCursor : true,
@@ -66,7 +64,7 @@ $(function () {
 
               $('.show').css({
                   display: 'block',
-                  animation: 'show 10s infinite ',//添加css动画
+                  animation: 'show 10s infinite linear',//添加css动画
               })
               //同上动画
               // $('.show').animate({left:'-900%'}, 9000,function () {
@@ -88,7 +86,7 @@ $(function () {
 
     var music = $("#music")
     var aud = $("#aud")[0]
-    aud.play()
+    
     music.on('click tap',function () {
         if(aud.paused){
             aud.play()
@@ -123,17 +121,19 @@ $(function () {
     setInterval(shade, 1000)
 
    $('.show-item-1 ').click(function() {
-       $('.show-item-layer-1').css('display', 'block');
+       $('.show-item-layer-1').css('display', 'block')
    });
    $('.close').click(function() {
-       $('.show-item-layer-1').css('display', 'none');
+       $('.show-item-layer-1').css('display', 'none')
        console.log('关闭')
    });
    
-   $('.main').css('display', 'none');;
+   $('.main').css('display', 'none')
     Pace.on('done', function(){
-        $('.main').show(1000);;
-        console.log('加载完成') 
+        $('.main').css({display: 'block'})
+        $('.page1 > div').addClass('amimated bounce')
+        aud.play()
+        console.log('加载完成,播放音乐') 
     });
 
 })
