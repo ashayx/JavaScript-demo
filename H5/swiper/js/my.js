@@ -130,7 +130,7 @@ $(function () {
        console.log('关闭')
    });
    
-   $('.main').hide();
+   $('.main').css('display', 'none');;
     Pace.on('done', function(){
         $('.main').show(1000);;
         console.log('加载完成') 
