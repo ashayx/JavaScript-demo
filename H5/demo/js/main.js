@@ -20,12 +20,6 @@ $(function () {
                 'animation': 'b 1s ',
                 'animation-delay': '0s',
                 'animation-fill-mode': 'forwards'})
-
-            // if (swiper.activeIndex == ) {
-            //     swiper.lockSwipeToPrev();
-            // }else {
-            //     swiper.unlockSwipeToPrev();
-            // }
         },
 
     })

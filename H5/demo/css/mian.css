@@ -4,6 +4,7 @@ body {
     max-width: 640px;
     height: auto;
     margin: auto;
+
 }
 body {
     font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
@@ -320,13 +321,13 @@ body {
     top: 0;
     left: 0;
 
-
     width: 100%;
     height: auto;
 
     animation: start 3s  linear;
     animation-fill-mode: forwards;
 }
+
 
 @keyframes start {
   0% {

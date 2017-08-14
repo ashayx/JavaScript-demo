@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html >
+<head>
+	<meta charset="UTF-8">
+	<title>bird</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1,user-scalable=no">
+	<style>
+		*{margin:0;padding: 0;}
+	</style>
+</head>
+<body>
+
+<canvas id="myCanvas" ></canvas>
+
+	<script>
+		window.w = screen.availWidth
+		window.h = screen.availHeight
+		var myCanvas = document.getElementById('myCanvas')
+
+		myCanvas.setAttribute("width", w);
+		myCanvas.setAttribute("height", h);
+
+		window.addEventListener('resize', resizeCanvas,false)
+		function resizeCanvas() {
+			w = screen.availWidth
+			h = screen.availHeight
+		}
+
+		
+		// var ctx = myCanvas.getContext('2d')
+		// var img = new Image()
+		// img.src = 'resource/bg.png'
+		// img.onload = function(){
+		// 	ctx.drawImage(img,0,0,w,h);
+		// }
+
+		var imageFromPath = function (path) {
+			var img = new Image() 
+			img.src = path
+			// console.log(path)
+			return img
+
+		}
+
+		var Back = function () {
+			var image = imageFromPath('resource/bg.png')
+
+			var o = {
+				x : 0,
+				y : 0,
+				w : w,
+				h : h,
+				image : image,		
+			}
+			return o
+		}
+
+		var Bird = function () {
+			var image = imageFromPath('resource/bird.png')
+
+			var o = {
+				x : 100,
+				y : 450,
+				w : 30,
+				h : 30,
+				sx : 0, //切片位置
+				sy : 0,
+				sw : 36,
+				sh : 26,
+				image : image			
+			}
+			return o
+		}
+
+		var Game = function () {
+			var ctx = myCanvas.getContext('2d');
+
+			var g = {
+				ctx : ctx,
+			}
+			g.drawImage = function (drawImage) {
+				g.ctx.drawImage(drawImage.image, drawImage.x, drawImage.y,drawImage.w, drawImage.h)
+				// console.log(drawImage)
+			}
+			g.sliceImage = function (drawImage) {
+				g.ctx.drawImage(drawImage.image, drawImage.sx, drawImage.sy,drawImage.sw, drawImage.sh,
+												 drawImage.x, drawImage.y,drawImage.w, drawImage.h)
+			}
+
+			return g
+		}
+
+		var _main = function () {
+			var game = new Game();
+			var bird = new Bird();
+			var bg = new Back();
+
+			window.addEventListener('click', function () {
+				bird.y -= 20
+				console.log('click')
+			})
+			window.addEventListener('keydown', function (event) {
+				if (event.key == 'a') {
+					bird.x -= 10
+				} else if(event.key == 'd'){
+					bird.x += 10
+				}
+				console.log(event)
+			})
+		
+			setInterval(function () {
+
+				game.ctx.clearRect(0,0,myCanvas.width,myCanvas.height)
+				game.drawImage(bg)
+				game.sliceImage(bird)
+				
+			}, 1000/60)
+		}
+
+		_main()
+
+
+	</script>
+</body>
+</html>
