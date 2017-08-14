@@ -21,29 +21,33 @@
 
 </head>
 <body >
+<div class="main">
+    <div id="music" class="p1musle"></div>
+    <audio id="aud" src="audio/Prologue.mp3" autoplay="autoplay"></audio>
 
-    <div class="swiper-container main" >
-        <div id="music" class="p1musle"></div>
-        <audio id="aud" src="audio/Prologue.mp3" autoplay="autoplay"></audio>
-            
-        <div class="swiper-wrapper ">
+    <div class="start-ani " >
+        <img src="images/1-1.png" style="display: block;width: 150%;height: auto;z-index: 30;position: absolute;top: 0;">
+    </div>
 
-            <div class="swiper-slide stop-swiping page1" style="width: 100%;" >
-                <div >
-                    <img src="images/bg-01.png" >
+    <div class="swiper-slide page1" >
+        <div>
+            <img src="images/bg-01.png" >
 
-                    <div class="door">
-                        <div style="position: relative;top: 0px;left: 0px;z-index: 5;"><img src="images/hua.jpg"></div>
-                        <div class="left-door"><img src="images/leftdoor.png"   style="height: 100%;"></div>
-                        <div class="right-door"><img src="images/rightdoor.png" style="height: 100%;"></div>
-                    </div>
-                    <div class="arrow-up">
-                        <img src="images/jt.png" >
-                        
-                    </div>
-                    <img src="images/jr.png" style="position: absolute;bottom: 7%;left:30%;width: 40%;height: auto;">
-                </div>
+            <div class="door">
+                <div style="position: relative;top: 0px;left: 0px;z-index: 5;"><img src="images/after-door.png"></div>
+                <div class="left-door"><img src="images/leftdoor.png"   style="height: 100%;"></div>
+                <div class="right-door"><img src="images/rightdoor.png" style="height: 100%;"></div>
             </div>
+            <div class="arrow-up">
+                <img src="images/jt.png" >
+                
+            </div>
+            <img src="images/jr.png" style="position: absolute;bottom: 7%;left:30%;width: 40%;height: auto;">
+        </div>
+    </div>
+
+    <div class="swiper-container S1" style="position: absolute;top: 0;">
+        <div class="swiper-wrapper ">
             
             <div class="swiper-slide " >
                 <img src="images/girl.gif" >
@@ -115,12 +119,8 @@
     <div  class="show">
         <img src="images/bg2.jpg" style="display: block;width: 1000%;height: auto;">
     </div>
-
-    <div class="start-ani " >
-        <img src="images/1-1.png" style="display: block;width: 150%;height: auto;z-index: 30;position: absolute;top: 0;">
-    </div>
-            
-   
+        
+</div> 
 
     
 </body>

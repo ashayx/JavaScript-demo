@@ -3,13 +3,12 @@ $(function () {
 
     
 
-    var swiper = new Swiper('.main', {
+    var swiper = new Swiper('.S1', {
         grabCursor : true,
-        noSwipingClass : 'stop-swiping',//不能滑动的类
         slidesPerView: 1,
         freeMode: true,
-        // freeModeMomentum : false,//缓冲关闭
-        freeModeSticky : true,
+        freeModeMomentum : false,//缓冲关闭
+        // freeModeSticky : true,
         resistanceRatio : 0,//阻力回系数
         //第二页不能左滑动
         onTouchStart:function (swiper,event) {
@@ -22,11 +21,11 @@ $(function () {
                 'animation-delay': '0s',
                 'animation-fill-mode': 'forwards'})
 
-            if (swiper.activeIndex == 1) {
-                swiper.lockSwipeToPrev();
-            }else {
-                swiper.unlockSwipeToPrev();
-            }
+            // if (swiper.activeIndex == ) {
+            //     swiper.lockSwipeToPrev();
+            // }else {
+            //     swiper.unlockSwipeToPrev();
+            // }
         },
 
     })
@@ -55,21 +54,21 @@ $(function () {
 
     $('.door').on('click tap',function () {
         
-       $('.left-door').css({'animation':'moveLeft 2s infinite'})
-       $('.right-door').css({'animation':'moveRight 2s infinite'})
+       $('.left-door').css({'animation':'moveLeft 2s '})
+       $('.right-door').css({'animation':'moveRight 2s '})
        $('.page1').css({'transition':'all 2s','transform':'scale(1.8)'})
 
        setTimeout(function () {
-              swiper.slideTo(1, 0,false)
+              swiper.slideTo(0, 0,false)
 
               $('.show').css({
                   display: 'block',
                   animation: 'show 10s infinite linear',//添加css动画
               })
-              //同上动画
-              // $('.show').animate({left:'-900%'}, 9000,function () {
-              //     $(this).animate({left:0},1000)
-              // })
+              //复原门大小，位置
+              $('.left-door').css({'animation':'null'})
+              $('.right-door').css({'animation':'null '})
+              $('.page1').css({'transition':'all 0s','transform':'scale(1)','z-index':'0'})
 
        },2000 )
 
@@ -90,12 +89,12 @@ $(function () {
     music.on('click tap',function () {
         if(aud.paused){
             aud.play()
-            this.style.background =  "url('images/musicBtn.png')"
+            this.style.background =  "url('images/音乐.png')"
             this.style.backgroundSize =  "100% 100%"
             this.style.animation = "rotateArrow 5s infinite linear" 
         }else{
             aud.pause()
-            this.style.background =  "url('images/musicBtnOff.png')"
+            this.style.background =  "url('images/音乐关闭.png')"
             this.style.backgroundSize =  "100% 100%"
             this.style.animation= "null"
         }
@@ -131,7 +130,6 @@ $(function () {
    $('.main').css('display', 'none')
     Pace.on('done', function(){
         $('.main').css({display: 'block'})
-        $('.page1 > div').addClass('amimated bounce')
         aud.play()
         console.log('加载完成,播放音乐') 
     });

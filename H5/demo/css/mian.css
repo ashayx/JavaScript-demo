@@ -15,7 +15,10 @@ body {
     color: #000;
     background: #eee;
 }
-
+.main {
+    position: absolute;
+    top: 0;
+}
 
 .swiper-container {
     width: 100%;
@@ -82,7 +85,7 @@ body {
     position: absolute;
     z-index: 5;
     top: 61.233333%;
-    left: 37.3%;
+    left: 37.4%;
 
     overflow: hidden;
 
@@ -126,30 +129,21 @@ body {
     height: 100%;
 }
 
-.btn-audio {
-    z-index: 20;
 
-    width: 50px;
-    height: 50px;
-    margin: 10px auto;
-
-    background: url(../img/4.png) no-repeat center bottom;
-    background-size: cover;
-}
 
 .p1musle {
     position: absolute;
-    z-index: 5;
-    top: 2px;
-    right: 2px;
+    z-index: 35;
+    top: 5px;
+    right: 5px;
 
-    width: 64px;
-    height: 64px;
+    width: 40px;
+    height: 40px;
     margin: 0;
 
     animation: rotateArrow 5s infinite linear ;
 
-    background-image: url('../images/musicBtn.png');
+    background-image: url('../images/音乐.png');
     background-size: 100% 100%;
 }
 @keyframes rotateArrow {
@@ -161,20 +155,20 @@ body {
     }
 }
 
-.swiper-slide {
+.swiper-slide,.page1 {
     display: -webkit-box;
     display: -ms-flexbox;
     display: -webkit-flex;
     display:         flex;
 
-    -webkit-box-pack: center;
-    -ms-flex-pack: center;
+
     -webkit-justify-content: center;
     justify-content: center;
-    -webkit-box-align: center;
-    -ms-flex-align: center;
     -webkit-align-items: center;
     align-items: center;
+}
+.page1{
+    z-index: 10;width: 100%;height: 100%;position: relative;flex-shrink: 0;
 }
 
 .arrow-up {
@@ -322,7 +316,7 @@ body {
 
 .start-ani {
     position: absolute;
-    z-index: 10;
+    z-index: 100;
     top: 0;
     left: 0;
 
