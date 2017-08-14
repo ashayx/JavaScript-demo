@@ -81,16 +81,14 @@ body {
 .door {
     position: absolute;
     z-index: 5;
-    top: 43.7%;
-    left: 36%;
+    top: 61.233333%;
+    left: 37.3%;
 
     overflow: hidden;
 
-    width: 32%;
-    max-width: 210px;
-    height: auto;
-
-    background-color: red;
+    width: 24.1%;
+    /* max-width: 210px; */
+    height: 16.4444444%;
 }
 @keyframes moveLeft {
     from {
@@ -117,9 +115,6 @@ body {
 
     width: 50%;
     height: 100%;
-
-    border-right: 2px solid #000;
-    background: #fff;
 }
 .right-door {
     position: absolute;
@@ -129,9 +124,6 @@ body {
 
     width: 50%;
     height: 100%;
-
-    border-left: 2px solid #000;
-    background: #fff;
 }
 
 .btn-audio {
@@ -187,7 +179,7 @@ body {
 
 .arrow-up {
     position: absolute;
-    bottom: 20%;
+    bottom: 18%;
     left: 47.5%;
 
     display: block;
@@ -196,6 +188,7 @@ body {
 
     animation: upArrow 1s infinite ease-in-out;
 }
+
 @keyframes upArrow {
     0% {
         transform: translateY(80%);
@@ -204,16 +197,7 @@ body {
         transform: translateY(0%);
     }
 }
-.font {
-    font-weight: bold;
 
-    position: absolute;
-    left: -120%;
-
-    width: 120px;
-
-    color: #fff;
-}
 .gesture {
     position: absolute;
     bottom: 10%;
@@ -335,3 +319,38 @@ body {
     opacity: 1;
   }
 }
+
+.start-ani {
+    position: absolute;
+    z-index: 10;
+    top: 0;
+    left: 0;
+
+
+    width: 100%;
+    height: auto;
+
+    animation: start 3s  linear;
+    animation-fill-mode: forwards;
+}
+
+@keyframes start {
+  0% {
+    transform: translate3d(-50%, 0, 0);
+    visibility: visible;
+  }
+  25%{
+    transform: translate3d(-25%, 0, 0);
+  }   
+  50% {
+    transform: translate3d(0, 0, 0);
+  }
+  75%{
+    transform: translate3d(-50%, 0, 0);
+  }
+  100%{
+     transform: translate3d(-25%, 0, 0);
+     visibility: hidden;
+  }
+}
+
