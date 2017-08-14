@@ -15,7 +15,7 @@ $(function () {
             $('.show').css({'display': 'none',});
             $('.swiper-slide-active .welcome').css({
                 'animation': 'b 1s linear',
-                'animation-delay': '1s',
+                'animation-delay': '0s',
                 'animation-fill-mode': 'forwards'})
 
             if (swiper.activeIndex == 1) {
@@ -72,11 +72,14 @@ $(function () {
 
        },2000 )
 
-
+       //展示动画之后
        setTimeout(function () {
-              $('.show').css({
-                  display: 'none',
-              });
+              $('.show').css({ display: 'none',})
+
+              $('.swiper-slide-active .welcome').css({
+                  'animation': 'b 1s linear',
+                  'animation-delay': '0s',
+                  'animation-fill-mode': 'forwards'})
        },12000 )
     })
 
