@@ -1,3 +1,4 @@
+
 $(function () {
 
     var swiper = new Swiper('.main', {
@@ -5,8 +6,8 @@ $(function () {
         noSwipingClass : 'stop-swiping',//不能滑动的类
         slidesPerView: 1,
         freeMode: true,
-        freeModeMomentum : false,//缓冲关闭
-        // freeModeSticky : true,
+        // freeModeMomentum : false,//缓冲关闭
+        freeModeSticky : true,
         resistanceRatio : 0,//阻力回系数
         //第二页不能左滑动
         onTouchStart:function (swiper,event) {
