@@ -26,14 +26,6 @@
 			h = screen.availHeight
 		}
 
-		
-		// var ctx = myCanvas.getContext('2d')
-		// var img = new Image()
-		// img.src = 'resource/bg.png'
-		// img.onload = function(){
-		// 	ctx.drawImage(img,0,0,w,h);
-		// }
-
 		var imageFromPath = function (path) {
 			var img = new Image() 
 			img.src = path
@@ -59,15 +51,53 @@
 			var image = imageFromPath('resource/bird.png')
 
 			var o = {
-				x : 100,
-				y : 450,
+				x : 150,
+				y : 200,
 				w : 30,
 				h : 30,
-				sx : 0, //切片位置
+				sx : [0,36,72], //切片位置
 				sy : 0,
 				sw : 36,
 				sh : 26,
-				image : image			
+				image : image,
+				i : 0,	//切片坐标
+				jumph: 45,
+				jumped: false,
+				g : 0.5,
+
+			}
+			o.jump = function () {
+				o.jumped = true
+				o.y -= o.jumph
+				o.g = 0
+			}
+			o.fallDown = function () {
+				// console.log(o.g)
+				o.jumped = false
+				o.y += o.g
+				o.g += 1
+				if (o.y > h-90) {
+					o.y = h -90
+					o.g = 0
+				}
+			}
+			
+			return o
+		}
+
+		var Ground = function () {
+			var image = imageFromPath('resource/ground.png')
+
+			var o = {
+				x : 0,
+				y : h-75,
+				w : 2*w,
+				h : 75,
+				image : image,	
+				offset : 5,	
+			}
+			o.move = function () {
+				o.x -= o.offset
 			}
 			return o
 		}
@@ -79,42 +109,92 @@
 				ctx : ctx,
 			}
 			g.drawImage = function (drawImage) {
+
 				g.ctx.drawImage(drawImage.image, drawImage.x, drawImage.y,drawImage.w, drawImage.h)
-				// console.log(drawImage)
+				
 			}
 			g.sliceImage = function (drawImage) {
-				g.ctx.drawImage(drawImage.image, drawImage.sx, drawImage.sy,drawImage.sw, drawImage.sh,
-												 drawImage.x, drawImage.y,drawImage.w, drawImage.h)
+				g.ctx.drawImage(drawImage.image, drawImage.sx[drawImage.i], drawImage.sy,drawImage.sw, drawImage.sh,
+												 -18, -13,drawImage.w, drawImage.h)
 			}
 
 			return g
 		}
 
 		var _main = function () {
-			var game = new Game();
-			var bird = new Bird();
-			var bg = new Back();
+			var game =  Game()
+			var bird =  Bird()
+			var bg =  Back()
+			var ground =  Ground()
 
-			window.addEventListener('click', function () {
-				bird.y -= 20
-				console.log('click')
-			})
-			window.addEventListener('keydown', function (event) {
-				if (event.key == 'a') {
-					bird.x -= 10
-				} else if(event.key == 'd'){
-					bird.x += 10
-				}
-				console.log(event)
-			})
-		
-			setInterval(function () {
-
-				game.ctx.clearRect(0,0,myCanvas.width,myCanvas.height)
-				game.drawImage(bg)
-				game.sliceImage(bird)
+			
+			window.addEventListener('mousedown', function (event) {
+				bird.jump()
+				console.log('1')
 				
-			}, 1000/60)
+			})
+			// window.addEventListener('touchstart', function (event) {
+			// 	bird.jump()
+			// })
+			window.addEventListener('keydown', function (event) {
+				switch(event.keyCode) {
+					case 65:
+						bird.x -= 10
+						break;
+					case 68:
+						bird.x += 10
+						break;
+					case 32:
+						bird.jump()
+						break;	
+				}
+				
+				// console.log(event.keyCode)
+			})
+			var birdCount = 3
+			var groundCount = 65
+			setInterval(function () {
+				//update
+				birdCount -- 
+				if (birdCount == 0) {
+					bird.i ++
+					
+					if ( bird.i == 3) {
+						bird.i =0
+					}
+					birdCount =3
+				}
+				bird.fallDown()
+				groundCount --
+				if (groundCount == 0) {
+					ground.x = 0
+					
+					groundCount = 65
+
+				}
+					console.log(ground.x)
+				ground.move()
+				
+				
+				//clear
+				game.ctx.clearRect(0,0,myCanvas.width,myCanvas.height)
+
+				//draw 
+				game.drawImage(bg)
+				game.drawImage(ground)	
+
+
+
+			
+				game.ctx.save();//保存状态
+				game.ctx.translate(bird.x,bird.y);//设置画布上的(0,0)位置，也就是旋转的中心点
+				game.ctx.rotate(45*Math.PI/180);
+				// cgametx.drawImage(img,-img.width/2,-img.height/2);//把图片绘制在旋转的中心点，
+				game.sliceImage(bird)
+				game.ctx.restore();//恢复状态
+		
+					
+			}, 1000/30)
 		}
 
 		_main()
