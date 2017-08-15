@@ -126,15 +126,17 @@
 			var bird =  Bird()
 			var bg =  Back()
 			var ground =  Ground()
-
+			var start = false
 			
-			window.addEventListener('mousedown', function (event) {
+			window.addEventListener('touchstart', function (event) {
 				bird.jump()
-				console.log('1')
-				
+				start = true
+				// event.preventDefault()
+				console.log(event)
 			})
-			// window.addEventListener('touchstart', function (event) {
+			// window.addEventListener('click', function (event) {
 			// 	bird.jump()
+			// 	console.log('1')
 			// })
 			window.addEventListener('keydown', function (event) {
 				switch(event.keyCode) {
@@ -164,7 +166,11 @@
 					}
 					birdCount =3
 				}
-				bird.fallDown()
+
+				if(start){
+					bird.fallDown()
+				}
+
 				groundCount --
 				if (groundCount == 0) {
 					ground.x = 0
@@ -172,7 +178,7 @@
 					groundCount = 65
 
 				}
-					console.log(ground.x)
+					// console.log(ground.x)
 				ground.move()
 				
 				
