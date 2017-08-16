@@ -2,10 +2,14 @@
 <html >
 <head>
 	<meta charset="UTF-8">
-	<title>bird</title>
+	<title>flappy bird</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1,user-scalable=no">
 	<style>
 		*{margin:0;padding: 0;}
+		#myCanvas{
+			display: block;
+			margin: auto
+		}
 	</style>
 </head>
 <body>
@@ -13,7 +17,7 @@
 <canvas id="myCanvas" ></canvas>
 
 	<script>
-		window.w = screen.availWidth
+		window.w = screen.availWidth < 640 ? screen.availWidth :640
 		window.h = screen.availHeight
 		var myCanvas = document.getElementById('myCanvas')
 
@@ -26,157 +30,22 @@
 			h = screen.availHeight
 		}
 
-
-		var imageFromPath = function (path) {
-			var img = new Image() 
-			img.src = path
-			// console.log(path)
-			return img
-
-		}
-
-		var Back = function () {
-			var image = imageFromPath('resource/bg.png')
-
-			var o = {
-				x : 0,
-				y : 0,
-				w : w,
-				h : h,
-				image : image,		
-			}
-			return o
-		}
-
-		var Bird = function () {
-			var image = imageFromPath('resource/bird.png')
-
-			var o = {
-				x : 150,
-				y : 0,
-				w : 30,
-				h : 30,
-				sx : 0, //切片位置
-				sy : 0,
-				sw : 36,
-				sh : 26,
-				image : image,
-				high : 50,	//跳的高度
-				g : 5, //重力加速度
-				isjump : false,
-			}
-			o.jump = function () {
-				o.y -= o.high
-			}
-			o.fallDown = function () {
-				if(o.isjump){
-					o.g = 0
-				}else{
-					// o.g = 5
-					o.g += 0.01
-					o.y += o.g
-				}
-				console.log(o.g,o.y)
-			}
-			return o
-		}
-
-		var Game = function () {
-			var ctx = myCanvas.getContext('2d');
-
-			var g = {
-				ctx : ctx,
-			}
-			g.drawImage = function (drawImage) {
-				g.ctx.drawImage(drawImage.image, drawImage.x, drawImage.y,drawImage.w, drawImage.h)
-				// console.log(drawImage)
-			}
-			g.sliceImage = function (drawImage) {
-				g.ctx.drawImage(drawImage.image, drawImage.sx, drawImage.sy,drawImage.sw, drawImage.sh,
-												 drawImage.x, drawImage.y,drawImage.w, drawImage.h)
-			}
-
-			return g
-		}
-
-		var Ground = function () {
-			var image = imageFromPath('resource/ground.png')
-			var ctx = myCanvas.getContext('2d');
-			var o = {
-				x : 0,
-				y : h-60,
-				w : w,
-				h : 60,
-				image : image,		
-			}
-			o.move = function () {
-				o.x -= 5 ;
-			}
-			o.draw = function () {
-				for (var j=0;j<3;j++){
-			       ctx.drawImage(o.image,j*w,o.y,w,60);
-			    }
-			}
-			return o
-		}
-
-		var _main = function () {
-			var game =  Game()
-			var bird =  Bird()
-			var bg =  Back()
-			var ground = Ground()
-
-			window.addEventListener('mousedown', function (event) {
-				bird.isjump = true
-				bird.jump()
-				console.log(event)
-			})
-			window.addEventListener('mouseup', function (event) {
-				bird.isjump = false
-			})
-			window.addEventListener('keydown', function (event) {
-				switch(event.keyCode) {
-					case 65:
-						bird.x -= 10
-						break
-					case 68:
-						bird.x += 10
-						break
-					case 87:
-						bird.y -= 10
-						break
-					case 83:
-						bird.y += 10
-						break
-				}
-				
-				console.log(event)
-			})
-
-			document.addEventListener('touchstart',function () {
-				bird.y -= 20
-			})
-			
-
-			setInterval(function () {
-
-				
-				game.ctx.clearRect(0,0,myCanvas.width,myCanvas.height)
-				bird.fallDown();
-				game.drawImage(bg)
-				game.sliceImage(bird)
-					// game.drawImage(ground)	
-				ground.move()
-				
-				ground.draw();
-			
-				
-			}, 1000/30)
-		}
-
-		_main()
-
-
+		var log = console.log.bind(console)
+		
+		window.interface = 1  //1未开始，2开始，3结束
+		window.start = false
 	</script>
+
+	<script src="js/bird.js"></script>
+	<script src="js/ground.js"></script>
+	<script src="js/back.js"></script>
+
+	<script src="js/scene.js"></script>
+	<script src="js/scene_end.js"></script>
+	<script src="js/scene_start.js"></script>
+
+	<script src="js/game.js"></script>
+	<script src="js/main.js"></script>
+
 </body>
 </html>
