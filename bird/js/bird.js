@@ -8,6 +8,7 @@ var Bird = function (game) {
 	o.jumph = 45,
 	o.jumped = false,
 	o.g = 0.5,
+	o.isdie = false,
 
 	o.jump = function () {
 		o.jumped = true
@@ -16,12 +17,17 @@ var Bird = function (game) {
 	}
 	o.fallDown = function () {
 		// console.log(o.g)
-		o.jumped = false
+		// o.jumped = false
 		o.y += o.g
 		o.g += 1
 		if (o.y > h- 110) {
 			o.y = h -110
 			o.g = 0
+		}
+	}
+	o.alive = function () {
+		if (o.y == h - 110) {
+			o.isdie = true
 		}
 	}
 	

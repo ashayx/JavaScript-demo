@@ -11,6 +11,7 @@ var _main = function () {
 
 	var game = new Game(30,images,function (g) {
 		var s = Scene(g)
+		// var s = new SceneStart(g)
 		g.runWithScene(s)
 		console.log('游戏开始');
 		

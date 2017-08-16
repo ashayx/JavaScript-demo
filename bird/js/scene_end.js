@@ -18,6 +18,7 @@ class SceneEnd extends GameScene {
                 game.replaceScene(s)
             }
         })
+
     }
 
     draw() {
