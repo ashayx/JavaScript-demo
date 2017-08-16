@@ -26,13 +26,6 @@
 			h = screen.availHeight
 		}
 
-		
-		// var ctx = myCanvas.getContext('2d')
-		// var img = new Image()
-		// img.src = 'resource/bg.png'
-		// img.onload = function(){
-		// 	ctx.drawImage(img,0,0,w,h);
-		// }
 
 		var imageFromPath = function (path) {
 			var img = new Image() 
@@ -59,15 +52,31 @@
 			var image = imageFromPath('resource/bird.png')
 
 			var o = {
-				x : 100,
-				y : 450,
+				x : 150,
+				y : 0,
 				w : 30,
 				h : 30,
 				sx : 0, //切片位置
 				sy : 0,
 				sw : 36,
 				sh : 26,
-				image : image			
+				image : image,
+				high : 50,	//跳的高度
+				g : 5, //重力加速度
+				isjump : false,
+			}
+			o.jump = function () {
+				o.y -= o.high
+			}
+			o.fallDown = function () {
+				if(o.isjump){
+					o.g = 0
+				}else{
+					// o.g = 5
+					o.g += 0.01
+					o.y += o.g
+				}
+				console.log(o.g,o.y)
 			}
 			return o
 		}
@@ -90,31 +99,79 @@
 			return g
 		}
 
-		var _main = function () {
-			var game = new Game();
-			var bird = new Bird();
-			var bg = new Back();
+		var Ground = function () {
+			var image = imageFromPath('resource/ground.png')
+			var ctx = myCanvas.getContext('2d');
+			var o = {
+				x : 0,
+				y : h-60,
+				w : w,
+				h : 60,
+				image : image,		
+			}
+			o.move = function () {
+				o.x -= 5 ;
+			}
+			o.draw = function () {
+				for (var j=0;j<3;j++){
+			       ctx.drawImage(o.image,j*w,o.y,w,60);
+			    }
+			}
+			return o
+		}
 
-			window.addEventListener('click', function () {
-				bird.y -= 20
-				console.log('click')
-			})
-			window.addEventListener('keydown', function (event) {
-				if (event.key == 'a') {
-					bird.x -= 10
-				} else if(event.key == 'd'){
-					bird.x += 10
-				}
+		var _main = function () {
+			var game =  Game()
+			var bird =  Bird()
+			var bg =  Back()
+			var ground = Ground()
+
+			window.addEventListener('mousedown', function (event) {
+				bird.isjump = true
+				bird.jump()
 				console.log(event)
 			})
-		
+			window.addEventListener('mouseup', function (event) {
+				bird.isjump = false
+			})
+			window.addEventListener('keydown', function (event) {
+				switch(event.keyCode) {
+					case 65:
+						bird.x -= 10
+						break
+					case 68:
+						bird.x += 10
+						break
+					case 87:
+						bird.y -= 10
+						break
+					case 83:
+						bird.y += 10
+						break
+				}
+				
+				console.log(event)
+			})
+
+			document.addEventListener('touchstart',function () {
+				bird.y -= 20
+			})
+			
+
 			setInterval(function () {
 
+				
 				game.ctx.clearRect(0,0,myCanvas.width,myCanvas.height)
+				bird.fallDown();
 				game.drawImage(bg)
 				game.sliceImage(bird)
+					// game.drawImage(ground)	
+				ground.move()
 				
-			}, 1000/60)
+				ground.draw();
+			
+				
+			}, 1000/30)
 		}
 
 		_main()
