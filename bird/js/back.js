@@ -1,12 +1,10 @@
-var Back = function () {
-	var image = imageFromPath('resource/bg.png')
+var Back = function (game) {
+	var o = game.imageByName('back')
 
-	var o = {
-		x : 0,
-		y : 0,
-		w : w,
-		h : h,
-		image : image,		
-	}
+	o.x = 0
+	o.y = 0
+	o.w = w
+	o.h = h
+
 	return o
 }

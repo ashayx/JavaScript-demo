@@ -1,16 +1,10 @@
-var Ground = function () {
-	var image = imageFromPath('resource/ground.png')
+var Ground = function (game) {
+	var o = game.imageByName('ground')
 
-	var o = {
-		x : 0,
-		y : h-75,
-		w : 2*w,
-		h : 75,
-		image : image,	
-		offset : 5,	
-	}
-	o.move = function () {
-		o.x -= o.offset
-	}
+	o.x = 0
+	o.y = h - 75
+	o.w = 2 * w
+	o.h = 75
+
 	return o
 }

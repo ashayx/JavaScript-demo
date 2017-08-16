@@ -1,22 +1,14 @@
-var Bird = function () {
-	var image = imageFromPath('resource/bird.png')
+var Bird = function (game) {
+	var o = game.imageByName(`bird${countList}`)
 
-	var o = {
-		x : 150,
-		y : 200,
-		w : 50,
-		h : 40,
-		sx : [0,36,72], //切片位置
-		sy : 0,
-		sw : 36,
-		sh : 26,
-		image : image,
-		i : 0,	//切片坐标
-		jumph: 45,
-		jumped: false,
-		g : 0.5,
+	o.x = w/2 - 25,
+	o.y = 200,
+	o.w = 50,
+	o.h = 40,
+	o.jumph = 45,
+	o.jumped = false,
+	o.g = 0.5,
 
-	}
 	o.jump = function () {
 		o.jumped = true
 		o.y -= o.jumph

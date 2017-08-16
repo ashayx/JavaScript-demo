@@ -2,10 +2,14 @@
 <html >
 <head>
 	<meta charset="UTF-8">
-	<title>bird</title>
+	<title>flappy bird</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1,user-scalable=no">
 	<style>
 		*{margin:0;padding: 0;}
+		#myCanvas{
+			display: block;
+			margin: auto
+		}
 	</style>
 </head>
 <body>
@@ -13,7 +17,7 @@
 <canvas id="myCanvas" ></canvas>
 
 	<script>
-		window.w = screen.availWidth
+		window.w = screen.availWidth < 640 ? screen.availWidth :640
 		window.h = screen.availHeight
 		var myCanvas = document.getElementById('myCanvas')
 
@@ -26,19 +30,18 @@
 			h = screen.availHeight
 		}
 
-		var imageFromPath = function (path) {
-			var img = new Image() 
-			img.src = path
-			// console.log(path)
-			return img
-
-		}
-
+		var log = console.log.bind(console)
 	</script>
-	<script src="js/game.js"></script>
+
 	<script src="js/bird.js"></script>
 	<script src="js/ground.js"></script>
 	<script src="js/back.js"></script>
+
+	<script src="js/scene.js"></script>
+	<script src="js/scene_end.js"></script>
+	<script src="js/scene_start.js"></script>
+
+	<script src="js/game.js"></script>
 	<script src="js/main.js"></script>
 
 </body>
