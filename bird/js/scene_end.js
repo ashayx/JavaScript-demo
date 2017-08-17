@@ -1,14 +1,3 @@
-class GameScene {
-    constructor(game) {
-        this.game = game
-    }
-    draw() {
-
-    }
-    update(){
-
-    }
-}
 class SceneEnd extends GameScene {
     constructor(game) {
         super(game)

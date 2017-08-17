@@ -14,38 +14,24 @@
 </head>
 <body>
 
-<canvas id="myCanvas" ></canvas>
+	<canvas id="myCanvas" ></canvas>
 
-	<script>
-		window.w = screen.availWidth < 640 ? screen.availWidth :640
-		window.h = screen.availHeight
-		var myCanvas = document.getElementById('myCanvas')
 
-		myCanvas.setAttribute("width", w);
-		myCanvas.setAttribute("height", h);
+</body>
+	<script src="js/config.js"></script>
 
-		window.addEventListener('resize', resizeCanvas,false)
-		function resizeCanvas() {
-			w = screen.availWidth
-			h = screen.availHeight
-		}
+	<script src="js/game_image.js"></script>	
 
-		var log = console.log.bind(console)
-		
-		window.interface = 1  //1未开始，2开始，3结束
-		window.start = false
-	</script>
-
-	<script src="js/bird.js"></script>
 	<script src="js/ground.js"></script>
 	<script src="js/back.js"></script>
-
+	<script src="js/tube.js"></script>
+	<script src="js/bird.js"></script>
+	
+	<script src="js/game_scene.js"></script>
 	<script src="js/scene.js"></script>
 	<script src="js/scene_end.js"></script>
 	<script src="js/scene_start.js"></script>
 
 	<script src="js/game.js"></script>
 	<script src="js/main.js"></script>
-
-</body>
 </html>

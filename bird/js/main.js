@@ -6,11 +6,14 @@ var _main = function () {
 		bird1 : 'resource/bird_01.png',
 		bird2 : 'resource/bird_02.png',
 		bird3 : 'resource/bird_03.png',
+
+		tube1 : 'resource/tube1.png',
+		tube2 : 'resource/tube2.png',
 	}
-	window.countList = 2
 
 	var game = new Game(30,images,function (g) {
-		var s = Scene(g)
+		
+		var s =  new Scene(g)
 		// var s = new SceneStart(g)
 		g.runWithScene(s)
 		console.log('游戏开始');

@@ -1,4 +1,3 @@
-
 class Game {
 	constructor(fps, images, runCallback) {
 		window.fps = fps
@@ -13,7 +12,8 @@ class Game {
 	}
 
 	drawImage(drawImage) {
-		this.ctx.drawImage(drawImage.image, drawImage.x, drawImage.y,drawImage.w, drawImage.h)
+		//
+		this.ctx.drawImage(drawImage.texture, drawImage.x, drawImage.y,drawImage.w, drawImage.h)
 	}
 
 	update() {
@@ -27,6 +27,7 @@ class Game {
 	runloop() {
 		let that = this
 		//update
+	
 		this.update()
 		//clear
 		this.ctx.clearRect(0,0,myCanvas.width,myCanvas.height)
@@ -37,12 +38,11 @@ class Game {
 		}, 1000/fps)
 	}
 
-	imageByName(name) {
-		log('img by name' ,name ,this.images[name])
-		var image = {
-			image : this.images[name]
-		}
-		return image 
+	textureByName(name) {
+		var	img = this.images[name]
+		// log('textureByName' ,name ,img)
+		
+		return img 
 	}
 
 	runWithScene(scene) {
@@ -72,7 +72,7 @@ class Game {
 				g.images[name] = img
 				//所有图片载入，调用run
 				loads.push(1)
-				log('全部图片：',names.length,'已加载:',loads.length,)
+				log('全部图片：',names.length,'已加载:',loads.length,img)
 
 				if (loads.length === names.length) {
 					g._start()

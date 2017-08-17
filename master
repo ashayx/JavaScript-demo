@@ -1,0 +1,327 @@
+[33mcommit 9ce8e52406d85534d49fc8acd8ac005e35d3d7b0[m
+Author: HI <973946691@qq.com>
+Date:   Mon Aug 14 18:38:09 2017 +0800
+
+    Update README.md
+
+[33mcommit fb642177e1e08391b4689707f536e9c43e30a9a6[m
+Author: ashayx <973946691@qq.com>
+Date:   Mon Aug 14 18:31:09 2017 +0800
+
+    flappy bird
+
+[33mcommit e7ffec489f6fa018b75f6a9efb2cfbb1065895d9[m
+Author: ashayx <973946691@qq.com>
+Date:   Mon Aug 14 15:45:45 2017 +0800
+
+    首页改
+
+[33mcommit 66b679f4659b5b51e6387dc082d70539c1a69e57[m
+Merge: e5d9caf 34b80a2
+Author: ashayx <973946691@qq.com>
+Date:   Mon Aug 14 14:01:56 2017 +0800
+
+    Merge branch 'master' of https://github.com/ashayx/JavaScript-demo
+
+[33mcommit e5d9cafb2635cbff860b9e09f073929b3ff8a343[m
+Author: ashayx <973946691@qq.com>
+Date:   Mon Aug 14 13:51:06 2017 +0800
+
+    star
+
+[33mcommit 34b80a23b5373ffa0e5eaa78875718bbde554237[m
+Author: HI <973946691@qq.com>
+Date:   Mon Aug 14 11:31:08 2017 +0800
+
+    Update README.md
+
+[33mcommit 444c05f5aa37e6ecf722cd1b66e6ac3154eaf59f[m
+Author: ashayx <973946691@qq.com>
+Date:   Mon Aug 14 11:28:24 2017 +0800
+
+    demo
+
+[33mcommit c64d45b87ef57e03c7cc3f9ff8948f5eb930791f[m
+Author: ashayx <973946691@qq.com>
+Date:   Mon Aug 14 10:46:21 2017 +0800
+
+    loading
+
+[33mcommit 023abb8046678044969617a84429038cb426e192[m
+Author: ashayx <973946691@qq.com>
+Date:   Mon Aug 14 10:41:07 2017 +0800
+
+    loading
+
+[33mcommit 9ee7897eee6d54af4840ddb7568678223dde3bce[m
+Author: ashayx <973946691@qq.com>
+Date:   Mon Aug 14 10:36:31 2017 +0800
+
+    loading
+
+[33mcommit 7373675eaa3dd91ccb5c135f3b04d685eb1ebf88[m
+Author: ashayx <973946691@qq.com>
+Date:   Mon Aug 14 10:10:54 2017 +0800
+
+    loading
+
+[33mcommit c26d6dd002d184ec58908230a1be7ab474c9e73f[m
+Author: ashayx <973946691@qq.com>
+Date:   Mon Aug 14 09:57:29 2017 +0800
+
+    loading
+
+[33mcommit 2c4b3315263c56fd4a3b47b1df09ce36fbbcf214[m
+Author: ashayx <973946691@qq.com>
+Date:   Mon Aug 14 09:45:23 2017 +0800
+
+    loading
+
+[33mcommit 04c037b94dcdde0505a6a86c7ceb30a5557ac125[m
+Author: ashayx <973946691@qq.com>
+Date:   Mon Aug 14 09:33:04 2017 +0800
+
+    loading
+
+[33mcommit 0783539eae4c9ab6ffe676df1fc1631193569fc9[m
+Author: ashayx <973946691@qq.com>
+Date:   Fri Aug 11 17:34:17 2017 +0800
+
+    移动端产品详情
+
+[33mcommit a3473875eaa4402ab6de8babd3534747126461a5[m
+Author: ashayx <973946691@qq.com>
+Date:   Fri Aug 11 15:00:19 2017 +0800
+
+    移动端产品详情
+
+[33mcommit 77c6f50ab6c8a42fa3561540283cb9d259fb3427[m
+Author: ashayx <973946691@qq.com>
+Date:   Fri Aug 11 14:48:25 2017 +0800
+
+    移动端产品详情
+
+[33mcommit 93fcbe4572206df0312ac47d1356b5a1d46ae970[m
+Author: ashayx <973946691@qq.com>
+Date:   Fri Aug 11 13:38:02 2017 +0800
+
+    移动端产品详情
+
+[33mcommit b789b39b9b4d3422f259b341a8b57b407bb37e06[m
+Author: ashayx <973946691@qq.com>
+Date:   Thu Aug 10 18:44:22 2017 +0800
+
+    移动端测试
+
+[33mcommit 277b7a428b9d1ce82b1c71431299d51e81e170bd[m
+Author: ashayx <973946691@qq.com>
+Date:   Thu Aug 10 16:39:22 2017 +0800
+
+    移动端测试
+
+[33mcommit d5839df8f3ffd91f37ae2601901991cc5ff55329[m
+Author: ashayx <973946691@qq.com>
+Date:   Thu Aug 10 13:50:11 2017 +0800
+
+    移动端点击测试
+
+[33mcommit cec6589c3f62dc7b60bbcee44b834762af47eff3[m
+Author: ashayx <973946691@qq.com>
+Date:   Thu Aug 10 12:00:34 2017 +0800
+
+    移动端点击测试
+
+[33mcommit 387ba1005a17ec8bb2ecaef61b1ec2584368c822[m
+Author: HI <973946691@qq.com>
+Date:   Thu Aug 10 11:28:41 2017 +0800
+
+    Update main.js
+
+[33mcommit 98cf34576b1719fb90e1fff3219b5ff966bc5c8a[m
+Author: HI <973946691@qq.com>
+Date:   Thu Aug 10 11:09:22 2017 +0800
+
+    Update index.html
+
+[33mcommit d82b69992983b96b6126d301dc19c63aedd22f42[m
+Author: ashayx <973946691@qq.com>
+Date:   Thu Aug 10 10:54:27 2017 +0800
+
+    移动端测试
+
+[33mcommit f780d2cb34e3e6f243e96040f1cf1a0812c03de0[m
+Author: ashayx <973946691@qq.com>
+Date:   Thu Aug 10 10:43:20 2017 +0800
+
+    移动端测试
+
+[33mcommit d5e5a8139d40ee085a26372a441c452f8d627015[m
+Author: HI <973946691@qq.com>
+Date:   Thu Aug 10 10:27:34 2017 +0800
+
+    Update index.html
+
+[33mcommit c4b1ddd42832d338fdf5feca24ebbd3e2e01e83b[m
+Author: ashayx <973946691@qq.com>
+Date:   Thu Aug 10 10:17:55 2017 +0800
+
+    移动端测试
+
+[33mcommit f35852d7a3a3bb1795b2e20ba697fa61bb84ebd7[m
+Author: HI <973946691@qq.com>
+Date:   Wed Aug 9 18:01:10 2017 +0800
+
+    Update index.html
+
+[33mcommit 09d7e467a3701282a0a91283b5554395a659e0fb[m
+Author: ashayx <973946691@qq.com>
+Date:   Wed Aug 9 17:57:10 2017 +0800
+
+    h5响应
+
+[33mcommit 9582971200dacca8d0924b755974eef56b5804a7[m
+Author: ashayx <973946691@qq.com>
+Date:   Wed Aug 9 17:30:12 2017 +0800
+
+    h5响应
+
+[33mcommit 75293848bd1a215011f6ce0c4196ea7885a13b99[m
+Author: HI <973946691@qq.com>
+Date:   Wed Aug 9 16:18:56 2017 +0800
+
+    Update README.md
+
+[33mcommit 057a854e01355c6316525fd425f4f377fafd2ad9[m
+Author: ashayx <973946691@qq.com>
+Date:   Wed Aug 9 16:10:35 2017 +0800
+
+    nb
+
+[33mcommit ec390ab8fc56d8484bc9aff5cf14fd8b08da4798[m
+Author: HI <973946691@qq.com>
+Date:   Tue Aug 8 23:04:24 2017 +0800
+
+    Update README.md
+
+[33mcommit 4f6620c9f20db366a17081013262dc3b311d9db1[m
+Author: peiyingqiang <mua-pyq@foxmail.com>
+Date:   Tue Aug 8 22:59:54 2017 +0800
+
+    swiper
+
+[33mcommit d7359aa50979e1fae33eb56cc14cabe251685085[m
+Author: ashayx <973946691@qq.com>
+Date:   Tue Aug 8 18:35:36 2017 +0800
+
+    open door
+
+[33mcommit 68075546caac98233ec10c3af21a695929a7ee55[m
+Author: ashayx <973946691@qq.com>
+Date:   Tue Aug 8 13:57:08 2017 +0800
+
+    test
+
+[33mcommit 1ca318fcf401b0fce49f6b8a7cf38f83dc743453[m
+Author: HI <973946691@qq.com>
+Date:   Sat Aug 5 08:10:51 2017 +0800
+
+    Update index.html
+
+[33mcommit bc0d700c71c7f616ef0898dbc0ee86953a00f480[m
+Author: peiyingqiang <mua-pyq@foxmail.com>
+Date:   Sat Aug 5 01:25:41 2017 +0800
+
+    打砖块2
+
+[33mcommit 2348ec60aeae5d37646cc6992e190833d4ebebad[m
+Author: HI <973946691@qq.com>
+Date:   Fri Aug 4 22:10:21 2017 +0800
+
+    Update README.md
+
+[33mcommit 6c3ba9d28ab700d9b3416aeaf2bd1e2571a23dfb[m
+Author: peiyingqiang <mua-pyq@foxmail.com>
+Date:   Fri Aug 4 22:05:50 2017 +0800
+
+    打砖块
+
+[33mcommit 72b340e73e36f0317ac964758e0ca7ed268885c3[m
+Author: peiyingqiang <mua-pyq@foxmail.com>
+Date:   Thu Aug 3 23:11:11 2017 +0800
+
+    打砖块
+
+[33mcommit ed3292e518c3faf7f8b38ddeaf4b1c5207038c8e[m
+Author: HI <973946691@qq.com>
+Date:   Thu Aug 3 22:51:31 2017 +0800
+
+    Update README.md
+
+[33mcommit 96b2d143f0f3d45bd5b2f98b59d54fdd32404c19[m
+Author: peiyingqiang <mua-pyq@foxmail.com>
+Date:   Thu Aug 3 22:44:22 2017 +0800
+
+    打砖块
+
+[33mcommit c372e939c6ca14ecd3b0b58d02164e442b37c077[m
+Author: HI <973946691@qq.com>
+Date:   Sat Jul 29 18:15:27 2017 +0800
+
+    Update README.md
+
+[33mcommit 16a986017b07a4725419ff390b1e17cb313e7607[m
+Author: peiyingqiang <mua-pyq@foxmail.com>
+Date:   Sat Jul 29 18:13:14 2017 +0800
+
+    js粒子效果
+
+[33mcommit 9a91b2297d6337c4e7446bcdb97a068d569586c7[m
+Author: peiyingqiang <mua-pyq@foxmail.com>
+Date:   Wed Jul 5 20:25:00 2017 +0800
+
+    图片
+
+[33mcommit 51c3584032e2e8bf084cf527d4fa61f89685492e[m
+Author: peiyingqiang <mua-pyq@foxmail.com>
+Date:   Wed Jul 5 19:18:36 2017 +0800
+
+    测试
+
+[33mcommit 55a2b7591774f91d2521474ad670dbd7c6031aaa[m
+Author: HI <973946691@qq.com>
+Date:   Fri Jun 30 18:46:51 2017 +0800
+
+    Update JS迷宫.html
+
+[33mcommit 354ec731548ea7ded03cfb9defba079d2f5f51c9[m
+Author: HI <973946691@qq.com>
+Date:   Fri Jun 30 17:52:27 2017 +0800
+
+    Update README.md
+
+[33mcommit 5d3f9abe9d4cda0bdefb970e11e7105837f2c3aa[m
+Author: HI <973946691@qq.com>
+Date:   Fri Jun 30 17:51:17 2017 +0800
+
+    Update README.md
+
+[33mcommit a325861ec01acdb05a07208ba984252a33e8e07a[m
+Author: peiyingqiang <mua-pyq@foxmail.com>
+Date:   Fri Jun 30 17:48:30 2017 +0800
+
+    JS显示KeyCode
+
+[33mcommit 91e545a6573dca2ebd37e6a37c9ff099fffc07d1[m
+Author: peiyingqiang <mua-pyq@foxmail.com>
+Date:   Fri Jun 30 17:43:03 2017 +0800
+
+    Text
+
+[33mcommit d22c35bf0d3dee68e387dbe6ead1a30fa4b88b0c[m
+Author: peiyingqiang <mua-pyq@foxmail.com>
+Date:   Fri Jun 30 17:36:51 2017 +0800
+
+    Text
+
+[33mcommit 2d3be87801677dc3cca087d31fbe7e3005e8ebb8[m
+Author: peiyingqiang <mua-pyq@foxma
