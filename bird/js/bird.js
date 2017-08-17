@@ -14,6 +14,9 @@ var Bird = function (game) {
 		o.jumped = true
 		o.y -= o.jumph
 		o.g = 0
+		if (o.y <= 0) {
+			o.y = 0
+		}
 	}
 	o.fallDown = function () {
 		// console.log(o.g)
