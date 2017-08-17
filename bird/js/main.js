@@ -12,10 +12,6 @@ var _main = function () {
 	}
 
 	var game = new Game(30,images,function (g) {
-<<<<<<< HEAD
-		
-=======
->>>>>>> 3c256b3ac6354e682ceb09c739207839d81cc738
 		var s =  new Scene(g)
 		// var s = new SceneStart(g)
 		g.runWithScene(s)
