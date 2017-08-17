@@ -3,43 +3,64 @@ class Scene extends GameScene {
 		super(game)
 
 		this.back   = new Back(game)
-		this.ground = new Ground(game)
 		this.bird   = new Bird(game)
 		this.tube   = new Tube(game)
-
 
 		this.setup()
 		this.setInput()
 
+		
 		console.log('back',this.back ,'ground',this.ground);
 		
 	}
 	setup() {
 		this.addElement(this.back)
-		this.addElement(this.ground)
-		this.addElement(this.bird)
+		// this.addElement(this.bird)
 		this.addElement(this.tube)
-
+		//ground
+		this.grounds = []
+		for (var i = 0; i < 3; i++) {
+			var g = new Ground(this.game)
+			g.x = i * w
+			this.addElement(g)
+			this.grounds.push(g)
+		}
+		log('grounds',this.grounds)
 		
 	}
 
     update(){
+    	// super.update()
     	if (window.interface == 3) {
     		return
     	}
+    	//地板移动
+	   	for (var i = 0; i < 3; i++) {
+	   		var g = this.grounds[i]
+	   		g.move()
+	   	}
+    	//小鸟
 		this.bird.frameAni()
-		if (start) {
+		if (start ) {
 	   		this.bird.fallDown()
+	   		if (this.bird.rotation < 90) {
+	   			this.bird.rotation += 5
+	   		}
 		}
-	   	this.ground.move()
+
 	}
 
 	setInput() {
-      	document.addEventListener( 'touchstart', birdJump.bind(this), false );
-
+      	log('是否支持touch:',"ontouchstart" in document)
+      	
+      	if ("ontouchstart" in document) {
+      		document.addEventListener( 'touchstart', birdJump.bind(this), false )
+      	}else {
+      		document.addEventListener( 'click', birdJump.bind(this), false )
+      	}
 	}
 }
-
+//不太好的事件绑定
 function birdJump(event){
      start = true
      if (window.interface == 1) {
@@ -52,6 +73,5 @@ function birdJump(event){
      	this.bird.isalive = true
      	window.interface = 1
      }
-     log(this.bird.isalive)
 }
 

@@ -16,10 +16,11 @@ class GameScene {
     	if (!this.bird.isalive) {
     		// log('die')
 	    	this.game.ctx.fillStyle = '#fff'
-			this.game.ctx.font = '30px  bolder'
-			this.game.ctx.fillText('游戏结束', w/4, 350)
+			this.game.ctx.font = '40px  Fantasy '
+            this.game.ctx.fillText('0', w/2.1, h/3)
+			this.game.ctx.fillText('GAME OVER ', w/4, h/2)
     	}
-
+        this.bird.rotateAni()
     }
     update() {
 

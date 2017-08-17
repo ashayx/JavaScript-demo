@@ -3,10 +3,10 @@ class Bird extends GameImage {
 		super(game,'bird')
 		this.game = game 
 
-		this.x = 130
-		this.y = 150
-		this.w = 50
-		this.h = 50
+		this.x = w/2.5
+		this.y = h/3
+		this.w = 54
+		this.h = 40
 
 		this.g = .5 //加速度
 		this.isalive = true
@@ -14,17 +14,14 @@ class Bird extends GameImage {
 		this.frames = []
 		this.framecount = 3
 		this.frameIndex = 1
+		this.rotation = 0
 		
 		for (var i = 1; i < 4; i++) {
 			var name = `bird${i}` 
-			// var bird = new GameImage(game,name)
 			var bird = game.textureByName(name)
-			bird.w = 50
-			bird.h = 50
 			this.frames.push(bird)
 		}
 		this.texture = this.frames[0]
-		log(this)
 	}
 
 	frameAni() {
@@ -40,9 +37,23 @@ class Bird extends GameImage {
 		this.texture = this.frames[this.frameIndex]
 
 	}
+	rotateAni() {
+		var ctx = this.game.ctx
+		var w2 = this.w / 2
+		var h2 = this.h / 2
+
+		ctx.save()
+		ctx.translate(this.x + w2 , this.y + h2) //画布原点
+		ctx.rotate(this.rotation * Math.PI / 180) //旋转
+		ctx.translate(-w2 , -h2)//画布原点
+		ctx.drawImage(this.texture, 0, 0, this.w, this.h)
+		ctx.restore()
+		
+	}
 	jump() {
 		this.y -= 50
 		this.g = 0
+		this.rotation = -45
 		if (this.y <= 0) {
 			this.y = 0
 		}
@@ -50,11 +61,10 @@ class Bird extends GameImage {
 	fallDown() {
 		this.y += this.g
 		this.g += .5
-		if (this.y >= h- 125) {
-			this.y = h-125
+		if (this.y >= h - 75 - this.h) {
+			this.y = h -75 - this.h
 			this.die()
 		}
-		// log(this.g)
 	}
 	die() {
 		this.isalive = false
