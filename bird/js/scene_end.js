@@ -1,3 +1,23 @@
+<<<<<<< HEAD
+=======
+
+class GameImage {
+    constructor(game,name) {
+        this.game = game
+        this.texture = game.textureByName(name)
+        this.x = 0
+        this.y = 0
+        this.w = w
+        this.h = h
+    }
+    draw() {
+
+    }
+    update(){
+
+    }
+}
+>>>>>>> 3c256b3ac6354e682ceb09c739207839d81cc738
 class SceneEnd extends GameScene {
     constructor(game) {
         super(game)

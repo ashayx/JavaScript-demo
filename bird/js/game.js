@@ -39,10 +39,17 @@ class Game {
 	}
 
 	textureByName(name) {
+<<<<<<< HEAD
 		var	img = this.images[name]
 		// log('textureByName' ,name ,img)
 		
 		return img 
+=======
+		var	image = this.images[name]
+		log('img by name' ,name ,image)
+		
+		return image 
+>>>>>>> 3c256b3ac6354e682ceb09c739207839d81cc738
 	}
 
 	runWithScene(scene) {
@@ -72,7 +79,11 @@ class Game {
 				g.images[name] = img
 				//所有图片载入，调用run
 				loads.push(1)
+<<<<<<< HEAD
 				log('全部图片：',names.length,'已加载:',loads.length,img)
+=======
+				log('全部图片：',names.length,'已加载:',loads.length)
+>>>>>>> 3c256b3ac6354e682ceb09c739207839d81cc738
 
 				if (loads.length === names.length) {
 					g._start()

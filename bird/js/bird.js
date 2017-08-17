@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 
 class Bird extends GameImage {
 	constructor(game) {
@@ -28,6 +29,24 @@ class Bird extends GameImage {
 		log(this)
 
 
+=======
+var Bird = function (game) {
+	var o = game.textureByName(`bird${countList}`)
+
+	o.x = w/2 - 25,
+	o.y = 200,
+	o.w = 50,
+	o.h = 40,
+	o.jumph = 45,
+	o.jumped = false,
+	o.g = 0.5,
+	o.isdie = false,
+
+	o.jump = function () {
+		o.jumped = true
+		o.y -= o.jumph
+		o.g = 0
+>>>>>>> 3c256b3ac6354e682ceb09c739207839d81cc738
 	}
 
 	frameAni() {
