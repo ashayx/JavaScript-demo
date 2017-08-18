@@ -47,7 +47,7 @@ class Scene extends GameScene {
 	   		g.move()
 	   	}
     	//如果start，管子开始移动，小鸟落下
-		if (start ) {
+		if (window.start ) {
 	   		this.bird.fallDown()
 			//管子移动,碰撞检测，小鸟x > 管子 x，y 小于偶数管子 y,  y 大于奇数管子y
 			for (var i = 0; i < this.tubeColumns * 2; i++) {
@@ -124,19 +124,19 @@ class Scene extends GameScene {
 //不太好的事件绑定
 function birdJump(event){
      if (window.interface == 1) {
-
      	start = true
      	window.interface = 2
      }else if (window.interface == 2) {
+     	audJump.currentTime = 0 //连续点击播放音效
      	this.bird.jump()
-     	audJump.play()
      }else if (window.interface == 3) {
      	var s = new Scene(this.game)
 		this.game.replaceScene(s)
      	this.bird.isalive = true
-     	window.interface = 1
-     	start = false
+     	window.start = false
      	window.score = 0
+     	window.interface = 1
+     	audSwooshing.play()
      }
 }
 

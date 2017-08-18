@@ -56,6 +56,7 @@ class Bird extends GameImage {
 		if (this.y <= 0) {
 			this.y = 0
 		}
+		audJump.play()
 	}
 	fallDown() {
 		this.y += this.g
