@@ -41,7 +41,9 @@ class Game {
 	textureByName(name) {
 		var	image = this.images[name]
 		return image 
-
+	}
+	randomBetwen(min,max){
+		return Math.floor(Math.random() * min + max - min)
 	}
 
 	runWithScene(scene) {

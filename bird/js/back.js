@@ -6,5 +6,4 @@ class Back extends GameImage {
 		this.w = w
 		this.h = h
 	}
-
 }

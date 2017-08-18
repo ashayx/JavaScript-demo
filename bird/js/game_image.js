@@ -9,7 +9,7 @@ class GameImage {
         // log('texture',name,this.texture)
     }
     draw() {
-
+        this.game.drawImage(this)
     }
     update(){
 

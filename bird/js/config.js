@@ -15,4 +15,4 @@ var log = console.log.bind(console)
 
 window.interface = 1  //1未开始，2开始，3结束
 window.start = false
-
+window.score = 0

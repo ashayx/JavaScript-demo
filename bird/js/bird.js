@@ -3,11 +3,11 @@ class Bird extends GameImage {
 		super(game,'bird')
 		this.game = game 
 
-		this.x = w/2.5
-		this.y = h/3
+		this.x = Math.floor(w/2.5)
+		this.y = Math.floor(h/3)
 		this.w = 54
 		this.h = 40
-
+		
 		this.g = .5 //加速度
 		this.isalive = true
 		
@@ -24,7 +24,7 @@ class Bird extends GameImage {
 		this.texture = this.frames[0]
 	}
 
-	frameAni() {
+	frameAnimation() {
 		this.framecount -- 
     	if (this.framecount == 0) {
     		this.framecount = 3
@@ -37,7 +37,7 @@ class Bird extends GameImage {
 		this.texture = this.frames[this.frameIndex]
 
 	}
-	rotateAni() {
+	draw() {
 		var ctx = this.game.ctx
 		var w2 = this.w / 2
 		var h2 = this.h / 2
@@ -48,7 +48,6 @@ class Bird extends GameImage {
 		ctx.translate(-w2 , -h2)//画布原点
 		ctx.drawImage(this.texture, 0, 0, this.w, this.h)
 		ctx.restore()
-		
 	}
 	jump() {
 		this.y -= 50

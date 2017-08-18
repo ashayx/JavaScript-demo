@@ -11,15 +11,20 @@ class GameScene {
     	for (var i = 0; i < this.elements.length; i++) {
     		var e = this.elements[i]
     		this.game.drawImage(e)
+
     	}
     	if (!this.bird.isalive) {
     		// log('die')
 	    	this.game.ctx.fillStyle = '#fff'
 			this.game.ctx.font = '40px  Fantasy '
-            this.game.ctx.fillText('0', w/2.1, h/3)
+            this.game.ctx.fillText(window.score, w/2.1, h/3)
 			this.game.ctx.fillText('GAME OVER ', w/4, h/2)
-    	}
-        this.bird.rotateAni()
+    	}else {
+            this.game.ctx.fillStyle = '#fff'
+            this.game.ctx.font = '50px  Fantasy '
+            this.game.ctx.fillText(window.score, w/2.1, h/3)
+        }
+        // log(window.score)
     }
     update() {
 
