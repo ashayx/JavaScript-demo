@@ -43,7 +43,7 @@ class Game {
 		return image 
 	}
 	randomBetwen(min,max){
-		return Math.floor(Math.random() * min + max - min)
+		return Math.floor(Math.random() * (max -min) +  min)
 	}
 
 	runWithScene(scene) {

@@ -3,11 +3,11 @@ class Bird extends GameImage {
 		super(game,'bird')
 		this.game = game 
 
-		this.x = Math.floor(w/2.5)
+		this.x = Math.floor(w/2) - 26
 		this.y = Math.floor(h/3)
 		this.w = 54
 		this.h = 40
-		
+		this.jumpHeight = 60
 		this.g = .5 //加速度
 		this.isalive = true
 		
@@ -50,7 +50,7 @@ class Bird extends GameImage {
 		ctx.restore()
 	}
 	jump() {
-		this.y -= 50
+		this.y -= this.jumpHeight
 		this.g = 0
 		this.rotation = -60
 		if (this.y <= 0) {

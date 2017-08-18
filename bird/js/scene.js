@@ -81,6 +81,9 @@ class Scene extends GameScene {
 				this.scoreCount = Math.floor((w-30)/5)  //管子间距 除以 管子速度
 				window.score ++
 			}
+			if (window.score >= window.maxScore) {
+				window.maxScore = window.score
+			}
 			
 	   		if (this.bird.rotation < 90) {
 	   			this.bird.rotation += 5
@@ -117,6 +120,7 @@ class Scene extends GameScene {
 //不太好的事件绑定
 function birdJump(event){
      if (window.interface == 1) {
+
      	start = true
      	window.interface = 2
      }else if (window.interface == 2) {
@@ -127,6 +131,7 @@ function birdJump(event){
      	this.bird.isalive = true
      	window.interface = 1
      	start = false
+     	window.score = 0
      }
 }
 

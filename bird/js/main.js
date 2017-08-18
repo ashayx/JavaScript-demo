@@ -10,7 +10,7 @@ var _main = function () {
 		tube : 'resource/tube.png',
 	}
 
-	var game = new Game(30,images,function (g) {
+	var game = new Game(40,images,function (g) {
 		var s =  new Scene(g)
 		// var s = new SceneStart(g)
 		g.runWithScene(s)	
