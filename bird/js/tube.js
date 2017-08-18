@@ -2,8 +2,8 @@ class Tube extends GameImage {
 	constructor(game) {
 		super(game,'tube')
 		this.x = w/1.5
-		this.y = - this.game.randomBetwen(400,670)
-		this.w = 104
+		this.y = - this.game.randomBetwen(400,650)
+		this.w = Math.floor(w / 3.6)
 		this.h = 680
 		this.tubeSpace = h / 3  //管口间距
 		this.distance = w-30  //管子间距

@@ -1,6 +1,10 @@
 window.w = screen.availWidth < 520 ? screen.availWidth :520
 window.h = document.documentElement.clientHeight
 var myCanvas = document.getElementById('myCanvas')
+var audJump = document.getElementById('aud-jump')
+var audDie = document.getElementById('aud-die')
+var audPoint = document.getElementById('aud-point')
+var audHit = document.getElementById('aud-hit')
 
 myCanvas.setAttribute("width", w);
 myCanvas.setAttribute("height", h);

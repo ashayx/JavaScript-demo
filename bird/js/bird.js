@@ -62,6 +62,7 @@ class Bird extends GameImage {
 		this.g += .5
 		if (this.y >= h - 75 - this.h) {
 			this.y = h -75 - this.h
+			audDie.play()
 			this.die()
 		}
 	}

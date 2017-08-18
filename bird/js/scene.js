@@ -63,6 +63,7 @@ class Scene extends GameScene {
 						//下管子
 						if ( bx + bw > t.x && by + bh > t.y) {
 							this.bird.die()
+							audHit.play()
 							// log('下',i,bx + bw , t.x , by +bh , t.y )
 
 						}
@@ -70,6 +71,7 @@ class Scene extends GameScene {
 						//上管子
 						if ( bx + bw > t.x && by < t.y + t.h) {
 							this.bird.die()
+							audHit.play()
 							// log(i,bx + bw , t.x , by , t.y + t.h)
 						}
 					}
@@ -79,7 +81,9 @@ class Scene extends GameScene {
 			this.scoreCount --
 			if (this.scoreCount == 0) {
 				this.scoreCount = Math.floor((w-30)/5)  //管子间距 除以 管子速度
+				audPoint.play()
 				window.score ++
+
 			}
 			if (window.score >= window.maxScore) {
 				window.maxScore = window.score
@@ -125,6 +129,7 @@ function birdJump(event){
      	window.interface = 2
      }else if (window.interface == 2) {
      	this.bird.jump()
+     	audJump.play()
      }else if (window.interface == 3) {
      	var s = new Scene(this.game)
 		this.game.replaceScene(s)

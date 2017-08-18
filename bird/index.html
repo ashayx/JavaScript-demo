@@ -4,6 +4,8 @@
 	<meta charset="UTF-8">
 	<title>flappy bird</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1,user-scalable=no">
+	<meta name="apple-mobile-web-app-capable" content="yes" />
+	<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 	<style>
 		*{margin:0;padding: 0;}
 		#myCanvas{
@@ -13,6 +15,15 @@
 	</style>
 </head>
 <body>
+	//兼容性
+	<audio id="aud-jump">
+	    <source src="resource/sfx_wing.mp3" type="audio/mp3" />
+	    <source ssrc="resource/sfx_wing.ogg" type="audio/ogg" />
+	</audio>
+	<audio id="aud-jump" src="resource/sfx_wing.mp3" ></audio>
+	<audio id="aud-die" src="resource/sfx_die.mp3" ></audio>
+	<audio id="aud-point" src="resource/sfx_point.mp3" ></audio>
+	<audio id="aud-hit" src="resource/sfx_hit.mp3" ></audio>
 
 	<canvas id="myCanvas" ></canvas>
 
