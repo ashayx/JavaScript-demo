@@ -1,5 +1,5 @@
-window.w = screen.availWidth < 640 ? screen.availWidth :640
-window.h = screen.availHeight
+window.w = screen.availWidth < 520 ? screen.availWidth :520
+window.h = document.documentElement.clientHeight
 var myCanvas = document.getElementById('myCanvas')
 
 myCanvas.setAttribute("width", w);
@@ -7,8 +7,8 @@ myCanvas.setAttribute("height", h);
 
 window.addEventListener('resize', resizeCanvas,false)
 function resizeCanvas() {
-	w = screen.availWidth
-	h = screen.availHeight
+	window.w = screen.availWidth
+	window.h = document.documentElement.clientHeight
 }
 
 var log = console.log.bind(console)

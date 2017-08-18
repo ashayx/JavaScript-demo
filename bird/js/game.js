@@ -71,10 +71,7 @@ class Game {
 				g.images[name] = img
 				//所有图片载入，调用run
 				loads.push(1)
-
 				log('全部图片：',names.length,'已加载:',loads.length)
-
-
 				if (loads.length === names.length) {
 					g._start()
 				}

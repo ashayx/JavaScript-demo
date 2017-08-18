@@ -53,7 +53,7 @@ class Bird extends GameImage {
 	jump() {
 		this.y -= 50
 		this.g = 0
-		this.rotation = -45
+		this.rotation = -60
 		if (this.y <= 0) {
 			this.y = 0
 		}

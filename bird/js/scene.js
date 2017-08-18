@@ -10,8 +10,6 @@ class Scene extends GameScene {
 		this.setInput()
 
 		
-		console.log('back',this.back ,'ground',this.ground);
-		
 	}
 	setup() {
 		this.addElement(this.back)
@@ -25,8 +23,6 @@ class Scene extends GameScene {
 			this.addElement(g)
 			this.grounds.push(g)
 		}
-		log('grounds',this.grounds)
-		
 	}
 
     update(){

@@ -5,7 +5,6 @@ class GameScene {
     }
     addElement(img) {
     	this.elements.push(img)
-    	log(img)
     }
     draw() {
 
