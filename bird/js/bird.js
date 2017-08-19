@@ -56,6 +56,7 @@ class Bird extends GameImage {
 		if (this.y <= 0) {
 			this.y = 0
 		}
+		audJump.currentTime = 0 //连续点击播放音效
 		audJump.play()
 	}
 	fallDown() {

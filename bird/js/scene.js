@@ -9,6 +9,8 @@ class Scene extends GameScene {
 		//初始背景，鸟
 		this.back   = new Back(this.game)
 		this.bird   = new Bird(this.game)
+
+		this.addElement(this.back)//添加
 		//初始管子
 		this.tubes = []
 		this.tubeColumns = 5
@@ -62,16 +64,16 @@ class Scene extends GameScene {
 					if (i % 2) {
 						//下管子
 						if ( bx + bw > t.x && by + bh > t.y) {
-							this.bird.die()
 							audHit.play()
+							this.bird.die()
 							// log('下',i,bx + bw , t.x , by +bh , t.y )
 
 						}
 					}else {
 						//上管子
 						if ( bx + bw > t.x && by < t.y + t.h) {
-							this.bird.die()
 							audHit.play()
+							this.bird.die()
 							// log(i,bx + bw , t.x , by , t.y + t.h)
 						}
 					}
@@ -97,7 +99,7 @@ class Scene extends GameScene {
 	}
 	draw() {
 		//画背景
-		this.back.draw()
+		// this.back.draw()
 
 		//画管子
 		//画地面
@@ -110,33 +112,38 @@ class Scene extends GameScene {
 
 	setInput() {
       	log('是否支持touch:',"ontouchstart" in document)
-      	
+    	var bird = this.bird
+    	var game = this.game 
+
+    	var birdJump = function () {
+		    if (window.interface == 1) {
+		    	window.start = true
+		     	window.interface = 2
+		    }else if (window.interface == 2) {
+		    	bird.jump()
+		    }else if (window.interface == 3) {
+		    	var s = new Scene(game)
+				game.replaceScene(s)
+		     	bird.isalive = true
+		     	window.start = false
+		     	window.score = 0
+		     	window.interface = 1
+		     	audSwooshing.play()
+		    }
+    	}
+
       	if ("ontouchstart" in document) {
-      		document.addEventListener( 'touchstart', birdJump.bind(this), false )
+      		window.addEventListener( 'touchstart', birdJump, false )
+
       	}else {
-      		document.addEventListener( 'click', birdJump.bind(this), false )
+      		window.addEventListener( 'click', birdJump, false )
+
       	}
+      	// window.addEventListener( 'click', birdJump, false )
 	}
 }
 
 
 
-//不太好的事件绑定
-function birdJump(event){
-     if (window.interface == 1) {
-     	start = true
-     	window.interface = 2
-     }else if (window.interface == 2) {
-     	audJump.currentTime = 0 //连续点击播放音效
-     	this.bird.jump()
-     }else if (window.interface == 3) {
-     	var s = new Scene(this.game)
-		this.game.replaceScene(s)
-     	this.bird.isalive = true
-     	window.start = false
-     	window.score = 0
-     	window.interface = 1
-     	audSwooshing.play()
-     }
-}
+
 

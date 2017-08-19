@@ -1,5 +1,6 @@
 window.w = screen.availWidth < 520 ? screen.availWidth :520
 window.h = document.documentElement.clientHeight
+
 var myCanvas = document.getElementById('myCanvas')
 var audSwooshing = document.getElementById('aud-swooshing')
 var audJump = document.getElementById('aud-jump')
