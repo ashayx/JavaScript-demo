@@ -18,8 +18,6 @@ var _main = function () {
 		console.log('游戏开始');
 		
 	})
-
-
 	
 }
 _main()
