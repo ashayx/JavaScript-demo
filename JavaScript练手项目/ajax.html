@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html >
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+	<form>
+		<input type="text" name="username" id='username'value="">
+		<input type="password" name="userpass" id='userpwd' value="">
+		<button type="button" id="button">提交</button>
+	</form>
+<body>
+	<script>
+	function showJson(){  
+	var test;  
+	if(window.XMLHttpRequest){  
+		test = new XMLHttpRequest();  
+	}else if(window.ActiveXObject){  
+		test = new window.ActiveXObject();  
+	}else{  
+		alert("请升级至最新版本的浏览器");  
+	}  
+	if(test !=null){  
+
+		test.open("GET","test.json",true);  
+		test.send(null);  
+		test.onreadystatechange=function(){  
+			if(test.readyState==4&&test.status==200){  
+				console.log(test.readyState);
+				console.log(test.responseText);
+				
+				var obj = JSON.parse(test.responseText);  
+
+				for (var name in obj){  
+					console.log(obj[name][0].firstName);
+					console.log(obj[name].firstName);  
+				}  
+			}  
+		};  
+	  
+	}  
+	}  
+	window.onload=function(){  
+	  showJson(); 
+	  var btn = document.querySelector('#button') 
+	  var name = document.querySelector('#username') 
+	  var pwd = document.querySelector('#userpwd') 
+	  btn.onclick = function () {
+	  	console.log(name.value,pwd.value);
+	  }
+	}
+	</script>
+</body>
+</html>
