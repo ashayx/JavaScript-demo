@@ -125,18 +125,18 @@ $(function () {
         console.log('加载完成,播放音乐') 
     });
 
-   $.ajax({  
-          //请求方式为get  
-          type:"GET",  
-          //json文件位置  
-          url:"data.json",  
-          //返回数据格式为json  
-          dataType: "json",  
-          //请求成功完成后要执行的方法  
-          success: function(data){  
-             console.log(data.people)
-          }  
-      })  
+   // $.ajax({  
+   //        //请求方式为get  
+   //        type:"GET",  
+   //        //json文件位置  
+   //        url:"data.json",  
+   //        //返回数据格式为json  
+   //        dataType: "json",  
+   //        //请求成功完成后要执行的方法  
+   //        success: function(data){  
+   //           console.log(data.people)
+   //        }  
+   //    })  
     
        
     
