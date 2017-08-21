@@ -15,8 +15,6 @@ var _main = function () {
 		// var s = new SceneStart(g)
 		g.runWithScene(s)	
 	})
-
-
 	
 }
 _main()
