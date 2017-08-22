@@ -3,6 +3,7 @@ $(function () {
     var swiper = new Swiper('.S1', {
         grabCursor : true,
         slidesPerView: 1,
+        spaceBetween : -1,
         freeMode: true,
         freeModeMomentum : false,//缓冲关闭
         // freeModeSticky : true,
