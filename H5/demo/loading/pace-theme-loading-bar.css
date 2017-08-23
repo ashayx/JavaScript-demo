@@ -29,7 +29,7 @@
   bottom: 0;
   width: 200px;
   height: 25px;
-  border: 2px solid #29d;
+  border: 2px solid #71C9F8;
   background-color: #fff;
 }
 
@@ -66,8 +66,8 @@
   top: 3px;
   height: 15px;
   font-size: 12px;
-  background: #29d;
-  color: #29d;
+  background: #71C9F8;
+  color: #71C9F8;
   line-height: 60px;
   font-weight: bold;
   font-family:  Helvetica, Arial, "Lucida Grande", sans-serif;

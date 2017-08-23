@@ -1,6 +1,6 @@
 $(function () {
 	var IMAGE_NUMBER = 2
-	
+
 	var swiper = new Swiper('.S1', {
 		slidesPerView: 1,
 		spaceBetween : -1,
@@ -49,6 +49,11 @@ $(function () {
 			  $('.left-door').css({'animation':'null'})
 			  $('.right-door').css({'animation':'null '})
 			  $('.page1').css({'transition':'all 0s','transform':'scale(1)','z-index':'0'})
+			  //欢迎
+			  $('.swiper-slide-active .welcome').css({
+				  'animation': 'welcome 1s linear',
+				  'animation-delay': '0.3s',
+				  'animation-fill-mode': 'forwards'})
 
 	   },2000 )
 
@@ -56,11 +61,8 @@ $(function () {
 	   setTimeout(function () {
 			  $('.show').css({ display: 'none',})
 
-			  $('.swiper-slide-active .welcome').css({
-				  'animation': 'welcome 1s linear',
-				  'animation-delay': '0s',
-				  'animation-fill-mode': 'forwards'})
-	   },12000 )
+			  
+	   },0 )
 	})
 
 	var music = $("#music")
