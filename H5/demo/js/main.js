@@ -7,7 +7,7 @@ $(function () {
 		slidesPerView: 1,
 		spaceBetween : -1,
 		freeMode: true,
-		// freeModeMomentum : false,//缓冲关闭
+		freeModeMomentum : false,//缓冲关闭
 		// freeModeSticky : true,
 		resistanceRatio : 0,//阻力回系数
 		onTouchStart:function (swiper,event) {
