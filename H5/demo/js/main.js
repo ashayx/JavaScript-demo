@@ -1,11 +1,13 @@
 $(function () {
-	var IMAGE_NUMBER = 2
+
+	var IMAGE_NUMBER = 23
+	var time = 2000
 
 	var swiper = new Swiper('.S1', {
 		slidesPerView: 1,
 		spaceBetween : -1,
 		freeMode: true,
-		freeModeMomentum : false,//缓冲关闭
+		// freeModeMomentum : false,//缓冲关闭
 		// freeModeSticky : true,
 		resistanceRatio : 0,//阻力回系数
 		onTouchStart:function (swiper,event) {
@@ -39,7 +41,6 @@ $(function () {
 
 	   setTimeout(function () {
 			  swiper.slideTo(0, 0,false)
-			  console.log( swiper)
 
 			  $('.show').css({
 				  display: 'block',
@@ -55,7 +56,7 @@ $(function () {
 				  'animation-delay': '0.3s',
 				  'animation-fill-mode': 'forwards'})
 
-	   },2000 )
+	   },time )
 
 	   //展示动画之后
 	   setTimeout(function () {
@@ -99,7 +100,6 @@ $(function () {
 		let layer = $(l)
 		let close = $('.close')
 
-		console.log(l)
 		item.on('click tap', function() {
 			layer.css('display', 'block')
 		})
