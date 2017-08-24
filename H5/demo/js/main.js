@@ -7,12 +7,12 @@ $(function () {
 		slidesPerView: 1,
 		spaceBetween : -1,
 		freeMode: true,
-		// freeModeMomentumRatio : .05,//缓冲系数
-		freeModeMomentum : false,//缓冲关闭
+		freeModeMomentumRatio : .05,//缓冲系数
+		// freeModeMomentum : false,//缓冲关闭
 		// freeModeSticky : true,
 		resistanceRatio : 0,//阻力回系数
 		onTouchStart:function (swiper,event) {
-			console.log(swiper.activeIndex)
+			// console.log(swiper.activeIndex)
 			//点击取消展示动画
 			$('.show').css({'display': 'none',});
 
@@ -31,7 +31,7 @@ $(function () {
 		var xx = event.pageX;  
 		var yy = event.pageY;   
 		  
-		console.log(xx/320,yy/520,'x',xx,'y',yy)
+		// console.log(xx/320,yy/520,'x',xx,'y',yy)
 	});  
 
 	$('.door').on('click tap',function () {
@@ -71,12 +71,12 @@ $(function () {
 	music.on('click tap',function () {
 		if(aud.paused){
 			aud.play()
-			this.style.background =  "url('images/音乐.png')"
+			this.style.background =  "url('images/音乐开.png')"
 			this.style.backgroundSize =  "100% 100%"
 			this.style.animation = "rotateArrow 5s infinite linear" 
 		}else{
 			aud.pause()
-			this.style.background =  "url('images/音乐关闭.png')"
+			this.style.background =  "url('images/音乐关.png')"
 			this.style.backgroundSize =  "100% 100%"
 			this.style.animation= "null"
 		}
@@ -86,7 +86,6 @@ $(function () {
 		document.addEventListener("WeixinJSBridgeReady", function () {
 		 	aud.play();
 		}, false);
-		console.log('播放')
 	}
 	audioAutoPlay()
 
@@ -122,24 +121,22 @@ $(function () {
    
    $('.main').css('display', 'none')
     Pace.on('done', function(){
+    	Pace.stop()
         $('.main').css({display: 'block'})
         audioAutoPlay()
     })
 
-   // $.ajax({  
-   //        //请求方式为get  
-   //        type:"GET",  
-   //        //json文件位置  
-   //        url:"data.json",  
-   //        //返回数据格式为json  
-   //        dataType: "json",  
-   //        //请求成功完成后要执行的方法  
-   //        success: function(data){  
-   //           console.log(data.people)
-   //        }  
-   //    })  
-	
-	   
+   $('.share').on('touchstart ', function() {
+   		$('.share img').attr({'src': 'images/share2.png'})
+   })
+   $('.share').on('touchend ', function() {
+   		$('.share img').attr({'src': 'images/share.png'})
+   		$('.layer-share').css({'display':'block','backgroundColor': 'rgba(0, 0, 0, 0.8)'})
+   })
+
+   $('.layer-share').on('touchstart', function() {
+   		$('.layer-share').css({'display':'none','backgroundColor':'rgba(0, 0, 0, 0.8)'})
+   })
 	
 })
 

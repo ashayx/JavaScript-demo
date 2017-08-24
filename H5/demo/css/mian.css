@@ -1,10 +1,14 @@
 html,
 body {
+    font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+
+    overflow: hidden;
+    overflow-y: auto;
+
     width: 100%;
     max-width: 640px;
     height: 100%;
     margin: auto;
-    font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
 }
 
 .main {
@@ -73,21 +77,19 @@ body {
     height: 100%;
 }
 
-
-
 .p1musle {
     position: absolute;
     z-index: 35;
     top: 5px;
-    right: 5px;
+    left: 5px;
 
-    width: 40px;
-    height: 40px;
+    width: 1.5rem;
+    height: 1.5rem;
     margin: 0;
 
     animation: rotateArrow 5s infinite linear ;
 
-    background-image: url('../images/音乐.png');
+    background-image: url('../images/音乐开.png');
     background-size: 100% 100%;
 }
 @keyframes rotateArrow {
@@ -99,15 +101,17 @@ body {
     }
 }
 
-.swiper-slide,.page1 {
+.swiper-slide,
+.page1 {
     display: -webkit-box;
     display: -ms-flexbox;
     display: -webkit-flex;
     display:         flex;
+
     -webkit-justify-content: center;
-    justify-content: center;
+            justify-content: center;
     -webkit-align-items: center;
-    align-items: center;
+            align-items: center;
 }
 .page1 {
     position: relative;
@@ -164,9 +168,11 @@ body {
     position: absolute;
     top: 35%;
     left: 64%;
+
     width: 10%;
     height: 15%;
-    animation: clickAnimate 0.7s infinite ease-in-out;
+
+    animation: clickAnimate .7s infinite ease-in-out;
 }
 @keyframes clickAnimate {
     0% {
@@ -205,158 +211,184 @@ body {
     /* background-color: rgba(0, 0, 0, 0.1) */
 }
 .item-1-left {
-    left: 55%;
     top: 20%;
+    left: 55%;
+
     width: 45%;
     height: 11rem;
 }
 .item-1-right {
-    left: 0;
     top: 20%;
+    left: 0;
+
     width: 34%;
     height: 11rem;
 }
 .item-2 {
-    left: 25%;
     top: 13%;
+    left: 25%;
+
     width: 60%;
     height: 7.25rem;
 }
 .item-3 {
-    left: 25%;
     top: 52.5%;
+    left: 25%;
+
     width: 60%;
     height: 6.25rem;
 }
 .item-4 {
-    left: 2%;
     top: 24%;
+    left: 2%;
+
     width: 40%;
     height: 4.5rem;
 }
 .item-5 {
-    left: 2%;
     top: 52%;
+    left: 2%;
+
     width: 40%;
     height: 4.5rem;
 }
 .item-6 {
-    left: 47%;
     top: 26%;
+    left: 47%;
+
     width: 45%;
     height: 10.5rem;
 }
 .item-7 {
-    left: 46%;
     top: 16%;
+    left: 46%;
+
     width: 40%;
     height: 6.5rem;
 }
 .item-8 {
-    left: 46%;
     top: 51%;
+    left: 46%;
+
     width: 40%;
     height: 6.5rem;
 }
 .item-9 {
-    left: 15%;
     top: 15%;
+    left: 15%;
+
     width: 40%;
     height: 8rem;
 }
 .item-10 {
-    left: 60%;
     top: 15%;
+    left: 60%;
+
     width: 38%;
     height: 8rem;
 }
 .item-11 {
-    left: 37%;
     top: 58%;
+    left: 37%;
+
     width: 40%;
     height: 8rem;
 }
 .item-12-left {
-    left: 37%;
     top: 34%;
+    left: 37%;
+
     width: 63%;
-    height: 6.5rem;  
+    height: 6.5rem;
 }
 .item-12-right {
-    left: 0%;
     top: 34%;
+    left: 0;
+
     width: 10%;
-    height: 6.5rem;  
+    height: 6.5rem;
 }
 .item-13 {
-    left: 0;
     top: 17%;
+    left: 0;
+
     width: 45%;
     height: 7rem;
 }
 .item-14 {
-    left: 0;
     top: 52%;
+    left: 0;
+
     width: 45%;
     height: 7rem;
 }
 .item-15 {
-    left: 0;
     top: 17%;
+    left: 0;
+
     width: 70%;
     height: 6.5rem;
 }
 .item-16 {
-    left: 0;
     top: 53%;
+    left: 0;
+
     width: 70%;
     height: 7rem;
 }
 .item-17 {
-    left: 0;
     top: 20%;
+    left: 0;
+
     width: 40%;
     height: 9.5rem;
 }
 .item-18 {
-    left: 51%;
     top: 42%;
+    left: 51%;
+
     width: 43%;
     height: 9rem;
 }
 .item-19 {
-    left: 51%;
     top: 18%;
+    left: 51%;
+
     width: 45%;
     height: 6rem;
 }
 .item-20 {
-    left: 51%;
     top: 45%;
+    left: 51%;
+
     width: 45%;
     height: 6rem;
 }
 .item-21 {
-    left: 23%;
     top: 19%;
+    left: 23%;
+
     width: 40%;
     height: 8.5rem;
 }
 .item-22-left {
-    left: 70%;
     top: 30%;
+    left: 70%;
+
     width: 30%;
     height: 8.5rem;
 }
 .item-22-right {
-    left: 0;
     top: 30%;
+    left: 0;
+
     width: 12%;
     height: 8.5rem;
 }
 .item-23 {
-    left: 22%;
     top: 17%;
+    left: 22%;
+
     width: 40%;
     height: 8.5rem;
 }
@@ -374,13 +406,15 @@ body {
     background-color: rgba(0, 0, 0, .9);
 }
 .words {
-    color: #fff;
     font-size: .7rem;
+
+    display: inline-block;
+
     margin: 0rem 2rem;
     padding: .5rem .5rem;
-    display: inline-block;
-    border: 2px solid #ccc;
 
+    color: #fff;
+    border: 2px solid #ccc;
 }
 .close {
     position: absolute;
@@ -402,41 +436,50 @@ body {
     height: auto;
 }
 .welcome {
+    font-size: 1.5rem;
+
     position: absolute;
     bottom: 20%;
-    color: #fff;
-    font-size: 1.5rem;
+
     opacity: 0;
+    color: #fff;
 }
 
 
 @keyframes welcome {
-  from, 60%, 75%, 90%, to {
-    animation-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
-  }
+    from,
+    60%,
+    75%,
+    90%,
+    to {
+        animation-timing-function: cubic-bezier(.215, .610, .355, 1.000);
+    }
 
-  0% {
-    opacity: 0;
-    transform: translate3d(0, -3000px, 0);
-  }
+    0% {
+        transform: translate3d(0, -3000px, 0);
 
-  60% {
-    opacity: 1;
-    transform: translate3d(0, 25px, 0);
-  }
+        opacity: 0;
+    }
 
-  75% {
-    transform: translate3d(0, -10px, 0);
-  }
+    60% {
+        transform: translate3d(0, 25px, 0);
 
-  90% {
-    transform: translate3d(0, 5px, 0);
-  }
+        opacity: 1;
+    }
 
-  to {
-    transform: none;
-    opacity: 1;
-  }
+    75% {
+        transform: translate3d(0, -10px, 0);
+    }
+
+    90% {
+        transform: translate3d(0, 5px, 0);
+    }
+
+    to {
+        transform: none;
+
+        opacity: 1;
+    }
 }
 
 .start-ani {
@@ -449,27 +492,55 @@ body {
     height: auto;
 
     animation: start 3s  linear;
+
     animation-fill-mode: forwards;
 }
 
 
 @keyframes start {
-  0% {
-    transform: translate3d(-50%, 0, 0);
-    visibility: visible;
-  }
-  25%{
-    transform: translate3d(-25%, 0, 0);
-  }   
-  50% {
-    transform: translate3d(0, 0, 0);
-  }
-  75%{
-    transform: translate3d(-50%, 0, 0);
-  }
-  100%{
-     transform: translate3d(-25%, 0, 0);
-     visibility: hidden;
-  }
+    0% {
+        visibility: visible;
+
+        transform: translate3d(-50%, 0, 0);
+    }
+    25% {
+        transform: translate3d(-25%, 0, 0);
+    }
+    50% {
+        transform: translate3d(0, 0, 0);
+    }
+    75% {
+        transform: translate3d(-50%, 0, 0);
+    }
+    100% {
+        visibility: hidden;
+
+        transform: translate3d(-25%, 0, 0);
+    }
 }
 
+.share {
+    position: absolute;
+    bottom: 4%;
+
+    width: 35%;
+    height: auto;
+}
+.layer-share img {
+    position: absolute;
+    top: 0;
+    right: 0;
+
+    display: block;
+
+    width: 70%;
+    height: auto;
+}
+.link {
+    position: absolute;
+    top: 65%;
+    left: 25%;
+
+    width: 50%;
+    height: 1rem;
+}
