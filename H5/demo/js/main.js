@@ -28,7 +28,7 @@ $(function () {
 		var xx = event.pageX;  
 		var yy = event.pageY;   
 		  
-		console.log(xx/320,yy/520,'x',xx,'y',yy)
+		// console.log(xx/320,yy/520,'x',xx,'y',yy)
 	});  
 
 	$('.door').on('click tap',function () {
@@ -68,12 +68,12 @@ $(function () {
 	music.on('click tap',function () {
 		if(aud.paused){
 			aud.play()
-			this.style.background =  "url('images/音乐开.png')"
+			this.style.background =  "url('images/musicon.png')"
 			this.style.backgroundSize =  "100% 100%"
 			this.style.animation = "rotateArrow 5s infinite linear" 
 		}else{
 			aud.pause()
-			this.style.background =  "url('images/音乐关.png')"
+			this.style.background =  "url('images/musicoff.png')"
 			this.style.backgroundSize =  "100% 100%"
 			this.style.animation= "null"
 		}

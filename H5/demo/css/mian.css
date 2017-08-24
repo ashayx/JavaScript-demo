@@ -89,7 +89,7 @@ body {
 
     animation: rotateArrow 5s infinite linear ;
 
-    background-image: url('../images/音乐开.png');
+    background-image: url('../images/musicon.png');
     background-size: 100% 100%;
 }
 @keyframes rotateArrow {
