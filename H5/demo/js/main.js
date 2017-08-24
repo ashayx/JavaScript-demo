@@ -7,7 +7,8 @@ $(function () {
 		slidesPerView: 1,
 		spaceBetween : -1,
 		freeMode: true,
-		freeModeMomentum : false,//缓冲关闭
+		freeModeMomentumRatio : .5,//缓冲系数
+		// freeModeMomentum : false,//缓冲关闭
 		// freeModeSticky : true,
 		resistanceRatio : 0,//阻力回系数
 		onTouchStart:function (swiper,event) {
@@ -61,8 +62,6 @@ $(function () {
 	   //展示动画之后
 	   setTimeout(function () {
 			  $('.show').css({ display: 'none',})
-
-			  
 	   },0 )
 	})
 
@@ -82,6 +81,7 @@ $(function () {
 			this.style.animation= "null"
 		}
 	})
+
 
 
    // $('.show-item-1 ').click(function() {
@@ -125,11 +125,11 @@ $(function () {
     Pace.on('done', function(){
         $('.main').css({display: 'block'})
             aud.play()
-            document.addEventListener("WeixinJSBridgeReady", function () {
+            window.addEventListener("WeixinJSBridgeReady", function () {
                aud.play()
             }, false)
         console.log('加载完成,播放音乐') 
-    });
+    })
 
    // $.ajax({  
    //        //请求方式为get  

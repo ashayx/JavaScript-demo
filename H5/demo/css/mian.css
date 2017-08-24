@@ -361,6 +361,9 @@ body {
     color: #fff;
     font-size: .7rem;
     margin: 1rem 2rem;
+    display: inline-block;
+    border: 2px solid #ccc;
+
 }
 .close {
     position: absolute;
