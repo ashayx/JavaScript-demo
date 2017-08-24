@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+	<title>vue</title>
+	<script src="https://unpkg.com/vue@2.4.2"></script>
+	<script src="https://unpkg.com/vue-router@2.7.0/dist/vue-router.js"></script>
+</head>
+<body>
+    <div id="app">
+        <p>
+            <router-link to="/user/foo/">/user/foo</router-link>
+            <router-link to="/user/profile/profile">/user/profile/profile</router-link>
+            <router-link to="/user/posts/posts">/user/posts/posts</router-link>
+        </p>
+        <router-view></router-view>
+    </div>
+
+	<script>
+		//组件
+        const User = {
+            template: `
+                <div class="user">
+                <h2>User {{ $route.params.id }}</h2>
+                <router-view></router-view>
+                </div>
+            `
+            }
+		
+        const UserHome = { template: '<div>Home</div>' }
+        const UserProfile = { template: '<div>Profile</div>' }
+        const UserPosts = { template: '<div>Posts</div>' }
+
+		//定义路由
+		const routes = [
+            { 
+                path: '/user/:id', component: User,
+                children: [
+                    { path: '', component: UserHome },
+                    { path: 'profile', component: UserProfile },
+                    { path: 'posts', component: UserPosts }			
+                ]
+            
+            }
+		]
+		//创建router实例
+		const router = new VueRouter({
+			routes
+		})
+		//创建和挂载实例
+		const app = new Vue({
+			router
+		}).$mount('#app')
+
+	</script>
+    
+</body>
+</html>
