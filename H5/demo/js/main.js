@@ -7,8 +7,8 @@ $(function () {
 		slidesPerView: 1,
 		spaceBetween : -1,
 		freeMode: true,
-		freeModeMomentumRatio : .1,//缓冲系数
-		// freeModeMomentum : false,//缓冲关闭
+		// freeModeMomentumRatio : .05,//缓冲系数
+		freeModeMomentum : false,//缓冲关闭
 		// freeModeSticky : true,
 		resistanceRatio : 0,//阻力回系数
 		onTouchStart:function (swiper,event) {
@@ -81,18 +81,15 @@ $(function () {
 			this.style.animation= "null"
 		}
 	})
-	window.addEventListener("WeixinJSBridgeReady", function () {
-	   aud.play()
-	}, false)
+	function audioAutoPlay() {
+		aud.play();
+		document.addEventListener("WeixinJSBridgeReady", function () {
+		 	aud.play();
+		}, false);
+		console.log('播放')
+	}
+	audioAutoPlay()
 
-
-   // $('.show-item-1 ').click(function() {
-	  //  $('.show-item-layer-1').css('display', 'block')
-   // });
-   $('.close').click(function() {
-	   $('.show-item-layer-1').css('display', 'none')
-	   console.log('关闭')
-   });
 
 	for (let i = 1; i < IMAGE_NUMBER + 1; i++) {
 		let s = `.item-${i}`
@@ -126,9 +123,7 @@ $(function () {
    $('.main').css('display', 'none')
     Pace.on('done', function(){
         $('.main').css({display: 'block'})
-            aud.play()
-            
-        console.log('加载完成,播放音乐') 
+        audioAutoPlay()
     })
 
    // $.ajax({  
