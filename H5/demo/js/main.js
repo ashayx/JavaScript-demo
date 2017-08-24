@@ -65,7 +65,7 @@ $(function () {
 	var music = $("#music")
 	var aud = $("#aud")[0]
 	
-	music.on('click tap',function () {
+	music.on('touchstart',function () {
 		if(aud.paused){
 			aud.play()
 			this.style.background =  "url('images/musicon.png')"
@@ -95,10 +95,10 @@ $(function () {
 		let layer = $(l)
 		let close = $('.close')
 
-		item.on('click tap', function() {
+		item.on('click', function() {
 			layer.css('display', 'block')
 		})
-		close.on('click tap', function() {
+		close.on('click', function() {
 			layer.css('display', 'none')
 		})
 		//初始化多个swiper
@@ -139,7 +139,7 @@ $(function () {
    /*微信白条*/
    $('body').on('touchmove', function (event) {
        event.preventDefault();
-   });
+   })
  
 })
 
