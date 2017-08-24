@@ -7,7 +7,7 @@ $(function () {
 		slidesPerView: 1,
 		spaceBetween : -1,
 		freeMode: true,
-		freeModeMomentumRatio : .5,//缓冲系数
+		freeModeMomentumRatio : .1,//缓冲系数
 		// freeModeMomentum : false,//缓冲关闭
 		// freeModeSticky : true,
 		resistanceRatio : 0,//阻力回系数
@@ -81,7 +81,9 @@ $(function () {
 			this.style.animation= "null"
 		}
 	})
-
+	window.addEventListener("WeixinJSBridgeReady", function () {
+	   aud.play()
+	}, false)
 
 
    // $('.show-item-1 ').click(function() {
@@ -125,9 +127,7 @@ $(function () {
     Pace.on('done', function(){
         $('.main').css({display: 'block'})
             aud.play()
-            window.addEventListener("WeixinJSBridgeReady", function () {
-               aud.play()
-            }, false)
+            
         console.log('加载完成,播放音乐') 
     })
 
