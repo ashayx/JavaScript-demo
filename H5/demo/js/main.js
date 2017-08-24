@@ -1,14 +1,14 @@
 $(function () {
 
-	var IMAGE_NUMBER = 23
+	var IMAGE_NUMBER = 24
 	var time = 2000
 
 	var swiper = new Swiper('.S1', {
 		slidesPerView: 1,
-		spaceBetween : -1,
+		spaceBetween : 0,
 		freeMode: true,
-		freeModeMomentumRatio : .05,//缓冲系数
-		// freeModeMomentum : false,//缓冲关闭
+		// freeModeMomentumRatio : 0.12,//缓冲系数
+		freeModeMomentum : false,//缓冲关闭
 		// freeModeSticky : true,
 		resistanceRatio : 0,//阻力回系数
 		onTouchStart:function (swiper,event) {
@@ -23,15 +23,12 @@ $(function () {
 		},
 
 	})
-
-
-
 	$(".main").click(function(event) {  
 
 		var xx = event.pageX;  
 		var yy = event.pageY;   
 		  
-		// console.log(xx/320,yy/520,'x',xx,'y',yy)
+		console.log(xx/320,yy/520,'x',xx,'y',yy)
 	});  
 
 	$('.door').on('click tap',function () {
@@ -90,7 +87,7 @@ $(function () {
 	audioAutoPlay()
 
 
-	for (let i = 1; i < IMAGE_NUMBER + 1; i++) {
+	for (let i = 0; i < IMAGE_NUMBER ; i++) {
 		let s = `.item-${i}`
 		let l = `.layer-${i}`
 
@@ -138,5 +135,11 @@ $(function () {
    		$('.layer-share').css({'display':'none','backgroundColor':'rgba(0, 0, 0, 0.8)'})
    })
 	
+
+   /*微信白条*/
+   $('body').on('touchmove', function (event) {
+       event.preventDefault();
+   });
+ 
 })
 
