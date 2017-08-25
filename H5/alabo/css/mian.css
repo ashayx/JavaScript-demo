@@ -570,9 +570,9 @@ body {
     left: 35%;
     width: 30%;
     height: auto;
-    animation: logo 1s  linear infinite;
+    animation: logoAnimate 1s  linear infinite;
 }
-@keyframes logo {
+@keyframes logoAnimate {
     0% {
         opacity: 1;
     }
