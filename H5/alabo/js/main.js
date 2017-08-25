@@ -5,22 +5,14 @@ $(function () {
 
 	var swiper = new Swiper('.S1', {
 		slidesPerView: 1,
-		spaceBetween : 0,
+		spaceBetween : -1,
 		freeMode: true,
 		freeModeMomentumRatio : 0.12,//缓冲系数
 		// freeModeMomentum : false,//缓冲关闭
 		// freeModeSticky : true,
 		resistanceRatio : 0,//阻力回系数
-		onTouchStart:function (swiper,event) {
-			// console.log(swiper.activeIndex)
-			//点击取消展示动画
-			$('.show').css({'display': 'none',});
-
-			$('.swiper-slide-active .welcome').css({
-				'animation': 'welcome 1s ',
-				'animation-delay': '0s',
-				'animation-fill-mode': 'forwards'})
-		},
+		// onTouchStart:function (swiper,event) {
+		// },
 
 	})
 	// $(".main").click(function(event) {  
@@ -28,22 +20,15 @@ $(function () {
 	// 	var xx = event.pageX;  
 	// 	var yy = event.pageY;   
 		  
-	// 	// console.log(xx/320,yy/520,'x',xx,'y',yy)
+	// 	console.log(xx/320,yy/520,'x',xx,'y',yy)
 	// });  
 
 	$('.door').on('touchstart',function () {
-		console.log('test')
 	   $('.left-door').css({'animation':'moveLeft 2s '})
 	   $('.right-door').css({'animation':'moveRight 2s '})
 	   $('.page1').css({'transition':'all 2s','transform':'scale(1.8)'})
 
 	   setTimeout(function () {
-			  
-
-			  // $('.show').css({
-				 //  display: 'block',
-				 //  animation: 'show 10s infinite linear',//添加css动画
-			  // })
 			  //复原门大小，位置
 			  $('.left-door').css({'animation':'null'})
 			  $('.right-door').css({'animation':'null '})
@@ -55,11 +40,6 @@ $(function () {
 				  'animation-fill-mode': 'forwards'})
 
 	   },time )
-
-	   //展示动画之后
-	   setTimeout(function () {
-			  $('.show').css({ display: 'none',})
-	   },0 )
 	})
 
 	var music = $("#music")
@@ -87,7 +67,7 @@ $(function () {
 	audioAutoPlay()
 
 
-	for (let i = 1; i < IMAGE_NUMBER ; i++) {
+	for (let i = 0; i < IMAGE_NUMBER ; i++) {
 		let s = `.item-${i}`
 		let l = `.layer-${i}`
 

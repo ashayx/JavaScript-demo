@@ -14,10 +14,10 @@
 .pace .pace-progress {
   position: fixed;
   z-index: 2000;
-  top: 80%;
-  right: 10%;
-  height: 5rem;
-  width: 5rem;
+  top: 50%;
+  right: 44%;
+  height: auto;
+  width: 10%;
 }
 
 .pace .pace-progress:after {
