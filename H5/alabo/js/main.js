@@ -31,7 +31,7 @@ $(function () {
 	// 	// console.log(xx/320,yy/520,'x',xx,'y',yy)
 	// });  
 
-	$('.door').on('click tap',function () {
+	$('.door').on('touchstart',function () {
 		console.log('test')
 	   $('.left-door').css({'animation':'moveLeft 2s '})
 	   $('.right-door').css({'animation':'moveRight 2s '})
@@ -65,7 +65,7 @@ $(function () {
 	var music = $("#music")
 	var aud = $("#aud")[0]
 	
-	music.on('click tap',function () {
+	music.on('touchstart',function () {
 		if(aud.paused){
 			aud.play()
 			this.style.background =  "url('images/musicon.png')"
@@ -95,10 +95,10 @@ $(function () {
 		let layer = $(l)
 		let close = $('.close')
 
-		item.on('click tap', function() {
+		item.on(' click', function() {
 			layer.css('display', 'block')
 		})
-		close.on('click tap', function() {
+		close.on(' click', function() {
 			layer.css('display', 'none')
 		})
 		//初始化多个swiper
@@ -141,12 +141,6 @@ $(function () {
    $('body').on('touchmove', function (event) {
        event.preventDefault();
    })
-   // $('body').on('touchstart', function (event) {
-   //     event.preventDefault();
-   // })
-   // $('body').on('touchend', function (event) {
-   //     event.preventDefault();
-   // })
- 
+
 })
 
