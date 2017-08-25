@@ -120,6 +120,7 @@ $(function () {
     Pace.on('done', function(){
     	Pace.stop()
         $('.main').css({display: 'block'})
+        $('.logo').css('display', 'none')
         audioAutoPlay()
     })
 
