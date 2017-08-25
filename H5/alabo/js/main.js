@@ -23,13 +23,13 @@ $(function () {
 		},
 
 	})
-	$(".main").click(function(event) {  
+	// $(".main").click(function(event) {  
 
-		var xx = event.pageX;  
-		var yy = event.pageY;   
+	// 	var xx = event.pageX;  
+	// 	var yy = event.pageY;   
 		  
-		// console.log(xx/320,yy/520,'x',xx,'y',yy)
-	});  
+	// 	// console.log(xx/320,yy/520,'x',xx,'y',yy)
+	// });  
 
 	$('.door').on('click tap',function () {
 		console.log('test')
@@ -87,7 +87,7 @@ $(function () {
 	audioAutoPlay()
 
 
-	for (let i = 0; i < IMAGE_NUMBER ; i++) {
+	for (let i = 1; i < IMAGE_NUMBER ; i++) {
 		let s = `.item-${i}`
 		let l = `.layer-${i}`
 
@@ -129,18 +129,24 @@ $(function () {
    })
    $('.share').on('touchend ', function() {
    		$('.share img').attr({'src': 'images/share.png'})
-   		$('.layer-share').css({'display':'block','backgroundColor': 'rgba(0, 0, 0, 0.8)'})
+   		$('.layer-share').css({'display':'block'})
    })
 
    $('.layer-share').on('touchstart', function() {
-   		$('.layer-share').css({'display':'none','backgroundColor':'rgba(0, 0, 0, 0.8)'})
+   		$('.layer-share').css({'display':'none'})
    })
 	
 
    /*微信白条*/
    $('body').on('touchmove', function (event) {
        event.preventDefault();
-   });
+   })
+   // $('body').on('touchstart', function (event) {
+   //     event.preventDefault();
+   // })
+   // $('body').on('touchend', function (event) {
+   //     event.preventDefault();
+   // })
  
 })
 

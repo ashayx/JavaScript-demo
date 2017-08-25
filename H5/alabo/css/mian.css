@@ -193,8 +193,8 @@ body {
 }
 .click-item {
     position: absolute;
-    top: 80%;
-    left: 80%;
+    top: 45%;
+    left: 96%;
     width: 1rem;
     height: auto;
 
@@ -202,13 +202,13 @@ body {
 }
 @keyframes clickAnimate {
     0% {
-        transform: scale(1.5);
+        left: 96%;
     }
     50% {
-        transform: scale(1);
+        left: 101%;
     }
     100% {
-        transform: scale(1.5);
+        left: 96%;
     }
 }
 
@@ -442,7 +442,7 @@ body {
     width: 100%;
     height: 100%;
 
-    background-color: rgba(0, 0, 0, .8);
+    background-color: rgba(0, 0, 0, .85);
 }
 .words {
     font-size: .7rem;
@@ -578,10 +578,11 @@ body {
     height: auto;
 }
 .link {
+    display: block;
     position: absolute;
-    top: 59%;
+    top: 57%;
     left: 25%;
 
     width: 50%;
-    height: 1rem;
+    height: 2rem;
 }
