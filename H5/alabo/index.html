@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="css/swiper.min.css">
     <link rel="stylesheet" href="loading/pace-theme-center-atom.css">
     <link rel="stylesheet" href="css/mian.css">
+<<<<<<< HEAD:H5/demo/index.html
     <!-- <script src="http://www.bjweifeng.cn/zimuWx/js/zepto.min.js"></script> -->
     <!-- <script src="http://res.wx.qq.com/open/js/jweixin-1.2.0.js"></script> -->
     <!-- <script type="text/javascript" src="http://www.bjweifeng.cn/zimuWx/js/yundaoWxV2.0.js"></script> -->
@@ -18,8 +19,20 @@
              yundaoWx.share_imgUrl= "images/min.png";
              yundaoWx.share();
     </script> -->
+=======
+>>>>>>> 适配:H5/alabo/index.html
     <script src="js/jquery.min.js"></script>
     <script src="js/swiper.min.js"></script>
+    <!-- <script src="http://www.bjweifeng.cn/zimuWx/js/zepto.min.js"></script> -->
+    <script src="http://res.wx.qq.com/open/js/jweixin-1.2.0.js"></script>
+    <script type="text/javascript" src="http://www.bjweifeng.cn/zimuWx/js/yundaoWxV2.0.js"></script>
+    <script>  
+             yundaoWx.share_title="2017中阿博览会抢先看";
+             yundaoWx.share_desc="2017中国—阿拉伯国家博览会开幕大会,阿博览会抢先看,时间:2017年9月6日";
+             yundaoWx.share_link= "";
+             yundaoWx.share_imgUrl= "http://www.bjweifeng.cn/alabo/images/min.png";
+             yundaoWx.share();
+    </script>
     <script src="js/config.js"></script>
     <script src="js/pace.min.js"></script>
     <!-- 百度统计 -->
@@ -37,7 +50,7 @@
         </div>
         <!-- 开门 -->
         <div class="swiper-slide page1">
-            <div>
+            <div style="position: absolute;top: 0;left: 0;">
                 <img src="images/bg-01.png" >
 
                 <div class="door">
@@ -53,7 +66,7 @@
             </div>
         </div>
         <!-- 大厅 -->
-        <div class="swiper-container S1" style="position: absolute;top: 0;" >
+        <div class="swiper-container S1" style="position: absolute;top: 0;left: 0;" >
             <div class="swiper-wrapper " >
                 
                 <!-- <div class="swiper-slide " >
@@ -202,12 +215,12 @@
                 <span class="close"> <img src="images/close.png" ></span>  
                 
                 <div class="swiper-container container1">
+                    <div class="gesture" style="animation: gestrueAnimate 1.5s infinite ease-in-out;bottom: 15%;">
+                        <img src="images/gesture1.png" />
+                    </div>
                     <div class="swiper-wrapper">
                         <div class="swiper-slide">
                             <div class="words">
-                                <div class="gesture" style="animation: gestrueAnimate 1.5s ease-in-out;">
-                                    <img src="images/gesture1.png" />
-                                </div>
                                 <p>2017中国—阿拉伯国家工商峰会</p>
                                 <p>时间： 2017年9月6日</p>
                                 <p>地点：银川悦海宾馆会议中心</p>

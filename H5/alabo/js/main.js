@@ -32,22 +32,22 @@ $(function () {
 	});  
 
 	$('.door').on('click tap',function () {
-		
+		console.log('test')
 	   $('.left-door').css({'animation':'moveLeft 2s '})
 	   $('.right-door').css({'animation':'moveRight 2s '})
 	   $('.page1').css({'transition':'all 2s','transform':'scale(1.8)'})
 
 	   setTimeout(function () {
-			  swiper.slideTo(0, 0,false)
+			  
 
-			  $('.show').css({
-				  display: 'block',
-				  animation: 'show 10s infinite linear',//添加css动画
-			  })
+			  // $('.show').css({
+				 //  display: 'block',
+				 //  animation: 'show 10s infinite linear',//添加css动画
+			  // })
 			  //复原门大小，位置
 			  $('.left-door').css({'animation':'null'})
 			  $('.right-door').css({'animation':'null '})
-			  $('.page1').css({'transition':'all 0s','transform':'scale(1)','z-index':'0'})
+			  $('.page1').css({'transition':'all 0s','transform':'scale(1)','z-index':'0','display':'none'})
 			  //欢迎
 			  $('.swiper-slide-active .welcome').css({
 				  'animation': 'welcome 1s linear',

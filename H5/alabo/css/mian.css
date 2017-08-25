@@ -12,8 +12,9 @@ body {
 }
 
 .main {
-    position: absolute;
-    top: 0;
+    position: relative;
+    width: 100%;
+    height: 100%;
 }
 
 .swiper-container {
@@ -27,6 +28,11 @@ body {
     width: 100%;
     max-width: 100%;
     height: auto;
+}
+.S1 .swiper-slide img {
+    position: absolute;
+    top: 0;
+    left: 0;
 }
 
 .door {
@@ -147,7 +153,7 @@ body {
 
 .gesture {
     position: absolute;
-    bottom: 10%;
+    bottom: 30%;
     left: 40%;
 
     display: block;
@@ -398,6 +404,10 @@ body {
     width: 40%;
     height: 8.5rem;
 }
+#layer {
+    width: 100%;
+    height: 100%;
+}
 .show-layer {
     position: absolute;
     z-index: 15;
@@ -491,6 +501,7 @@ body {
 .start-ani {
     position: absolute;
     z-index: 100;
+
     top: 0;
     left: 0;
 
@@ -506,7 +517,7 @@ body {
 @keyframes start {
     0% {
         visibility: visible;
-
+        display: block;
         transform: translate3d(-50%, 0, 0);
     }
     25% {
@@ -520,7 +531,7 @@ body {
     }
     100% {
         visibility: hidden;
-
+        display: none;
         transform: translate3d(-25%, 0, 0);
     }
 }
@@ -528,7 +539,7 @@ body {
 .share {
     position: absolute;
     left: 32%; 
-    bottom: 4%;
+    bottom: 21%;
 
     width: 36%;
     height: auto;
