@@ -578,9 +578,10 @@ body {
     height: auto;
 }
 .link {
-    display: block;
+    display: inline-block;
+
     position: absolute;
-    top: 57%;
+    top: 16rem;
     left: 25%;
 
     width: 50%;
