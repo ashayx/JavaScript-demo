@@ -5,49 +5,34 @@ $(function () {
 
 	var swiper = new Swiper('.S1', {
 		slidesPerView: 1,
-		spaceBetween : 0,
+		spaceBetween : -1,
 		freeMode: true,
-		// freeModeMomentumRatio : 0.12,//缓冲系数
-		freeModeMomentum : false,//缓冲关闭
+		freeModeMomentumRatio : 0.12,//缓冲系数
+		// freeModeMomentum : false,//缓冲关闭
 		// freeModeSticky : true,
 		resistanceRatio : 0,//阻力回系数
-		onTouchStart:function (swiper,event) {
-			// console.log(swiper.activeIndex)
-			//点击取消展示动画
-			$('.show').css({'display': 'none',});
-
-			$('.swiper-slide-active .welcome').css({
-				'animation': 'welcome 1s ',
-				'animation-delay': '0s',
-				'animation-fill-mode': 'forwards'})
-		},
+		// onTouchStart:function (swiper,event) {
+		// },
 
 	})
-	$(".main").click(function(event) {  
+	// $(".main").click(function(event) {  
 
-		var xx = event.pageX;  
-		var yy = event.pageY;   
+	// 	var xx = event.pageX;  
+	// 	var yy = event.pageY;   
 		  
-		// console.log(xx/320,yy/520,'x',xx,'y',yy)
-	});  
+	// 	console.log(xx/320,yy/520,'x',xx,'y',yy)
+	// });  
 
-	$('.door').on('click tap',function () {
-		
+	$('.door').on('touchstart',function () {
 	   $('.left-door').css({'animation':'moveLeft 2s '})
 	   $('.right-door').css({'animation':'moveRight 2s '})
 	   $('.page1').css({'transition':'all 2s','transform':'scale(1.8)'})
 
 	   setTimeout(function () {
-			  swiper.slideTo(0, 0,false)
-
-			  $('.show').css({
-				  display: 'block',
-				  animation: 'show 10s infinite linear',//添加css动画
-			  })
 			  //复原门大小，位置
 			  $('.left-door').css({'animation':'null'})
 			  $('.right-door').css({'animation':'null '})
-			  $('.page1').css({'transition':'all 0s','transform':'scale(1)','z-index':'0'})
+			  $('.page1').css({'transition':'all 0s','transform':'scale(1)','z-index':'0','display':'none'})
 			  //欢迎
 			  $('.swiper-slide-active .welcome').css({
 				  'animation': 'welcome 1s linear',
@@ -55,11 +40,6 @@ $(function () {
 				  'animation-fill-mode': 'forwards'})
 
 	   },time )
-
-	   //展示动画之后
-	   setTimeout(function () {
-			  $('.show').css({ display: 'none',})
-	   },0 )
 	})
 
 	var music = $("#music")
@@ -95,10 +75,10 @@ $(function () {
 		let layer = $(l)
 		let close = $('.close')
 
-		item.on('click', function() {
+		item.on(' click', function() {
 			layer.css('display', 'block')
 		})
-		close.on('click', function() {
+		close.on(' click', function() {
 			layer.css('display', 'none')
 		})
 		//初始化多个swiper
@@ -120,6 +100,7 @@ $(function () {
     Pace.on('done', function(){
     	Pace.stop()
         $('.main').css({display: 'block'})
+        $('.logo').css('display', 'none')
         audioAutoPlay()
     })
 
@@ -128,11 +109,11 @@ $(function () {
    })
    $('.share').on('touchend ', function() {
    		$('.share img').attr({'src': 'images/share.png'})
-   		$('.layer-share').css({'display':'block','backgroundColor': 'rgba(0, 0, 0, 0.8)'})
+   		$('.layer-share').css({'display':'block'})
    })
 
    $('.layer-share').on('touchstart', function() {
-   		$('.layer-share').css({'display':'none','backgroundColor':'rgba(0, 0, 0, 0.8)'})
+   		$('.layer-share').css({'display':'none'})
    })
 	
 
@@ -140,6 +121,6 @@ $(function () {
    $('body').on('touchmove', function (event) {
        event.preventDefault();
    })
- 
+
 })
 

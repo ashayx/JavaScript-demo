@@ -6,42 +6,45 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1,user-scalable=no">
 
     <link rel="stylesheet" href="css/swiper.min.css">
-    <link rel="stylesheet" href="loading/pace-theme-center-atom.css">
+    <!-- <link rel="stylesheet" href="loading/pace-theme-center-atom.css"> -->
+    <!-- <link rel="stylesheet" href="loading/pace-theme-flash.css"> -->
+    <link rel="stylesheet" href="loading/pace-theme-big-counter.css">
     <link rel="stylesheet" href="css/mian.css">
-    <!-- <script src="http://www.bjweifeng.cn/zimuWx/js/zepto.min.js"></script> -->
-    <!-- <script src="http://res.wx.qq.com/open/js/jweixin-1.2.0.js"></script> -->
-    <!-- <script type="text/javascript" src="http://www.bjweifeng.cn/zimuWx/js/yundaoWxV2.0.js"></script> -->
-    <!-- <script>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/swiper.min.js"></script>
+    <script src="http://res.wx.qq.com/open/js/jweixin-1.2.0.js"></script>
+    <script type="text/javascript" src="http://www.bjweifeng.cn/zimuWx/js/yundaoWxV2.0.js"></script>
+    <script>  
              yundaoWx.share_title="2017中阿博览会抢先看";
              yundaoWx.share_desc="2017中国—阿拉伯国家博览会开幕大会,阿博览会抢先看,时间:2017年9月6日";
              yundaoWx.share_link= "";
-             yundaoWx.share_imgUrl= "images/min.png";
+             yundaoWx.share_imgUrl= "http://www.bjweifeng.cn/alabo/images/min.png";
              yundaoWx.share();
-    </script> -->
-    <script src="js/jquery.min.js"></script>
-    <script src="js/swiper.min.js"></script>
+    </script>
     <script src="js/config.js"></script>
     <script src="js/pace.min.js"></script>
-    <!-- 百度统计 -->
 
 </head>
 <body >
+    <div class="logo">
+      <img src="images/logo.png" alt="">
+    </div>
     <div class="main">
         <!-- 音乐 -->
         <div id="music" class="p1musle">
             <audio id="aud" src="audio/bgmusic.mp3" autoplay="autoplay" loop="loop"></audio>
         </div>
         <!-- 开头动画 -->
-        <div class="start-ani " >
+        <!-- <div class="start-ani " >
             <img src="images/1-1.png" style="display: block;width: 150%;height: auto;">
-        </div>
+        </div> -->
         <!-- 开门 -->
-        <div class="swiper-slide page1">
-            <div>
+        <div class="swiper-slide page1" >
+            <div style="position: absolute;top: 0;left: 0;">
                 <img src="images/bg-01.png" >
 
                 <div class="door">
-                    <div style="position: relative;top: 0px;left: 0px;z-index: 5;"><img src="images/after-door.png"></div>
+                    <div style="position: relative;top: 0px;left: 0px;z-index: 5;width: 110%;height: 110%;"><img src="images/after-door.jpg" style="width: 100%;height: 100%;"></div>
                     <div class="left-door"><img src="images/leftdoor.png"   style="height: 100%;"></div>
                     <div class="right-door"><img src="images/rightdoor.png" style="height: 100%;"></div>
                 </div>
@@ -53,23 +56,13 @@
             </div>
         </div>
         <!-- 大厅 -->
-        <div class="swiper-container S1" style="position: absolute;top: 0;" >
+        <div class="swiper-container S1" style="position: absolute;top: 0;left: 0;" >
             <div class="swiper-wrapper " >
-                
-                <!-- <div class="swiper-slide " >
-                    <img src="images/girl.gif" >
-                    <span class="welcome"  >欢迎光临</span>
-                    <span class="welcome" style="bottom: 40%;">欢迎光临</span>
-                    <span class="welcome" style="bottom: 60%;">欢迎光临</span> 
-                </div> -->
-
                 <div class="swiper-slide" >
                 	<img src="images/images/bg_01.png" >
-                    <!-- <span class="welcome"  >欢迎</span> -->
                     <div class="gesture" >
                         <img src="images/gesture.png" />
                     </div>
-                    <div class="show-item item-0" "></div>
                 </div>
                 <div class="swiper-slide" >
                     <img src="images/images/bg_02.png" >
@@ -83,92 +76,189 @@
                 <div class="swiper-slide" >
                     <img src="images/images/bg_04.png" >
 
-                    <div class="show-item item-1 item-1-left" "></div>
-                    <div class="click-item">
-                        <img src="images/gesture2.png" alt="">
+                    <div class="show-item item-0 ">
+                    	<div class="click-item ">
+                            <img src="images/click.png" alt="">
+                        </div>
                     </div>
+                    
     
                 </div>
                 <div class="swiper-slide" >
                     <img src="images/images/bg_05.png" >
 
-                    <div class="show-item item-1 item-1-right"></div>
+                    <div class="show-item item-1">
+                    	<div class="click-item ">
+                    	    <img src="images/click.png" alt="">
+                    	</div>
+                    </div>
 
                 </div>
                 <div class="swiper-slide" >
                     <img src="images/images/bg_06.png" >
 
-                    <div class="show-item item-2 "></div>
-                    <div class="show-item item-3 "></div>
+                    <div class="show-item item-2 ">
+                    	<div class="click-item ">
+                    	    <img src="images/click.png" alt="">
+                    	</div>
+                    </div>
+                    <div class="show-item item-3 ">
+                    	<div class="click-item ">
+                    	    <img src="images/click.png" alt="">
+                    	</div>
+                    </div>
                     
                 </div>
                 <div class="swiper-slide" >
                     <img src="images/images/bg_07.png" >
-                    <div class="show-item item-4 "></div>
-                    <div class="show-item item-5 "></div>
-                    <div class="show-item item-6 "></div>
+                    <div class="show-item item-4 ">
+                    	<div class="click-item">
+                    		<img src="images/click.png" alt="">
+                    	</div>
+                    </div>
+                    <div class="show-item item-5 ">
+                    	<div class="click-item">
+                    		<img src="images/click.png" alt="">
+                    	</div>
+                    </div>
+                    <div class="show-item item-6 ">
+                    	<div class="click-item">
+                    		<img src="images/click.png" alt="">
+                    	</div>
+                    </div>
                     
                 </div>
                 <div class="swiper-slide" >
                     <img src="images/images/bg_08.png" >
-                    <div class="show-item item-7 "></div>
-                    <div class="show-item item-8 "></div>
+                    <div class="show-item item-7 ">
+                    	<div class="click-item">
+                    		<img src="images/click.png" alt="">
+                    	</div>
+                    </div>
+                    <div class="show-item item-8 ">
+                    	<div class="click-item">
+                    		<img src="images/click.png" alt="">
+                    	</div>
+                    </div>
                     
                 </div>
                 <div class="swiper-slide" >
                     <img src="images/images/bg_09.png" >
-                    <div class="show-item item-9 "></div>
-                    <div class="show-item item-10 "></div>
-                    <div class="show-item item-11 "></div>
+                    <div class="show-item item-9 ">
+                    	<div class="click-item">
+                    		<img src="images/click.png" alt="">
+                    	</div>
+                    </div>
+                    <div class="show-item item-10 ">
+                    	<div class="click-item">
+                    		<img src="images/click.png" alt="">
+                    	</div>
+                    </div>
+                    <div class="show-item item-11 ">
+                    	<div class="click-item">
+                    		<img src="images/click.png" alt="">
+                    	</div>
+                    </div>
                     
                 </div>
                 <div class="swiper-slide" >
                     <img src="images/images/bg_10.png" >
-                    <div class="show-item item-12 item-12-left"></div>
+                    <div class="show-item item-12 item-12-left">
+                    	
+                    </div>
                 </div>
                 <div class="swiper-slide" >
                     <img src="images/images/bg_11.png" >
-                    <div class="show-item item-12 item-12-right"></div>
+                    <div class="show-item item-12 item-12-right">
+                    	<div class="click-item">
+                    		<img src="images/click.png" alt="">
+                    	</div>
+                    </div>
                     
                 </div>
                 <div class="swiper-slide" >
                     <img src="images/images/bg_12.png" >
-                    <div class="show-item item-13 "></div>
-                    <div class="show-item item-14 "></div>
+                    <div class="show-item item-13 ">
+                    	<div class="click-item">
+                    		<img src="images/click.png" alt="">
+                    	</div>
+                    </div>
+                    <div class="show-item item-14 ">
+                    	<div class="click-item">
+                    		<img src="images/click.png" alt="">
+                    	</div>
+                    </div>
                     
                 </div>
                 <div class="swiper-slide" >
                     <img src="images/images/bg_13.png" >
-                    <div class="show-item item-15 "></div>
-                    <div class="show-item item-16 "></div>
+                    <div class="show-item item-15 ">
+                    	<div class="click-item">
+                    		<img src="images/click.png" alt="">
+                    	</div>
+                    </div>
+                    <div class="show-item item-16 ">
+                    	<div class="click-item">
+                    		<img src="images/click.png" alt="">
+                    	</div>
+                    </div>
                     
                 </div>
                 <div class="swiper-slide" >
                     <img src="images/images/bg_14.png" >
-                    <div class="show-item item-17 "></div>
-                    <div class="show-item item-18 "></div>
+                    <div class="show-item item-17 ">
+                    	<div class="click-item">
+                    		<img src="images/click.png" alt="">
+                    	</div>
+                    </div>
+                    <div class="show-item item-18 ">
+                    	<div class="click-item">
+                    		<img src="images/click.png" alt="">
+                    	</div>
+                    </div>
                 </div>
                 <div class="swiper-slide" >
                     <img src="images/images/bg_15.png" >
-                    <div class="show-item item-19 "></div>
-                    <div class="show-item item-20 "></div>
+                    <div class="show-item item-19 ">
+                    	<div class="click-item">
+                    		<img src="images/click.png" alt="">
+                    	</div>
+                    </div>
+                    <div class="show-item item-20 ">
+                    	<div class="click-item">
+                    		<img src="images/click.png" alt="">
+                    	</div>
+                    </div>
                 </div>
                 <div class="swiper-slide" >
                     <img src="images/images/bg_16.png" >
-                    <div class="show-item item-21 "></div>
-                    <div class="show-item item-22 item-22-left"></div>                   
+                    <div class="show-item item-21 ">
+                    	<div class="click-item">
+                    		<img src="images/click.png" alt="">
+                    	</div>
+                    </div>
+                    <div class="show-item item-22 item-22-left">
+                    </div>                   
                 </div>
                 <div class="swiper-slide" >
                     <img src="images/images/bg_17.png" >
-                    <div class="show-item item-22 item-22-right"></div> 
-                    <div class="show-item item-23 "></div> 
+                    <div class="show-item item-22 item-22-right">
+                    	<div class="click-item">
+                    		<img src="images/click.png" alt="">
+                    	</div>
+                    </div> 
+                    <div class="show-item item-23 ">
+                    	<div class="click-item">
+                    		<img src="images/click.png" alt="">
+                    	</div>
+                    </div> 
                 </div>
                 <div class="swiper-slide" >
                     <img src="images/images/bg_18.png" >
                     <div class="share">
                         <img src="images/share.png" alt="">
                     </div>
-                    <a href="http://www.casetf.org"><div class="link"></div></a>
+                    <a href="http://www.casetf.org" class="link"></a>
                 </div>
 
                 
@@ -180,7 +270,7 @@
         </div>
         <!-- 展示 -->
         <div id="layer">
-
+        
             <div class="show-layer layer-0" >
                 <span class="close"> <img src="images/close.png" ></span>  
                 
@@ -202,13 +292,12 @@
                 <span class="close"> <img src="images/close.png" ></span>  
                 
                 <div class="swiper-container container1">
+        
+        
                     <div class="swiper-wrapper">
                         <div class="swiper-slide">
                             <div class="words">
-                                <div class="gesture" style="animation: gestrueAnimate 1.5s ease-in-out;">
-                                    <img src="images/gesture1.png" />
-                                </div>
-                                <p>2017中国—阿拉伯国家工商峰会</p>
+                                <p>中阿合作论坛第七届企业家大会暨第五届投资研讨会、2017中国—阿拉伯国家工商峰会</p>
                                 <p>时间： 2017年9月6日</p>
                                 <p>地点：银川悦海宾馆会议中心</p>
                                 <p>主题：创新合作模式 促进联动发展</p>
@@ -216,6 +305,9 @@
                             </div>
                         </div>
                         <div class="swiper-slide">
+                            <div class="gesture" style="animation: gestrueAnimate 1.5s 2 ease-in-out;bottom: 25%;">
+                                <img src="images/gesture1.png" />
+                            </div>
                             <div class="words">
                                 <p>其他活动构成：</p>
                                 <p>2017中国—阿拉伯联合商会中方理事会会议</p>
@@ -247,7 +339,7 @@
                    </div>
                </div>
            </div>
-
+        
            <div class="show-layer layer-3" >
                <span class="close"> <img src="images/close.png" ></span>  
                
@@ -293,7 +385,8 @@
                                <p>2017中国－阿拉伯国家国际物流合作洽谈会</p>
                                <p>时间： 2017年9月6日-7日</p>
                                <p>地点：银川国贸中心假日酒店</p>
-                               <p>主题：构建陆空丝绸之路 深化国际物流合作</p>
+                               <p>主题：构建陆空丝绸之路 </p>
+                               <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;深化国际物流合作</p>
                                <p>活动构成：</p>
                                <p>“一带一路”国际物流合作论坛</p>
                                <p>航空物流座谈会</p>
@@ -312,7 +405,7 @@
                    <div class="swiper-wrapper">
                        <div class="swiper-slide">
                            <div class="words">
-                               <p>2017中国（宁夏）“一带一路”信用论坛</p>
+                               <p>2017中国－阿拉伯国家博览会信用论坛</p>
                                <p>时间： 2017年9月7日</p>
                                <p>地点：宁夏国际会堂主报告厅</p>
                                <p>主题：绿色信用体系的构建和创新—“互信、合作、共享”</p>
@@ -330,13 +423,14 @@
                    <div class="swiper-wrapper">
                        <div class="swiper-slide">
                            <div class="words">
-                               <!-- <p>中阿合作论坛第七届企业家大会暨第五届投资研讨会</p> -->
                                <p>2017中国－阿拉伯国家技术转移与创新合作大会</p>
                                <p>时间： 2017年9月6日-7日</p>
                                <p>地点：银川国际交流中心银川厅</p>
-                               <p>主题：落实“一带一路”倡议　推动中阿务实合作</p>
+                               <p>主题：落实“一带一路”倡议　</p>
+                               <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;推动中阿务实合作</p>
                                <p>活动构成：</p>
-                               <p>中国—阿拉伯国家技术转移暨创新合作大会高层论坛技术成果推介发布与对接会</p>
+                               <p>中国—阿拉伯国家技术转移暨创新合作大会高层论坛</p>
+                               <p>技术成果推介发布与对接会</p>
                            </div>
                        </div>
                    </div>
@@ -350,7 +444,7 @@
                        <div class="swiper-slide">
                            <div class="words">
                                <p>2017中国－阿拉伯国家高铁分会</p>
-                               <p>时间： 2017年9月6日14：00-18：00</p>
+                               <p>时间：2017年9月6日14:00-18:00</p>
                                <p>地点：银川国际交流中心黄河厅</p>
                                <p>主题：践行“一带一路”促进中阿高铁交通基础设施互联互通</p>
                            </div>
@@ -366,7 +460,7 @@
                    <div class="swiper-wrapper">
                        <div class="swiper-slide">
                            <div class="words">
-                               <!-- <p>中阿合作论坛第七届企业家大会暨第五届投资研讨会</p> -->
+                               <p>中阿合作论坛第七届企业家大会暨第五届投资研讨会</p>
                                <p>2017网上丝绸之路大会</p>
                                <p>时间： 2017年9月6日-7日</p>
                                <p>地点：银川市  中卫市</p>
@@ -416,7 +510,6 @@
                                 <p>旅游资源推介</p>
                                 <p>客源互送及投资项目洽谈</p>
                                 <p>项目签约</p>
-                                <p>P20大会签约仪式</p>
                                
                            </div>
                        </div>
@@ -431,7 +524,7 @@
                        <div class="swiper-slide">
                            <div class="words">
                                 <p>2017中国—阿拉伯国家博览会项目签约仪式</p>
-                                <p>时间： 2017年9月7日17：00—18：00</p>
+                                <p>时间：2017年9月7日17:00—18:00</p>
                                 <p>地点：悦海宾馆会议中心中心会场</p>
                                 <p>主题： 合作项目签约仪式</p>
                            </div>
@@ -468,7 +561,7 @@
                                <p>主宾国花博园埃及馆</p>
                                <p>时间： 2017年9月1日—10月7日</p>
                                <p>地点：银川花博园国际园展区</p>
-                               <p>内容：通过宣传片和图册以及艺术品等，展示埃及文化、旅游优势；展演小型文艺节目；举办开馆仪式</p>
+                               <p>内容：通过宣传片和图册以及艺术品等，展示埃及文化、旅游优势；展演小型文艺节目；举办开馆仪式。</p>
                                
                            </div>
                        </div>
@@ -515,7 +608,7 @@
                    <div class="swiper-wrapper">
                        <div class="swiper-slide">
                            <div class="words">
-                               <!-- <p>中阿合作论坛第七届企业家大会暨第五届投资研讨会</p> -->
+                               <p>中阿合作论坛第七届企业家大会暨第五届投资研讨会</p>
                                <p>中国高铁技术成就专题展</p>
                                <p>时间： 2017年9月6日—9日</p>
                                <p>地点：银川国际会展中心B馆部分</p>
@@ -613,9 +706,10 @@
                    <div class="swiper-wrapper">
                        <div class="swiper-slide">
                            <div class="words">
-                               <!-- <p>中阿合作论坛第七届企业家大会暨第五届投资研讨会</p> -->
+                               <p>中阿合作论坛第七届企业家大会暨第五届投资研讨会</p>
                                <p>2017中阿特色商品经贸活动展（“宁夏品牌日”活动）</p>
-                               <p>时间：2017年9月6日—9日（其中：2017年9月6-7日为专业观众日，2017年9月8日-9日为公众开放日）</p>
+                               <p>时间：2017年9月6日—9日</p>
+                               <p>（其中：2017年9月6-7日为专业观众日，2017年9月8日-9日为公众开放日）</p>
                                <p> 地点：银川国际会展中心室外北广场篷房F馆、H馆 </p>
                                <p>范围：宁夏品牌产品产业展示以及国内外其他省区的特色商品、优势产业、项目合作展示。</p>
                            </div>
@@ -623,13 +717,9 @@
                    </div>
                </div>
            </div>
-        </div>
-        <!-- 移动画廊 -->
-       <!--  <div  class="show">
-            <img src="images/bg2.jpg" style="display: block;width: 1000%;height: auto;">
-        </div> -->
-        <div class="show-layer layer-share" >
-            <img src="images/layer-share.png" alt="">
+            <div class="show-layer layer-share" >
+                <img src="images/layer-share.png" alt="">
+            </div>
         </div>
     </div> 
 </body>
