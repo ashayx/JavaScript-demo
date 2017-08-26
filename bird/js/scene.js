@@ -64,6 +64,7 @@ class Scene extends GameScene {
 					if (i % 2) {
 						//下管子
 						if ( bx + bw > t.x && by + bh > t.y) {
+							audHit.currentTime = 0
 							audHit.play()
 							this.bird.die()
 							// log('下',i,bx + bw , t.x , by +bh , t.y )
@@ -72,6 +73,7 @@ class Scene extends GameScene {
 					}else {
 						//上管子
 						if ( bx + bw > t.x && by < t.y + t.h) {
+							audHit.currentTime = 0
 							audHit.play()
 							this.bird.die()
 							// log(i,bx + bw , t.x , by , t.y + t.h)

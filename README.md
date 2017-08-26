@@ -25,8 +25,9 @@
 - [JS开门](https://ashayx.github.io/JavaScript-demo/JavaScript练手项目/JS开门动画.html)
 - [swiper](https://ashayx.github.io/JavaScript-demo/JavaScript练手项目/swiper.html)
 - [h5](http://peiyingqiang.win/JavaScript-demo/H5/swiper/index.html)
-- [demo](http://peiyingqiang.win/JavaScript-demo/H5/demo/index.html)
+- [demo](http://peiyingqiang.win/JavaScript-demo/H5/alabo/index.html)
 - [flappy bird](http://peiyingqiang.win/JavaScript-demo/bird/index.html)
+- [JS粒子背景](https://ashayx.github.io/JavaScript-demo/JavaScript练手项目/重力.html)
 
 ------------------------------
 # jQuery练习
