@@ -27,6 +27,7 @@
 - [h5](http://peiyingqiang.win/JavaScript-demo/H5/swiper/index.html)
 - [demo](http://peiyingqiang.win/JavaScript-demo/H5/alabo/index.html)
 - [flappy bird](http://peiyingqiang.win/JavaScript-demo/bird/index.html)
+- [JS粒子背景](https://ashayx.github.io/JavaScript-demo/JavaScript练手项目/重力.html)
 
 ------------------------------
 # jQuery练习
