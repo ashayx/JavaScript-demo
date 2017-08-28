@@ -1,7 +1,7 @@
 $(function () {
 
 	var IMAGE_NUMBER = 24
-	var time = 2000
+	var time = 2500
 
 	var swiper = new Swiper('.S1', {
 		slidesPerView: 1,
@@ -24,9 +24,9 @@ $(function () {
 	// });  
 
 	$('.door').on('touchstart',function () {
-	   $('.left-door').css({'animation':'moveLeft 2s '})
-	   $('.right-door').css({'animation':'moveRight 2s '})
-	   $('.page1').css({'transition':'all 2s','transform':'scale(1.8)'})
+	   $('.left-door').css({'animation':'moveLeft 2.5s '})
+	   $('.right-door').css({'animation':'moveRight 2.5s '})
+	   $('.page1').css({'transition':'all 2.5s','transform':'scale(1.8)'})
 
 	   setTimeout(function () {
 			  //复原门大小，位置
