@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+	<title>Document</title>
+	<style>
+		#content {
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+		}
+
+		#content p {
+			margin: auto;
+			margin-top: 20px;
+			text-align: center;
+		}
+
+		img {
+			width: 100px;
+		}
+	</style>
+</head>
+
+<body>
+	
+	<div id="content">
+		<p>谁说html5不能横屏的。。。</p>
+		<p>我就是要横屏。。。</p>
+		<p>要横屏。。。</p>
+		<p>横屏。。。</p>
+		<p>屏。。。</p>
+		<div class="title">pinch</div>
+		<div class="imgBox" style="width:200px;height:200px;">
+			<img id="pinchRotateImg" src="test.png" />
+		</div>
+	</div>
+
+
+	<script src="transform.js"></script>
+	<script src="alloy_finger.js"></script>
+	<script src="to.js"></script>
+	<script>
+		var pinchRotateImg = document.getElementById("pinchRotateImg");
+		Transform(pinchRotateImg);
+		new AlloyFinger(pinchRotateImg, {
+			rotate: function (evt) {
+				pinchRotateImg.rotateZ += evt.angle;
+			},
+			multipointStart: function () {
+				initScale = pinchRotateImg.scaleX;
+			},
+			pinch: function (evt) {
+				pinchRotateImg.scaleX = pinchRotateImg.scaleY = initScale * evt.zoom;
+			}
+		
+		});
+	</script>
+	<script>
+
+		const log = console.log.bind(console)
+		// let WIDTH = document.documentElement.clientWidth
+		// let HEIGHT = document.documentElement.clientHeight
+
+		// let layer = document.getElementById('layer')
+
+		// window.addEventListener('resize', resizeView, false)
+		// function resizeView() {
+		// 	WIDTH = document.documentElement.clientWidth
+		// 	HEIGHT = document.documentElement.clientHeight
+		// 	alert(WIDTH)
+		// 	if(WIDTH < HEIGHT) {
+		// 		layer.style.display = 'block'
+		// 	}else {
+		// 		layer.style.display = 'none'				
+		// 	}
+		// }
+		const WIDTH = document.documentElement.clientWidth
+		const HEIGHT = document.documentElement.clientHeight
+		const orientation = window.orientation
+		const MAX = WIDTH > HEIGHT ? WIDTH : HEIGHT 
+		const MIN = WIDTH < HEIGHT ? WIDTH : HEIGHT 
+		const contentDOM = document.getElementById('content')
+		log(MAX +''+ MIN)
+		//如果是竖屏
+		if (orientation == 0) {
+			contentDOM.style.width = MIN + 'px';
+			contentDOM.style.height = MAX + 'px';
+			contentDOM.style.top = (MAX - MIN) / 2 + 'px';
+			contentDOM.style.left = 0 - (MAX - MIN) / 2 + 'px';
+			contentDOM.style.transform = 'rotate(90deg)';
+		}
+
+		const evt = "onorientationchange" in window ? "orientationchange" : "resize";
+
+		window.addEventListener(evt, function () {
+			//微信的orientationchange有延迟
+			setTimeout(function() {
+				var width = document.documentElement.clientWidth;
+				var height = document.documentElement.clientHeight;
+				var contentDOM = document.getElementById('content');
+				var orientation = window.orientation;
+				alert('width: ' + width + ' height: ' + height + '角度' + orientation)
+				if (orientation != 0) { // 横屏
+					contentDOM.style.width = width + 'px';
+					contentDOM.style.height = height + 'px';
+					contentDOM.style.top = '0px';
+					contentDOM.style.left = '0px';
+					contentDOM.style.transform = 'rotate(0)';
+				}
+				else { 
+					alert('change to portrait')
+					contentDOM.style.width = height + 'px';
+					contentDOM.style.height = width + 'px';
+					contentDOM.style.top = (height - width) / 2 + 'px';
+					contentDOM.style.left = 0 - (height - width) / 2 + 'px';
+					contentDOM.style.transform = 'rotate(90deg)';
+				}
+			},50)
+
+
+
+		}, false);
+	</script>
+</body>
+
+</html>

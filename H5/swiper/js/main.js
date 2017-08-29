@@ -128,13 +128,13 @@ $(function () {
        console.log('关闭')
    });
    
-   $('.main').css('display', 'none')
-    Pace.on('done', function(){
-        $('.main').css({display: 'block'})
-        $('.page1 > div').addClass('amimated bounce')
-        aud.play()
-        console.log('加载完成,播放音乐') 
-    });
+   // $('.main').css('display', 'none')
+   //  Pace.on('done', function(){
+   //      $('.main').css({display: 'block'})
+   //      $('.page1 > div').addClass('amimated bounce')
+   //      aud.play()
+   //      console.log('加载完成,播放音乐') 
+   //  });
 
 })
 
