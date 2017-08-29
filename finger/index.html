@@ -63,61 +63,41 @@
 	<script>
 
 		const log = console.log.bind(console)
-		// let WIDTH = document.documentElement.clientWidth
-		// let HEIGHT = document.documentElement.clientHeight
 
-		// let layer = document.getElementById('layer')
-
-		// window.addEventListener('resize', resizeView, false)
-		// function resizeView() {
-		// 	WIDTH = document.documentElement.clientWidth
-		// 	HEIGHT = document.documentElement.clientHeight
-		// 	alert(WIDTH)
-		// 	if(WIDTH < HEIGHT) {
-		// 		layer.style.display = 'block'
-		// 	}else {
-		// 		layer.style.display = 'none'				
-		// 	}
-		// }
 		const WIDTH = document.documentElement.clientWidth
 		const HEIGHT = document.documentElement.clientHeight
-		const orientation = window.orientation
 		const MAX = WIDTH > HEIGHT ? WIDTH : HEIGHT 
 		const MIN = WIDTH < HEIGHT ? WIDTH : HEIGHT 
 		const contentDOM = document.getElementById('content')
-		log(MAX +''+ MIN)
+		const orientation = window.orientation
 		//如果是竖屏
-		if (orientation == 0) {
-			contentDOM.style.width = MIN + 'px';
-			contentDOM.style.height = MAX + 'px';
+		if (WIDTH < HEIGHT) {
+			contentDOM.style.width = MAX + 'px';
+			contentDOM.style.height = MIN + 'px';
 			contentDOM.style.top = (MAX - MIN) / 2 + 'px';
 			contentDOM.style.left = 0 - (MAX - MIN) / 2 + 'px';
 			contentDOM.style.transform = 'rotate(90deg)';
 		}
-
+		
 		const evt = "onorientationchange" in window ? "orientationchange" : "resize";
-
 		window.addEventListener(evt, function () {
+			const orientation = window.orientation
 			//微信的orientationchange有延迟
 			setTimeout(function() {
-				var width = document.documentElement.clientWidth;
-				var height = document.documentElement.clientHeight;
-				var contentDOM = document.getElementById('content');
-				var orientation = window.orientation;
-				alert('width: ' + width + ' height: ' + height + '角度' + orientation)
+				// alert(orientation)
 				if (orientation != 0) { // 横屏
-					contentDOM.style.width = width + 'px';
-					contentDOM.style.height = height + 'px';
+					contentDOM.style.width = MAX + 'px';
+					contentDOM.style.height = MIN + 'px';
 					contentDOM.style.top = '0px';
 					contentDOM.style.left = '0px';
 					contentDOM.style.transform = 'rotate(0)';
 				}
 				else { 
-					alert('change to portrait')
-					contentDOM.style.width = height + 'px';
-					contentDOM.style.height = width + 'px';
-					contentDOM.style.top = (height - width) / 2 + 'px';
-					contentDOM.style.left = 0 - (height - width) / 2 + 'px';
+					alert('竖屏')
+					contentDOM.style.width = MAX + 'px';
+					contentDOM.style.height = MIN + 'px';
+					contentDOM.style.top = (MAX - MIN) / 2 + 'px';
+					contentDOM.style.left = 0 - (MAX - MIN) / 2 + 'px';
 					contentDOM.style.transform = 'rotate(90deg)';
 				}
 			},50)
