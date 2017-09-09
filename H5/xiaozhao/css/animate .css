@@ -1367,7 +1367,7 @@
   animation-name: zoomInUp;
 }
 
-@keyframes zoomOut {
+/*@keyframes zoomOut {
   from {
     opacity: 1;
   }
@@ -1384,7 +1384,7 @@
 
 .zoomOut {
   animation-name: zoomOut;
-}
+}*/
 
 @keyframes zoomOutDown {
   40% {

@@ -2,28 +2,50 @@
 <html>
 <head>
 	<meta charset="UTF-8">
-	<title>Document</title>
+	<title>校招</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1,user-scalable=no">
 	<link rel="stylesheet" type="text/css" href="css/swiper.min.css">
 	<link rel="stylesheet" type="text/css" href="css/animate .css">
+	<link rel="stylesheet" href="loading/pace-theme-big-counter.css">
 
 	<script src="js/jquery.min.js"></script>
 	<script src="js/swiper.min.js"></script>
 	<script src="js/swiper.animate1.0.2.min.js"></script>
+	<script src="js/pace.min.js"></script>
 	<script src="js/config.js"></script>
+	<!-- 分享 -->
+	<script src="http://res.wx.qq.com/open/js/jweixin-1.2.0.js"></script>
+	<script type="text/javascript" src="http://www.bjweifeng.cn/zimuWx/js/yundaoWxV2.0.js"></script>
+	<script>  
+			 yundaoWx.share_title="登登登登越计划，马上登上你的梦想起飞之地！";
+			 yundaoWx.share_desc="越秀集团“登越计划”2018校园招聘全面启动！";
+			 yundaoWx.share_link= "";
+			 yundaoWx.share_imgUrl= "http://h5.sjzzimu.com/xiaozhao/images/min.png";
+			 yundaoWx.share();
+	</script>
+
+
 </head>
    <link rel="stylesheet" href="css/main.css">
 <body>
 
+		<div class="logo" style="position: absolute;top: 1rem;left: 1rem;z-index: 9999;width: 6rem">
+			<img src="images/logo.png" style="width: 100%;">
+		</div>
+	<div class="main" >
+		
+	
+		<div id="music" class="p1musle">
+			<audio id="aud" src="audio/music.mp3" autoplay="autoplay" loop="loop"></audio>
+		</div>
+		
 
-	<div id="music" class="p1musle">
-		<audio id="aud" src="audio/music.mp3" autoplay="autoplay" loop="loop"></audio>
-	</div>
+		 <div class="swiper-container">
+			<div class="swiper-wrapper">
 
-	 <div class="swiper-container">
-		<div class="swiper-wrapper">
-			<div class="swiper-slide page1"  >
-				
+
+				<div class="swiper-slide stop-swiper page1"  >
+					
 					<img src="images/page1_bg.png" alt="" class="page1_bg">
 					<div class="page1_smallmap"><img src="images/gd_map.png" alt=""></div>
 					<div class="page1_icon"><img src="images/gd.png" alt=""></div>
@@ -51,109 +73,184 @@
 							<img src="images/cloud07.png" alt="">
 						</div>
 					</div>
+				</div>
 
+
+				<div class="swiper-slide stop-swiper page2"  >
+					<img src="images/page2_bg.png" alt="" class="page2_bg">
+					<div class="floor">
+						<img src="images/page2_floor.png" alt="">
+					</div>
+					<div class="cloud_container">
+						<div class="cloud1 page2_cloud1 page2_move_left">
+							<img src="images/cloud01.png" alt="">
+						</div>
+						<div class="cloud2 page2_cloud2 page2_move_right">
+							<img src="images/cloud02.png" alt="">
+						</div>
+						<div class="cloud3 page2_cloud3 page2_move_left">
+							<img src="images/cloud03.png" alt="">
+						</div>
+						<div class="cloud4 page2_cloud4 page2_move_right">
+							<img src="images/cloud02.png" alt="">
+						</div>
+						<div class="cloud5 page2_cloud5 page2_move_right">
+							<img src="images/cloud05.png" alt="">
+						</div>
+						<div class="cloud6 page2_cloud6 page2_move_left">
+							<img src="images/cloud03.png" alt="">
+						</div>
+						<div class="cloud7 page2_cloud7 page2_move_right">
+							<img src="images/cloud05.png" alt="">
+						</div>
+					</div>
+				
+					<div class="page2-icon">
+						<img src="images/p2-icon.png">
+					</div>
+				</div>
+
+
+
+				<div class="swiper-slide stop-swiper page3" >
+					<img src="images/page3_bg.png" alt="" class="page3_bg">
+					<div class="page3_floor">
+						<img src="images/3_1.png" alt="">
+					</div>
+					<div class="page3_person">
+						<div class="page3-word">
+							<img src="images/3_duihuakang.png">
+						</div>
+					</div>
+
+					<div class="cloud_container page3_container">
+						<div class="page3_cloud1" >
+							<img src="images/3_2.png" alt="">
+						</div>
+						<div class="page3_cloud2">
+							<img src="images/3_3.png" alt="">
+						</div>
+						<div class="page3_cloud3">
+							<img src="images/3_2.png" alt="">
+						</div>
+						<div class="page3_cloud4">
+							<img src="images/3_5.png" alt="">
+						</div>
+						<div class="page3_cloud5">
+							<img src="images/3_6.png" alt="">
+						</div>
+						<div class="page3_cloud6">
+							<img src="images/3_7.png" alt="">
+						</div>
+						<div class="page3_cloud7">
+							<img src="images/3_8.png" alt="">
+						</div>
+					</div>
+					
+					<div class="page3_next">
+						<img src="images/page3_next.png">
+					</div>
+				</div>
+
+
+
+				<div class="swiper-slide stop-swiper page4" >
+					<img src="images/page4_bg.png" alt="" class="page4_bg">
+					
+					<div class="cloud_container page4_container">
+						<div class=" page4-cloud1">
+							<img src="images/5_3.png" alt="">
+						</div>
+						<div class="page4-cloud2">
+							<img src="images/5_4.png" alt="">
+						</div>
+						<div class="page4-cloud3">
+							<img src="images/5_1.png" alt="">
+						</div>
+						<div class="page4-cloud4">
+							<img src="images/5_4.png" alt="">
+						</div>
+						<div class="page4-cloud5">
+							<img src="images/5_3.png" alt="">
+						</div>
+						
+					</div>
+
+					<div class="page4_floor">
+						<img src="images/4_1.png" alt="">
+					</div>
+					<div class="page4_item " >
+						<img src="images/4_biaoti_2.png" alt="">
+					</div>
+					<div class="page4_button1">
+						<img src="images/4_anniu_2.png" alt="">
+					</div>
+					<div class="page4_button2">
+						<img src="images/4_anniu_3.png" alt="">
+					</div>
+					<div class="page4_person">
+						<img src="images/page4_person.png">
+					</div>
+				</div>
+
+
+				<div class="swiper-slide stop-swiper page5" >
+					<img src="images/page5_bg.jpg" alt="" style="position: absolute;top: 0;left: 0;width: 100%;height: 100%;">
+					<div class="cloud_container page5_container">
+						<div class=" page5-cloud1">
+							<img src="images/cloud03.png" alt="">
+						</div>
+						<div class="page5-cloud2">
+							<img src="images/cloud05.png" alt="">
+						</div>
+						<div class="page5-cloud3">
+							<img src="images/5_1.png" alt="">
+						</div>
+						<div class="page5-cloud4">
+							<img src="images/5_2.png" alt="">
+						</div>
+						<div class="page5-cloud5">
+							<img src="images/5_3.png" alt="">
+						</div>
+						<div class="page5-cloud6">
+							<img src="images/5_1.png" alt="">
+						</div>
+						<div class="page5-cloud7">
+							<img src="images/5_2.png" alt="">
+						</div>
+					</div>
+					<div style="position: absolute;top: 4rem;left: 1rem;width: 14rem;">
+						<img src="images/5_biaoti_1.png" alt="" style="width: 100%;">
+					</div>
+					<div class="mid_line">
+						<img src="images/page5_mid_line.png">
+					</div>
+					<ul class="mid-container">
+						<li class="mid_ani1">
+							<div class="time"><img src="images/time_1.png"></div>
+							<div class="point"></div>
+							<div class="address"><img src="images/addr_1.png"></div>
+						</li>
+						<li class="mid_ani2">
+							<div class="time"><img src="images/time_2.png"></div>
+							<div class="point"></div>
+							<div class="address"><img src="images/addr_2.png"></div>
+						</li>
+						<li class="mid_ani3">
+							<div class="time"><img src="images/time_3.png"></div>
+							<div class="point"></div>
+							<div class="address"><img src="images/addr_3.png"></div>
+						</li>
+						<li class="mid_ani4">
+							<div class="time"><img src="images/time_4.png"></div>
+							<div class="point"></div>
+							<div class="address"><img src="images/addr_4.png"></div>
+						</li>
+					</ul>
+				</div>
 				
 			</div>
-
-
-			<div class="swiper-slide page2"  >
-				 <img src="images/page2_bg.png" alt="" class="page2_bg">
-				<div class="floor">
-					<img src="images/page2_floor.png" alt="">
-				</div>
-				<div class="cloud_container">
-					<div class="cloud1 page2_cloud1">
-						<img src="images/cloud01.png" alt="">
-					</div>
-					<div class="cloud2 page2_cloud2">
-						<img src="images/cloud02.png" alt="">
-					</div>
-					<div class="cloud3 page2_cloud3">
-						<img src="images/cloud03.png" alt="">
-					</div>
-					<div class="cloud4 page2_cloud4">
-						<img src="images/cloud02.png" alt="">
-					</div>
-					<div class="cloud5 page2_cloud5">
-						<img src="images/cloud05.png" alt="">
-					</div>
-					<div class="cloud6 page2_cloud6">
-						<img src="images/cloud06.png" alt="">
-					</div>
-					<div class="cloud7 page2_cloud7">
-						<img src="images/cloud07.png" alt="">
-					</div>
-				</div>
-			</div>
-
-
-
-			<div class="swiper-slide page3" >
-				<img src="images/page3_bg.png" alt="" class="page3_bg">
-				<div class="page3_floor">
-					<img src="images/3_1.png" alt="">
-				</div>
-				<div class="page3_person">
-				</div>
-
-				<div class="cloud_container">
-					<div class="page3_cloud1">
-						<img src="images/3_2.png" alt="">
-					</div>
-					<div class="page3_cloud2">
-						<img src="images/3_3.png" alt="">
-					</div>
-					<div class="page3_cloud3">
-						<img src="images/3_2.png" alt="">
-					</div>
-					<div class="page3_cloud4">
-						<img src="images/3_5.png" alt="">
-					</div>
-					<div class="page3_cloud5">
-						<img src="images/3_6.png" alt="">
-					</div>
-					<div class="page3_cloud6">
-						<img src="images/3_7.png" alt="">
-					</div>
-					<div class="page3_cloud7">
-						<img src="images/3_8.png" alt="">
-					</div>
-				</div>
-				<div class="page3_next">
-					<img src="images/page3_next.png" alt="">
-				</div>
-			</div>
-
-
-
-			<div class="swiper-slide page4" >
-				<img src="images/page4_bg.png" alt="" class="page4_bg">
-
-				<div class="page4_floor">
-					<img src="images/4_1.png" alt="">
-				</div>
-				<div class="page4_item " >
-					<img src="images/4_biaoti_2.png" alt="">
-				</div>
-				<div class="page4_button1">
-					<img src="images/4_anniu_2.png" alt="">
-				</div>
-				<div class="page4_button2">
-					<img src="images/4_anniu_3.png" alt="">
-				</div>
-			</div>
-
-
-			<div class="swiper-slide" >
-				<img src="images/page5_bg.png" alt="" style="position: absolute;top: 0;left: 0;width: 100%;height: 100%;">
-				<div style="position: absolute;top: 60px;left: 20px;width: 240px;">
-					<img src="images/5_biaoti_1.png" alt="" style="top: 60px;left: 20px;width: 240px;">
-				</div>
-			</div>
-			
 		</div>
-		<!-- Add Pagination -->
-		<!-- <div class="swiper-pagination"></div> -->
 	</div>
 </body>
 	
@@ -161,7 +258,7 @@
 	<script>
 		var swiper = new Swiper('.swiper-container', {
 			noSwiping : true,
-			// noSwipingClass : 'swiper-slide ',
+			noSwipingClass : 'stop-swiper ',
 			slidesPerView: 1,
 			pagination: '.swiper-pagination',
 			effect: 'coverflow',
@@ -184,20 +281,28 @@
 			  } 
 		})
 		$(function () {
-			$('.page1').click(function(event) {
+			/*page-1*/
+			var page1 = function () {
+				$('.move_left').css({'animation':'bounceOutLeft 2s linear ','animation-fill-mode': 'forwards'})
+				$('.move_left1').css({'animation':'bounceOutLeft 2s linear ','animation-fill-mode': 'forwards'})
+				$('.move_right').css({'animation':'bounceOutRight 2s linear ','animation-fill-mode': 'forwards'})
+
+				
 				$('.page1_bg').css({
 					'transition':'all 2s',
 					'transform':'scale(2.5)', 
 					'animation': 'moveMap 0.8s 1.2s forwards',
 				})
+
 				setTimeout(function () {
 					$('.page1_icon').css('display', 'block')
 					$('.page1_smallmap').css('display', 'block')
 				},2000)	
-				$('.move_left').css({'animation':'moveLeft 1.5s linear ','animation-fill-mode': 'forwards'})
-				$('.move_left1').css({'animation':'moveLeft1 1s linear ','animation-fill-mode': 'forwards'})
-				$('.move_right').css({'animation':'moveRight 1.5s linear ','animation-fill-mode': 'forwards'})
-			})
+			}
+			// $('.page1').click(function(event) {
+				
+				
+			// })
 
 			$('.page1_icon').click(function(event) {
 				$('.page1_icon').css('display', 'none')
@@ -214,9 +319,70 @@
 			var add =function () {
 				$('.page4_item').addClass('animated rollIn')
 			}
+
+
+			/*page2*/
+			$('.page2-icon').click(function(event) {
+				$('.page2_bg').css({
+					'transition':'all 1.5s',
+					'transform':'scale(3.5)', 
+				})
+				$('.page2-icon').css('display', 'none')
+
+				$('.page2_move_left').css({'animation':'page2moveLeft 1.5s linear ','animation-fill-mode': 'forwards'})
+				$('.page2_move_right').css({'animation':'page2moveRight 1.5s linear ','animation-fill-mode': 'forwards'})
+
+				setTimeout(function () {
+					swiper.slideTo(2, 600,loadPage3())
+				}, 1500)
+			});
+
+			/*page-3*/
 			$('.page3_next').click(function(event) {
 				swiper.slideTo(3, 600,add())
+			})
+			var loadPage3 = function () {
+				
+
+				for (var i = 1; i < 8; i++) {
+					var page = `.page3_cloud${i}`
+					var ani = `page3Move${i}`
+					$(page).css({'animation': ani,'animation-duration': '10s','animation-timing-function':'linear','animation-iteration-count':'infinite'});
+				}
+				setTimeout(function () {
+					$('.page3-word').css('display','block')
+				}, 2000)
+			}
+
+			/*page-5*/
+			$('.page4_button2').click(function(event) {
+				swiper.slideTo(4, 600,false)
+				for (var i = 1; i < 5; i++) {
+					var item =  `.mid_ani${i}`
+					console.log(item);
+					if (i % 2 ) {
+						$(item).addClass('animated bounceInLeft ')
+					} else {
+						$(item).addClass('animated bounceInDown ')
+					}
+				}
 			});
+
+
+
+			/*page-5*/
+
+			
+
+
+
+			$('body').on('touchmove', function (event) {
+			    event.preventDefault();
+			})
+
+
+
+
 
 			var music = $("#music")
 			var aud = $("#aud")[0]
@@ -241,8 +407,14 @@
 			}
 			audioAutoPlay()
 
-			// alert(getComputedStyle(window.document.documentElement)['font-size'])
 
+			$('.main').css('display', 'none')
+			Pace.on('done', function(){
+			 	Pace.stop()
+			    $('.main').css({'display': 'block'})
+			    console.log('start');
+			    page1()
+			})
 		})
 	</script>
 </html>
