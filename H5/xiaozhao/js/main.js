@@ -42,7 +42,7 @@
 					$('.page1_bg').css({
 						'transition':'all 2s',
 						'transform':'scale(2.5)', 
-						'animation': 'moveMap 0.8s 1.2s forwards',
+						'animation': 'moveMap 0.8s 1s forwards',
 					})
 					// $('.cloud1_float').css('visibility', 'hidden')
 					setTimeout(function () {
