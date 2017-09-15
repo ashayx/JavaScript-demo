@@ -1,0 +1,181 @@
+@charset "UTF-8";
+/**
+ * 样式主文件
+ */
+/**
+ * 常用的 mixins
+ */
+/**
+ * Mixins
+ */
+/**
+ * 引用图片，自动获取图片的宽高
+ * @param  {string} $name [图片相对于img目录的位置]
+ */
+/**
+ * 引用图片，自动获取图片的宽高
+ * @param  {string} $url [图片的路径]
+ */
+/**
+ * 引用图片，自动获取图片的 background-size
+ * @param  {string} $url [图片的路径]
+ */
+/**
+ * 文本截断 - text ellipsis
+ * @param  {integer} $num [文本截断的行数]
+ */
+/**
+ * 清除浮动
+ */
+/**
+ * 隐藏滚动条
+ */
+/**
+ * 1像素边框
+ * @param  {string} $position [边框位置，取值：top, bottom, left, right, full]
+ * @param  {string} $borderColor [边框颜色]
+ * @param  {number} $raidus [圆角]
+ *
+ * 例子：
+ *   @include border(top, #ddd);
+ *   @include border(full, #ddd, 2px);
+ */
+/**
+ * 页面的基础样式，包括样式重置
+ */
+/**
+ * 样式重置
+ */
+* {
+  -webkit-tap-highlight-color: transparent;
+  outline: 0;
+  margin: 0;
+  padding: 0;
+  vertical-align: baseline; }
+
+body, h1, h2, h3, h4, h5, h6, hr, p, blockquote, dl, dt, dd, ul, ol, li, pre, form, fieldset, legend, button, input, textarea, th, td {
+  margin: 0;
+  padding: 0;
+  vertical-align: baseline; }
+
+img {
+  border: 0 none;
+  vertical-align: top; }
+
+i, em {
+  font-style: normal; }
+
+ol, ul {
+  list-style: none; }
+
+input, select, button, h1, h2, h3, h4, h5, h6 {
+  font-size: 100%;
+  font-family: inherit; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+a {
+  text-decoration: none;
+  color: #666; }
+
+body {
+  margin: 0 auto;
+  min-width: 320px;
+  max-width: 768px;
+  width: 100%;
+  height: 100%;
+  font-size: 14px;
+  font-family: -apple-system, Helvetica, "Microsoft YaHei", Arial, sans-serif;
+  line-height: 1.5;
+  color: #666;
+  text-size-adjust: 100% !important;
+  user-select: none; }
+
+input[type="text"], textarea {
+  appearance: none; }
+
+html {
+  width: 100%;
+  height: 100%; }
+
+/**
+ * 状态类
+ */
+.hide {
+  display: none !important; }
+
+/**
+ * 活动的样式
+ */
+/**
+ * Main Page
+ */
+.IIV::-webkit-media-controls-play-button,
+.IIV::-webkit-media-controls-start-playback-button {
+  opacity: 0;
+  pointer-events: none;
+  width: 5px; }
+
+body {
+  position: relative;
+  overflow: hidden; }
+
+.loading,
+.main,
+.end {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background-color: #000;
+  justify-content: center;
+  align-items: center; }
+
+.main {
+  display: none;
+  background-color: #000; }
+  .main .wrapper .video.show {
+    width: 100%;
+    height: 100%; }
+  .main .control {
+    position: absolute;
+    height: 20%;
+    width: 100%;
+    bottom: 0; }
+    .main .control .btn {
+      display: none; }
+  .main .poster {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    background-color: #000; }
+
+.btns {
+  width: 100%;
+  text-align: center; }
+
+.btn {
+  display: inline-block;
+  padding: 20px 40px;
+  border: 1PX solid white;
+  color: white;
+  font-size: 28px; }
+
+.tip {
+  position: fixed;
+  top: 30px;
+  left: 30px;
+  padding: 16px;
+  color: white;
+  font-size: 14PX;
+  background: black; }
+
+/*# sourceMappingURL=package.css.map */
