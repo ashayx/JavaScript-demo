@@ -30,6 +30,23 @@
 - [alabo](http://peiyingqiang.win/JavaScript-demo/H5/alabo/index.html)
 - [xiaozhao](http://peiyingqiang.win/JavaScript-demo/H5/xiaohzao/index.html)
 - [holiday](http://peiyingqiang.win/JavaScript-demo/H5/holiday/index.html)
+## 几个js面试题
+#### 1.写一个函数，比较两个字符串组成是否相等，例如'abcd' 和'acbd'返回true，'abcd'和'abcf'返回false
+    const compare = (a,b)=> a.split('').sort().join('') == b.split('').sort().join('')
+#### 2.写个函数多维数组转一维数组[1,[2,[[3,4],5],6]] =>[1, 2, 3, 4, 5, 6]
+    const flatten = arr => arr.reduce((acc,val) => acc.concat(Array.isArray(val)? flatten(val):val),[])
+#### 3.还有个把数字转换成中文的，12345 => 一万两千三百四十五，最多支持5位数
+    const fnc = a => {
+      // 最多支持到万位，5位数字
+	    let arr = a.toString().split('')
+	    let cnArr = '零一二三四五六七八九'.split('')
+      let andArr = '万千百十'.split('')
+      let arrLen = arr.length
+      let andArrLen = andArr.length
+	    andArr = arrLen > 1 ? andArr.splice(andArrLen + 1 - arrLen,arrLen - 1) : [] 
+	    let str = arr.map((v,i) => i < arrLen - 1 ? cnArr[v] + andArr[i] : cnArr[v])
+	    return str.join('')
+  }
 
 ------------------------------
 # jQuery练习
