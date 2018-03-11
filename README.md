@@ -37,12 +37,12 @@
     const flatten = arr => arr.reduce((acc,val) => acc.concat(Array.isArray(val)? flatten(val):val),[])
 #### 3.还有个把数字转换成中文的，12345 => 一万两千三百四十五，最多支持5位数
     const fnc = a => {
-    	// 最多支持到万位，5位数字
+	// 最多支持到万位，5位数字
 	let arr = a.toString().split('')
 	let cnArr = '零一二三四五六七八九'.split('')
-      	let andArr = '万千百十'.split('')
-      	let arrLen = arr.length
-      	let andArrLen = andArr.length
+	let andArr = '万千百十'.split('')
+	let arrLen = arr.length
+	let andArrLen = andArr.length
 	andArr = arrLen > 1 ? andArr.splice(andArrLen + 1 - arrLen,arrLen - 1) : [] 
 	let str = arr.map((v,i) => i < arrLen - 1 ? cnArr[v] + andArr[i] : cnArr[v])
 	return str.join('')
