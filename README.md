@@ -22,13 +22,9 @@
 - [JS.显示KeyCode](https://ashayx.github.io/JavaScript-demo/JavaScript练手项目/JS.显示KeyCode.html)
 - [JS粒子背景](https://ashayx.github.io/JavaScript-demo/JavaScript练手项目/JS粒子背景.html)
 - [JS打砖块](https://ashayx.github.io/JavaScript-demo/JavaScript练手项目/打砖块/index.html)
-- [JS开门](https://ashayx.github.io/JavaScript-demo/JavaScript练手项目/JS开门动画.html)
-- [swiper](https://ashayx.github.io/JavaScript-demo/JavaScript练手项目/swiper.html)
-- [h5](http://peiyingqiang.win/JavaScript-demo/H5/swiper/index.html)
 - [flappy bird](http://peiyingqiang.win/JavaScript-demo/bird/index.html)
 - [JS粒子背景](https://ashayx.github.io/JavaScript-demo/JavaScript练手项目/重力.html)
 - [alabo](http://peiyingqiang.win/JavaScript-demo/H5/alabo/index.html)
-- [xiaozhao](http://peiyingqiang.win/JavaScript-demo/H5/xiaohzao/index.html)
 - [holiday](http://peiyingqiang.win/JavaScript-demo/H5/holiday/index.html)
 ## 几个js面试题
 #### 1.写一个函数，比较两个字符串组成是否相等，例如'abcd' 和'acbd'返回true，'abcd'和'abcf'返回false
