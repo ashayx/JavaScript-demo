@@ -26,7 +26,7 @@
 - [JS粒子背景](https://ashayx.github.io/JavaScript-demo/JavaScript练手项目/重力.html)
 - [alabo](http://peiyingqiang.win/JavaScript-demo/H5/alabo/index.html)
 - [holiday](http://peiyingqiang.win/JavaScript-demo/H5/holiday/index.html)
-## 几个js面试题
+## 几个js练习
 #### 1.写一个函数，比较两个字符串组成是否相等，例如'abcd' 和'acbd'返回true，'abcd'和'abcf'返回false
     const compare = (a,b)=> a.split('').sort().join('') == b.split('').sort().join('')
 #### 2.写个函数多维数组转一维数组[1,[2,[[3,4],5],6]] =>[1, 2, 3, 4, 5, 6]
